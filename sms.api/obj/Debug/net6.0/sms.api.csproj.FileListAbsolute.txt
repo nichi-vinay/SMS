@@ -1,0 +1,96 @@
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\appsettings.json
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\sms.api.exe
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\sms.api.deps.json
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\sms.api.runtimeconfig.json
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\sms.api.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.AssemblyReference.cache
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfoInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.CoreCompileInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.sms.api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.build.sms.api.props
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.sms.api.props
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.sms.api.props
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\scopedcss\bundle\sms.api.styles.css
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.CopyComplete
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\refint\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\sms.api.genruntimeconfig.cache
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.api\obj\Debug\net6.0\ref\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\appsettings.json
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\sms.api.exe
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\sms.api.deps.json
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\sms.api.runtimeconfig.json
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\sms.api.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.AssemblyReference.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfoInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.CoreCompileInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.sms.api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.build.sms.api.props
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.sms.api.props
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.sms.api.props
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\scopedcss\bundle\sms.api.styles.css
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.CopyComplete
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\refint\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\sms.api.genruntimeconfig.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.api\obj\Debug\net6.0\ref\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\appsettings.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\sms.api.exe
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\sms.api.deps.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\sms.api.runtimeconfig.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\sms.api.pdb
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.AssemblyReference.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfoInputs.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.CoreCompileInputs.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.sms.api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.build.sms.api.props
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.sms.api.props
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.sms.api.props
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\scopedcss\bundle\sms.api.styles.css
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.csproj.CopyComplete
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\refint\sms.api.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.pdb
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\sms.api.genruntimeconfig.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.api\obj\Debug\net6.0\ref\sms.api.dll

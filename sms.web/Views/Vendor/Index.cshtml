@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="@Url.Action("Create", "Enquiry")" class="btn btn-info">
+                    <a href="@Url.Action("Create", "Vendor")" class="btn btn-info">
                         <i class="fas fa-plus"></i> Add item
                     </a>
                 </div>
@@ -68,7 +68,7 @@
                         <td>Vendor1@mail.com</td>
                         <td>GST</td>
                         <td>190</td>
-                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash-fill"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i></td>
                     </tr>
                     <tr>
                         <td>Vendor 2</td>
@@ -77,7 +77,7 @@
                         <td>Vendor1@mail.com</td>
                         <td>GST</td>
                         <td>190</td>
-                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash-fill"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i></td>
                     </tr>
                     <tr>
                         <td>Vendor 3</td>
@@ -86,7 +86,7 @@
                         <td>Vendor1@mail.com</td>
                         <td>GST</td>
                         <td>190</td>
-                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash-fill"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i></td>
                     </tr>
                 </tbody>
 
@@ -97,6 +97,8 @@
     <!-- /.card-body -->
     </div>
 
+
+    <!-- /.content -->
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -116,6 +118,9 @@
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
 
+
+
+
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
@@ -123,35 +128,13 @@
     <!-- Page specific script -->
     <script>
         $(function () {
-            // Initialize the date picker
-            $('#datepicker').datepicker({
-                format: 'yyyy-mm-dd', // You can change the date format as needed
-                autoclose: true
-            });
-
-            // Add a click event handler for the "Add Vendor" button
-            $('#addVendorButton').on('click', function () {
-                // Redirect to the "Create.html" page
-                window.location.href = 'Create.cshtml';
-            });
-
             $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
+                "responsive": true, "lengthChange": false, "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
         });
+
     </script>
 
 </body>

@@ -1,0 +1,34 @@
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.deps.json
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.AssemblyInfoInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.AssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.csproj.CoreCompileInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\obj\Debug\net6.0\refint\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS\sms.viewmodels\obj\Debug\net6.0\ref\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.deps.json
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.csproj.AssemblyReference.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.AssemblyInfoInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.AssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.csproj.CoreCompileInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\refint\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS (2)\SMS\sms.viewmodels\obj\Debug\net6.0\ref\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.deps.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\bin\Debug\net6.0\sms.viewmodels.pdb
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.AssemblyInfoInputs.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.AssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.csproj.CoreCompileInputs.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\obj\Debug\net6.0\refint\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\obj\Debug\net6.0\sms.viewmodels.pdb
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.viewmodels\obj\Debug\net6.0\ref\sms.viewmodels.dll

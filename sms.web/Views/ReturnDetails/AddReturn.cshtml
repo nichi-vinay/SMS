@@ -21,7 +21,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Add Purchase</h3>
+            <h3 class="card-title">Add Order</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -46,7 +46,7 @@
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                            <label>PO Number</label>
+                            <label>Order Name</label>
                             <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                     </div>
@@ -56,7 +56,30 @@
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                            <label>PO Date</label>
+                            <label>Order Number</label>
+                            <input type="text" class="form-control" placeholder="Enter ...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- select -->
+                        <div class="form-group">
+                            <label>Order Type</label>
+                            <select class="form-control">
+                                <option>In Process</option>
+                                <option>Return</option>
+                               
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Order Date</label>
                             <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                     </div>
@@ -85,9 +108,7 @@
                                     <th>Item Name</th>
                                     <th>Item Number</th>
                                     <th>Quantity</th>
-                                    <th>MRP</th>
-                                    <th>Discount Price</th>
-                                    <th>Total Price</th>
+                                  
                                     
                                 </tr>
                             </thead>
@@ -96,79 +117,32 @@
                                     <td>Item 1</td>
                                     <td>xxxxxxxxxx</td>
                                     <td>10</td>
-                                    <td>200</td>
-                                    <td>10%</td>
-                                    <td>190</td>
+                                  
                                 </tr>
                                 <tr>
                                     <td>Item 2</td>
                                     <td>xxxxxxxxxx</td>
                                     <td>10</td>
-                                    <td>200</td>
-                                    <td>10%</td>
-                                    <td>190</td>
+                                  
                                 </tr>
                                 <tr>
                                     <td>Item 3</td>
                                     <td>xxxxxxxxxx</td>
                                     <td>10</td>
-                                    <td>200</td>
-                                    <td>10%</td>
-                                    <td>190</td>
+                                 
                                 </tr>
                             </tbody>
 
                         </table>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <div class="form-group">
-                               
-                            </div>
-                        </div>
-                        <div class="col-lf-2">
-                            <!-- text input -->
-                            <div class="form-group">
-                                <label>Total Discount</label>
-                                <input type="text" class="form-control" placeholder="Enter ...">
-                            </div>
-                        </div>
-                       
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <div class="form-group">
-                            </div>
-                        </div>
-                        <div class="col-lf-2">
-                            <!-- text input -->
-                            <div class="form-group">
-                                <label>Total Tax</label>
-                                <input type="text" class="form-control" placeholder="Enter ...">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <div class="form-group">
-                            </div>
-                        </div>
-                        <div class="col-lf-2">
-                            <!-- text input -->
-                            <div class="form-group">
-                                <label>Total Price</label>
-                                <input type="text" class="form-control" placeholder="Enter ...">
-                            </div>
-                        </div>
-
-                    </div>
+                  
+                   
                 </div>
-                <button type="submit" class="btn btn-success">Upload Invoice</button>
+               
                 <button type="submit" class="btn btn-primary">Save</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="submit" class="btn btn-danger">Cancel</button>
+                <button type="button" class="btn btn-danger" onclick="goToIndexPage()">Cancel</button>
             </form>
         </div>
         <!-- /.card-body -->
@@ -227,6 +201,10 @@
         $(function () {
             bsCustomFileInput.init();
         });
+
+        function goToIndexPage() {
+            window.location.href = "/ReturnDetails"; // Replace with the actual URL of your index page
+        }
     </script>
 </body>
 </html>

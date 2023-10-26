@@ -172,7 +172,7 @@
                 <button type="submit" class="btn btn-success">Upload Invoice</button>
                 <button type="submit" class="btn btn-primary">Save</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="submit" class="btn btn-danger">Cancel</button>
+                <button type="button" class="btn btn-danger" onclick="goToIndexPage()">Cancel</button>
             </form>
         </div>
         <!-- /.card-body -->
@@ -226,6 +226,10 @@
                 "responsive": true,
             });
         });
+
+        function goToIndexPage() {
+            window.location.href = "/Purchase"; // Replace with the actual URL of your index page
+        }
 
    
         $(function () {

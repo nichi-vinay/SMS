@@ -36,10 +36,10 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link no-highlight" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
-             
             </ul>
+
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -51,7 +51,7 @@
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control form-control-navbfar" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
@@ -281,8 +281,8 @@
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="dist/img/SMS_LOGO.png" alt="AdminLTE Logo" class="brand-image img-rectangle elevation-3" style="opacity: .8">
+            <a href="_Layout.cshtml" class="brand-link">
+                <img src="/dist/img/SMS_LOGO.png" alt="AdminLTE Logo" class="brand-image img-rectangle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">&nbsp;</span>
             </a>
 
@@ -313,8 +313,7 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
+                      
                         <li class="nav-item">
                             <a href="@Url.Action("Index", "Dashboard")" class="nav-link">
                                 <i class="fa-solid fa-chalkboard-user"></i> &nbsp;
@@ -323,6 +322,9 @@
                                 </p>
                             </a>
                         </li>
+                        <!-- Other menu items go here -->
+                    
+
                    
                     <li class="nav-item">
                         <a href="@Url.Action("Index", "Enquiry")" class="nav-link">
@@ -363,7 +365,7 @@
                         <a href="@Url.Action("Index", "ReturnDetails")" class="nav-link">
                                 <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i> &nbsp;
                             <p>
-                                Return Details
+                                Orders
                             </p>
                         </a>
                     </li>
@@ -478,6 +480,45 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <!-- Add this script at the end of your HTML, just before </body> -->
+    <style>
+        .nav-item.active a {
+            background-color: #8d868687;
+            color: #fff; /* Change the text color to white for better visibility */
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // Get the current URL of the page
+            var currentUrl = window.location.pathname;
+
+            // Handle click events on menu items
+            $('.nav-item a').not('.no-highlight').on('click', function () {
+                // Remove the 'active' class from all menu items
+                $('.nav-item').removeClass('active');
+
+                // Add the 'active' class to the clicked menu item's parent
+                $(this).parent('.nav-item').addClass('active');
+            });
+
+            // Highlight the menu item corresponding to the current page
+            $('.nav-item a').each(function () {
+                var menuItemUrl = $(this).attr('href');
+
+                // Check if the current URL matches the menu item's URL
+                if (currentUrl === menuItemUrl) {
+                    // Add a class to highlight the menu item
+                    $(this).parent('.nav-item').addClass('active');
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
 
 
 </body>
