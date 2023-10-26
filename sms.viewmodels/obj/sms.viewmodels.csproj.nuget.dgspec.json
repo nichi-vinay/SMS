@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.viewmodels\\sms.viewmodels.csproj": {}
+    "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.viewmodels\\sms.viewmodels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.viewmodels\\sms.viewmodels.csproj": {
+    "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.viewmodels\\sms.viewmodels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.viewmodels\\sms.viewmodels.csproj",
+        "projectUniqueName": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.viewmodels\\sms.viewmodels.csproj",
         "projectName": "sms.viewmodels",
-        "projectPath": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.viewmodels\\sms.viewmodels.csproj",
+        "projectPath": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.viewmodels\\sms.viewmodels.csproj",
         "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.viewmodels\\obj\\",
+        "outputPath": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.viewmodels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nichiuser\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.web\\sms.web.csproj",
+      "projectUniqueName": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.web\\sms.web.csproj",
       "projectName": "sms.web",
-      "projectPath": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.web\\sms.web.csproj",
+      "projectPath": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.web\\sms.web.csproj",
       "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.web\\obj\\",
+      "outputPath": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nichiuser\\AppData\\Roaming\\NuGet\\NuGet.Config",

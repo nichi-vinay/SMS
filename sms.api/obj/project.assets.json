@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.api\\sms.api.csproj",
+      "projectUniqueName": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.api\\sms.api.csproj",
       "projectName": "sms.api",
-      "projectPath": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.api\\sms.api.csproj",
+      "projectPath": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.api\\sms.api.csproj",
       "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.api\\obj\\",
+      "outputPath": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nichiuser\\AppData\\Roaming\\NuGet\\NuGet.Config",

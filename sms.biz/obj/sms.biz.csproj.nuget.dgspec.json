@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.biz\\sms.biz.csproj": {}
+    "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.biz\\sms.biz.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.biz\\sms.biz.csproj": {
+    "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.biz\\sms.biz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.biz\\sms.biz.csproj",
+        "projectUniqueName": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.biz\\sms.biz.csproj",
         "projectName": "sms.biz",
-        "projectPath": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.biz\\sms.biz.csproj",
+        "projectPath": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.biz\\sms.biz.csproj",
         "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nichiuser\\Downloads\\SMS\\SMS (3)\\SMS\\sms.biz\\obj\\",
+        "outputPath": "C:\\Users\\nichiuser\\Downloads\\SMS_Git\\sms.biz\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nichiuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
