@@ -22,7 +22,11 @@
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -32,21 +36,14 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <button type="button" class="btn btn-primary float-right" id="addReturnButton">
-                                <a href="@Url.Action("AddReturn", "ReturnDetails")" class="btn btn-info float-right">
-                                    <i class="fas fa-plus"></i> Add Return
-                                </a>
-                            </button>
                             <h3 class="card-title">Return List</h3>
                         </div>
-
-                      
 
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
-                                    
+                                    <button type="button" class="btn btn-primary float-right" id="addReturnButton"><i class="fas fa-plus"></i> Add Return</button>
 
 
                                     <tr>

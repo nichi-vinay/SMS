@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "nU86z6Nsrwhd23IzF3t8se7S9aFoMJzwKZ9fhiGlLnk=",
+  "Source": "sms.api",
+  "BasePath": "_content/sms.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

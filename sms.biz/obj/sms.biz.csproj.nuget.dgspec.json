@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\New folder\\SMS\\sms.biz\\sms.biz.csproj": {}
+    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.biz\\sms.biz.csproj": {}
   },
   "projects": {
-    "D:\\New folder\\SMS\\sms.biz\\sms.biz.csproj": {
+    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.biz\\sms.biz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\New folder\\SMS\\sms.biz\\sms.biz.csproj",
+        "projectUniqueName": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.biz\\sms.biz.csproj",
         "projectName": "sms.biz",
-        "projectPath": "D:\\New folder\\SMS\\sms.biz\\sms.biz.csproj",
+        "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.biz\\sms.biz.csproj",
         "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-        "outputPath": "D:\\New folder\\SMS\\sms.biz\\obj\\",
+        "outputPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.biz\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,14 @@
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\bin\Debug\net6.0\sms.Data.deps.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\bin\Debug\net6.0\sms.Data.runtimeconfig.json
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\bin\Debug\net6.0\sms.Data.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\bin\Debug\net6.0\sms.Data.pdb
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\sms.Data.csproj.AssemblyReference.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\sms.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\sms.Data.AssemblyInfoInputs.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\sms.Data.AssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\sms.Data.csproj.CoreCompileInputs.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\sms.Data.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\refint\sms.Data.dll
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\sms.Data.pdb
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\sms.Data.genruntimeconfig.cache
+C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.Data\obj\Debug\net6.0\ref\sms.Data.dll

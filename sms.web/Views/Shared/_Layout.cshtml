@@ -24,9 +24,6 @@
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-    <!-- font awesome CDN link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -164,28 +161,27 @@
         </nav>
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
-     @*   <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link" style="margin-bottom: 20px; display: block;">
-                <img src="dist/img/SMS_LOGO.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8;">
+            <a href="index3.html" class="brand-link">
+                <img src="dist/img/SMS_LOGO.png" alt="SMS Logo" class="brand-image  elevation-3" style="opacity: 1.9">
+                <span class="brand-text font-weight-light">&nbsp;</span>
             </a>
-
 
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+              @*   <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
-                    <div class="info" style="margin-left: 10px;">
+                    <div class="info">
                         <a href="#" class="d-block">Admin</a>
                     </div>
-                </div>
+                </div> *@
 
                 <!-- SidebarSearch Form -->
-                <div class="form-inline">
+             @*    <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
                         <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
@@ -194,7 +190,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> *@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -276,123 +272,7 @@
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
-        </aside>*@
-
-
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="dist/img/SMS_LOGO.png" alt="AdminLTE Logo" class="brand-image img-rectangle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">&nbsp;</span>
-            </a>
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-              @*  <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info" style="margin-left: 10px;">
-                        <a href="#" class="d-block">Admin</a>
-                    </div>
-                </div>
-
-                <!-- SidebarSearch Form -->
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>*@
-
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index", "Dashboard")" class="nav-link">
-                                <i class="fa-solid fa-chalkboard-user"></i> &nbsp;
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
-                   
-                    <li class="nav-item">
-                        <a href="@Url.Action("Index", "Enquiry")" class="nav-link">
-                                <i class="fa-solid fa-clipboard-list"></i> &nbsp;
-                            <p>
-                                Enquiry
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="@Url.Action("Index", "Purchase")" class="nav-link">
-                                <i class="fa-solid fa-bag-shopping"></i> &nbsp;
-                            <p>
-                                Purchases
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="@Url.Action("Index", "Vendor")" class="nav-link">
-                                <i class="fa-solid fa-user-tie"></i> &nbsp;
-                            <p>
-                                Vendor
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="@Url.Action("Index", "Sales")" class="nav-link">
-
-
-
-                                <i class="fa-solid fa-cart-shopping"></i> &nbsp;
-                            <p>
-                                Sales
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="@Url.Action("Index", "ReturnDetails")" class="nav-link">
-                                <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i> &nbsp;
-                            <p>
-                                Return Details
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="@Url.Action("Index", "InStock")" class="nav-link">
-                                <i class="fa-solid fa-warehouse"></i>   &nbsp;                      
-                                <p>
-                                In Stock
-                            </p>
-                        </a>
-                    </li>
-
-
-
-                    <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
-                                <i class="fa-solid fa-chart-column"></i> &nbsp
-                            <p>
-                                Reports
-                            </p>
-                        </a>
-                    </li>
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
         </aside>
-
 
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -406,10 +286,10 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2023 <a href="https://www.nichi.com/">Powered By Nichi-In Softwares</a>.</strong>
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 1.0
+                <b>Version</b> 3.2.0
             </div>
         </footer>
 
@@ -455,8 +335,6 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="dist/js/pages/dashboard.js"></script>
 
-
-
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -478,6 +356,8 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <!-- Page specific script -->
+
 
 
 </body>

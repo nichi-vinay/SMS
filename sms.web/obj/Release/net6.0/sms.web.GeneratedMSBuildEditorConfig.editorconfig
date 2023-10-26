@@ -9,93 +9,89 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = sms.web
 build_property.RootNamespace = sms.web
-build_property.ProjectDir = D:\SMS\SMS\sms.web\
+build_property.ProjectDir = C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\SMS\SMS\sms.web
+build_property.MSBuildProjectDirectory = C:\Users\nichiuser\Downloads\SMS (1)\SMS\sms.web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/SMS/SMS/sms.web/Views/Dashboard/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/Create.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Enquiry/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Enquiry/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Home/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Home/Privacy.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/InStock/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/InStock/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5TdG9ja1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Login/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Purchase/AddItem.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Purchase/AddItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VcQWRkSXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Purchase/AddPurchase.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Purchase/AddPurchase.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VcQWRkUHVyY2hhc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Purchase/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Purchase/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Report/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Report/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/ReturnDetails/AddReturn.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuRGV0YWlsc1xBZGRSZXR1cm4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/SMS/SMS/sms.web/Views/ReturnDetails/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/ReturnDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuRGV0YWlsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Sales/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Sales/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Shared/Error.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Vendor/Create.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Vendor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Vendor/Index.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Vendor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/_ViewImports.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/_ViewStart.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Shared/_Layout.cshtml]
+[C:/Users/nichiuser/Downloads/SMS (1)/SMS/sms.web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-46hucv6jxe
