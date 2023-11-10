@@ -1,0 +1,34 @@
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\bin\Debug\net6.0\sms.biz.deps.json
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\bin\Debug\net6.0\sms.biz.dll
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\bin\Debug\net6.0\sms.biz.pdb
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\sms.biz.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\sms.biz.AssemblyInfoInputs.cache
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\sms.biz.AssemblyInfo.cs
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\sms.biz.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\sms.biz.dll
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\refint\sms.biz.dll
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\sms.biz.pdb
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\ref\sms.biz.dll
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\sms.biz.csproj.AssemblyReference.cache
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\bin\Debug\net6.0\sms.data.dll
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\bin\Debug\net6.0\sms.viewmodels.dll
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\bin\Debug\net6.0\sms.data.pdb
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\bin\Debug\net6.0\sms.viewmodels.pdb
+D:\VisualStudio\Projects\NichiProjects\SMS\sms.biz\obj\Debug\net6.0\sms.biz.csproj.CopyComplete
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\bin\Debug\net6.0\sms.biz.deps.json
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\bin\Debug\net6.0\sms.biz.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\bin\Debug\net6.0\sms.biz.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\bin\Debug\net6.0\sms.data.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\bin\Debug\net6.0\sms.viewmodels.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\bin\Debug\net6.0\sms.data.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\bin\Debug\net6.0\sms.viewmodels.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\sms.biz.csproj.AssemblyReference.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\sms.biz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\sms.biz.AssemblyInfoInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\sms.biz.AssemblyInfo.cs
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\sms.biz.csproj.CoreCompileInputs.cache
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\sms.biz.csproj.CopyComplete
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\sms.biz.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\refint\sms.biz.dll
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\sms.biz.pdb
+C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS_Api\SMS\sms.biz\obj\Debug\net6.0\ref\sms.biz.dll

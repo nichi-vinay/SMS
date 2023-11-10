@@ -1,0 +1,68 @@
+﻿<div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Item Number</th>
+                <th>Total Stock</th>
+                <th>Current Stock</th>
+                <th>MRP</th>
+                <th> Total Price</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Item 1</td>
+                <td>
+                    XXXXXXXX
+                </td>
+                <td>xxxx</td>
+                <td> 50</td>
+                <td>xxxx</td>
+                <td>xxxx</td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td>
+                    XXXXXXXX
+                </td>
+                <td>xxxx</td>
+                <td>40</td>
+                <td>xxxx</td>
+                <td>xxxx</td>
+            </tr>
+            <tr>
+                <td>Item 3</td>
+                <td>
+                    XXXXXXXX
+                </td>
+                <td>xxxx</td>
+                <td>9</td>
+                <td>xxxx</td>
+                <td>xxxx</td>
+            </tr>
+            <tr>
+                <td>Item 4</td>
+                <td>
+                    XXXXXXXX
+                </td>
+                <td>xxxx</td>
+                <td>15</td>
+                <td>xxxx</td>
+                <td>xxxx</td>
+            </tr>
+
+        </tbody>
+        </table>
+</div>
+  
+        <script>
+                  $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+        });
+</script>

@@ -28,7 +28,7 @@
   var qtwebkit = webkit && /Qt\/\d+\.\d+/.test(userAgent);
   var chrome = !edge && /Chrome\//.test(userAgent);
   var presto = /Opera\//.test(userAgent);
-  var safari = /Apple Computer/.test(navigator.vendor);
+  var safari = /Apple Computer/.test(navigator.Supplier);
   var mac_geMountainLion = /Mac OS X 1\d\D([8-9]|\d\d)\D/.test(userAgent);
   var phantom = /PhantomJS/.test(userAgent);
 

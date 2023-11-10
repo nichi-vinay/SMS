@@ -46788,7 +46788,7 @@ module.exports = {
     // There are lots of tables for Big5 and cp950. Please see the following links for history:
     // http://moztw.org/docs/big5/  http://www.haible.de/bruno/charsets/conversion-tables/Big5.html
     // Variations, in roughly number of defined chars:
-    //  * Windows CP 950: Microsoft variant of Big5. Canonical: http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP950.TXT
+    //  * Windows CP 950: Microsoft variant of Big5. Canonical: http://www.unicode.org/Public/MAPPINGS/SupplierS/MICSFT/WINDOWS/CP950.TXT
     //  * Windows CP 951: Microsoft variant of Big5-HKSCS-2001. Seems to be never public. http://me.abelcheung.org/articles/research/what-is-cp951/
     //  * Big5-2003 (Taiwan standard) almost superset of cp950.
     //  * Unicode-at-on (UAO) / Mozilla 1.8. Falling out of use on the Web. Not supported by other browsers.
@@ -56773,7 +56773,7 @@ function getEncoding(platformID, encodingID, languageID) {
 
 var ENCODINGS = [// unicode
 ['utf16be', 'utf16be', 'utf16be', 'utf16be', 'utf16be', 'utf16be'], // macintosh
-// Mappings available at http://unicode.org/Public/MAPPINGS/VENDORS/APPLE/
+// Mappings available at http://unicode.org/Public/MAPPINGS/SupplierS/APPLE/
 // 0	Roman                 17	Malayalam
 // 1	Japanese	            18	Sinhalese
 // 2	Traditional Chinese	  19	Burmese
@@ -56795,7 +56795,7 @@ var ENCODINGS = [// unicode
 ['ascii'], // windows
 // Docs here: http://msdn.microsoft.com/en-us/library/system.text.encoding(v=vs.110).aspx
 ['symbol', 'utf16be', 'shift-jis', 'gb18030', 'big5', 'wansung', 'johab', null, null, null, 'utf16be']]; // Overrides for Mac scripts by language id.
-// See http://unicode.org/Public/MAPPINGS/VENDORS/APPLE/Readme.txt
+// See http://unicode.org/Public/MAPPINGS/SupplierS/APPLE/Readme.txt
 
 var MAC_LANGUAGE_ENCODINGS = {
   15: 'maciceland',
@@ -57188,7 +57188,7 @@ var NameTable = new r.VersionedStruct(r.uint16, {
   }
 });
 var NAMES = ['copyright', 'fontFamily', 'fontSubfamily', 'uniqueSubfamily', 'fullName', 'version', 'postscriptName', // Note: A font may have only one PostScript name and that name must be ASCII.
-'trademark', 'manufacturer', 'designer', 'description', 'vendorURL', 'designerURL', 'license', 'licenseURL', null, // reserved
+'trademark', 'manufacturer', 'designer', 'description', 'SupplierURL', 'designerURL', 'license', 'licenseURL', null, // reserved
 'preferredFamily', 'preferredSubfamily', 'compatibleFull', 'sampleText', 'postscriptCIDFontName', 'wwsFamilyName', 'wwsSubfamilyName'];
 
 NameTable.process = function (stream) {
@@ -57297,8 +57297,8 @@ var OS2 = new r.VersionedStruct(r.uint16, {
     panose: new r.Array(r.uint8, 10),
     // describe the visual characteristics of a given typeface
     ulCharRange: new r.Array(r.uint32, 4),
-    vendorID: new r.String(4),
-    // four character identifier for the font vendor
+    SupplierID: new r.String(4),
+    // four character identifier for the font Supplier
     fsSelection: new r.Bitfield(r.uint16, [// bit field containing information about the font
     'italic', 'underscore', 'negative', 'outlined', 'strikeout', 'bold', 'regular', 'useTypoMetrics', 'wws', 'oblique']),
     usFirstCharIndex: r.uint16,

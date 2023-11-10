@@ -23,20 +23,26 @@
 <body class="hold-transition sidebar-mini">
     <div class="card">
         <div class="card-header">
-            <div class="form-row">
-                <div class="form-group col-lg-2">
+            <div class="row">
+                <div class="col-lg-2">
                     <label for="selectBox" style="margin-top: 40px;">Sales List</label>
                 </div>
-                <div class="form-group col-lg-3" style="margin-left: 20px;">
+                <div class="col-lg-2" style="margin-left: 20px;">
                     <label for="datepicker">From Date</label>
                     <input type="text" id="datepicker" class="form-control" style="width: 100%;" placeholder="Select a date">
                 </div>
-                <div class="form-group col-lg-3" style="margin-left: 20px;">
+                <div class="col-lg-2" style="margin-left: 20px;">
                     <label for="datepicker">To Date</label>
                     <input type="text" id="datepicker" class="form-control" style="width: 100%;" placeholder="Select a date">
                 </div>
+                <div class="col-lg-5 text-right">
+                    <a href="@Url.Action("Create", "Sales")" class="btn btn-info">
+                        <i class="fas fa-plus"></i> Add item
+                    </a>
+                </div>
             </div>
         </div>
+  
 
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
@@ -63,7 +69,7 @@
                         <td>xxxx</td>
                         <td>xxxx</td>
                         <td>xxxx</td>
-                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-file-earmark-fill"></i>&nbsp;&nbsp;&nbsp;<i class="bi bi-download"></i></td>
+                        <td></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
                     </tr>
                     <tr>
                         <td>xxxxxxxxxx</td>
@@ -72,7 +78,7 @@
                         <td>xxxx</td>
                         <td>xxxx</td>
                         <td>xxxx</td>
-                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-file-earmark-fill"></i>&nbsp;&nbsp;&nbsp;<i class="bi bi-download"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
                     </tr>
                     <tr>
                         <td>xxxxxxxxxx</td>
@@ -81,16 +87,15 @@
                         <td>xxxx</td>
                         <td>xxxx</td>
                         <td>xxxx</td>
-                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-file-earmark-fill"></i>&nbsp;&nbsp;&nbsp;<i class="bi bi-download"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
                     </tr>
                 </tbody>
 
             </table>
         </div>
     </div>
-    </div>
-    <!-- /.card-body -->
-    </div>
+    
+
 
 
     <!-- /.content -->

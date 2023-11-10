@@ -1,0 +1,59 @@
+﻿
+
+<div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+
+        <thead>
+
+            <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Tax Type</th>
+                <th>Tax Number</th>
+         
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Supplier 1</td>
+                <td>xxxxxxxxxxxx</td>
+                <td>Address 1</td>
+                <td>Supplier1@mail.com</td>
+                <td>GST</td>
+                <td>190</td>
+            
+            </tr>
+            <tr>
+                <td>Supplier 2</td>
+                <td>xxxxxxxxxxxx</td>
+                <td>Address 2</td>
+                <td>Supplier1@mail.com</td>
+                <td>GST</td>
+                <td>190</td>
+               
+            </tr>
+            <tr>
+                <td>Supplier 3</td>
+                <td>xxxxxxxxxxxx</td>
+                <td>Address 3</td>
+                <td>Supplier1@mail.com</td>
+                <td>GST</td>
+                <td>190</td>
+            
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+    });
+</script>

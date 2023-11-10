@@ -810,7 +810,7 @@ function getReferenceOffsets(state, popper, reference, fixedPosition = null) {
  * @method
  * @memberof Popper.Utils
  * @argument {String} property (camelCase)
- * @returns {String} prefixed property (camelCase or PascalCase, depending on the vendor prefix)
+ * @returns {String} prefixed property (camelCase or PascalCase, depending on the Supplier prefix)
  */
 function getSupportedPropertyName(property) {
   const prefixes = [false, 'ms', 'Webkit', 'Moz', 'O'];
