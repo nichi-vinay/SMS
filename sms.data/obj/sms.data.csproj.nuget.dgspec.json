@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.Data\\sms.Data.csproj": {}
+    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.data\\sms.data.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.Data\\sms.Data.csproj": {
+    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.data\\sms.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.Data\\sms.Data.csproj",
-        "projectName": "sms.Data",
-        "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.Data\\sms.Data.csproj",
+        "projectUniqueName": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.data\\sms.data.csproj",
+        "projectName": "sms.data",
+        "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.data\\sms.data.csproj",
         "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.Data\\obj\\",
+        "outputPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,19 +45,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.13, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[6.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[6.0.10, )"
             }
           },
           "imports": [

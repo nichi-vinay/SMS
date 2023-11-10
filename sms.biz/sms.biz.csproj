@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\sms.data\sms.data.csproj" />
+    <ProjectReference Include="..\sms.viewmodels\sms.viewmodels.csproj" />
+  </ItemGroup>
+
 </Project>
