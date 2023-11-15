@@ -48,7 +48,7 @@
                                             XXXXXXXX
                                         </td>
                                         <td>xxxx</td>
-                                        <td> 50</td>
+                                        <td> xxxx</td>
                                         <td>xxxx</td>
                                         <td>xxxx</td>
                                     </tr>
@@ -58,7 +58,7 @@
                                             XXXXXXXX
                                         </td>
                                         <td>xxxx</td>
-                                        <td>40</td>
+                                        <td>xxxx</td>
                                         <td>xxxx</td>
                                         <td>xxxx</td>
                                     </tr>
@@ -68,7 +68,7 @@
                                             XXXXXXXX
                                         </td>
                                         <td>xxxx</td>
-                                        <td>9</td>
+                                        <td>xxxx</td>
                                         <td>xxxx</td>
                                         <td>xxxx</td>
                                     </tr>
@@ -78,7 +78,7 @@
                                             XXXXXXXX
                                         </td>
                                         <td>xxxx</td>
-                                        <td>15</td>
+                                        <td>xxxx</td>
                                         <td>xxxx</td>
                                         <td>xxxx</td>
                                     </tr>
@@ -130,25 +130,6 @@
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-        });
-        $(document).ready(function () {
-            // Iterate through each table row
-            $('#example1 tbody tr').each(function () {
-                // Find the "Current Stock" cell in this row (use the appropriate column index)
-                var currentStockCell = $(this).find('td:eq(3)');
-
-                // Get the current stock value as an integer (remove any non-numeric characters)
-                var currentStockValue = parseInt(currentStockCell.text().replace(/[^0-9]/g, ''));
-
-                // Check if the current stock is less than 10
-                if (currentStockValue < 10) {
-                    currentStockCell.css('color', 'red');
-                }
-                // Check if the current stock is between 10 and 20
-                else if (currentStockValue >= 10 && currentStockValue < 20) {
-                    currentStockCell.css('color', '#E7D903');
-                }
-            });
         });
     </script>
 

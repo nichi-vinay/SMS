@@ -1,7 +1,0 @@
-C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS\sms.web\obj\Release\net6.0\PubTmp\Out\sms.web.exe
-C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS\sms.web\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
-C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS\sms.web\obj\Release\net6.0\PubTmp\Out\appsettings.json
-C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS\sms.web\obj\Release\net6.0\PubTmp\Out\sms.web.dll
-C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS\sms.web\obj\Release\net6.0\PubTmp\Out\sms.web.deps.json
-C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS\sms.web\obj\Release\net6.0\PubTmp\Out\sms.web.runtimeconfig.json
-C:\Users\nichiuser\Downloads\SMS\SMS (3)\SMS\sms.web\obj\Release\net6.0\PubTmp\Out\sms.web.pdb
