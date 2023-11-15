@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/G1FWLd99g84BRqhaWuXriBQ5EOJiqgdPBMbA4QE4BBuVuD5hWkrzwdADPfa3EJildec8G9oF153VETCYaBF8g==",
+  "dgSpecHash": "aYri2YywcO/Yf1yIEU972hRSa+xiPWlUYo8/g3slG5FMkU/0eFceRcUf0uR2QzrVcCUMMwLaptvbn+9yqm/FxQ==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.viewmodels\\sms.viewmodels.csproj",
+  "projectFilePath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\sms.viewmodels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nichiuser\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.10\\microsoft.aspnetcore.cryptography.internal.6.0.10.nupkg.sha512",
     "C:\\Users\\nichiuser\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.10\\microsoft.aspnetcore.cryptography.keyderivation.6.0.10.nupkg.sha512",

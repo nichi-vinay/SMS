@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tLAyNvoKBAHDywrJa4isyjByxs4xC4rb0aFK4CmLZ7lYzpIqPCWj/jYiQT92vqHeogFfBSz3GVCjevsbnUe5lQ==",
+  "dgSpecHash": "dmudmHJY05E6qHJVlLR6E1DKMc80mMqFHKtFgxEEVfkMUr7h5AgoJh1DLpQgnP6XH1JM0nsaCdLkNtbxci3+wQ==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.api\\sms.api.csproj",
+  "projectFilePath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.api\\sms.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nichiuser\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nichiuser\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.10\\microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",

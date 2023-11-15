@@ -2127,11 +2127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.biz\\sms.biz.csproj",
+      "projectUniqueName": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\sms.biz.csproj",
       "projectName": "sms.biz",
-      "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.biz\\sms.biz.csproj",
+      "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\sms.biz.csproj",
       "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.biz\\obj\\",
+      "outputPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2153,11 +2153,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.data\\sms.data.csproj": {
-              "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.data\\sms.data.csproj"
+            "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj": {
+              "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj"
             },
-            "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.viewmodels\\sms.viewmodels.csproj": {
-              "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSGITClone\\sms.viewmodels\\sms.viewmodels.csproj"
+            "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\sms.viewmodels.csproj": {
+              "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\sms.viewmodels.csproj"
             }
           }
         }
