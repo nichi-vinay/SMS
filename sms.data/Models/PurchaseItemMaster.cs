@@ -13,21 +13,23 @@ namespace sms.data.Models
 
         [Key]
         public int Id { get; set; }
+        [Required]
         [ForeignKey("PurchaseMaster")]
         public int PurchasemasterId { get; set; }
-
+        [Required]
         [ForeignKey("ItemMaster")]
         public int ItemID {  get; set; }
-
+        [Required]
         public int Quantity { get; set; }
-
+        [Required]
         public double Mrp { get; set; }
-
+        [Required]
         public double DiscountPercentage {  get; set; }
+        [Required]
         public double Totalprice { get; set; }
-
+        [Required]
         public bool IsSubmitted { get; set; }
-
+        [Required]
         public bool IsActive { get; set; }
 
         public int CreatedBy { get; set; }

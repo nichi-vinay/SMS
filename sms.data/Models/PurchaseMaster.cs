@@ -13,17 +13,18 @@ namespace sms.data.Models
 
         [Key]
         public int Id { get; set; }
+        [Required]
         [ForeignKey("VendorMaster")]
         public int VendorId { get; set; }
-
+        [Required]
         public string InvoiceNumber { get; set; } = null!;
-
+        [Required]
         public DateTime InvoiceDate { get; set; }
 
         public string? ShipmentDetails { get; set; }
-
+        [Required]
         public bool IsSubmitted { get; set; }
-
+        [Required]
         public bool IsActive { get; set; }
 
         public int CreatedBy { get; set; }

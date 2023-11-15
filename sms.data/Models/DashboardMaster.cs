@@ -11,11 +11,11 @@ namespace sms.data.Models
     {
         [Key]
         public int Id { get; set; }
-
-        public byte[] Image { get; set; } = null!;
-
+        [Required]
+        public byte[] Image { get; set; }
+        [Required]
         public bool IsAvilable { get; set; }
-
+        [Required]
         public bool IsActive { get; set; }
 
         public int CreatedBy { get; set; }

@@ -11,9 +11,9 @@ namespace sms.data.Models
     {
         [Key]
         public int Id { get; set; }
-
+        [Required]
         public string OrderTypeName { get; set; } = null!;
-
+        [Required]
         public bool IsActive {  get; set; }
         public int CreatedBy { get; set; }
 

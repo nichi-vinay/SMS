@@ -13,10 +13,14 @@ namespace sms.data.Models
 
         [Key]
         public int Id { get; set; }
+        [Required]
         public string ItemName { get; set; } = null!;
+        [Required]
         public string ItemNumber { get; set; } = null!;
+        [Required]
         [ForeignKey("UnitTypeMaster")]
         public int UnitTypeMasterId { get; set; }
+        [Required]
         public bool IsActive { get; set; }
 
         public int CreatedBy { get; set; }

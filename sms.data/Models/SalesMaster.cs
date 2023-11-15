@@ -12,19 +12,20 @@ namespace sms.data.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         [ForeignKey("CustomerMaster")]
         public int CustomerId { get; set; }
-
+        [Required]
         public string InvoiceNumber { get; set; } = null!;
-
+        [Required]
         public DateTime InvoiceDate { get; set; }
 
         public string? ShipmentDetails { get; set; }
 
         public byte[]? InvoiceCopy { get; set; }
-
+        [Required]
         public bool IsCanceled { get; set; }
-
+        [Required]
         public bool IsActive { get; set; }
 
         public int CreatedBy { get; set; }
