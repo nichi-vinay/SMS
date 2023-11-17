@@ -15,6 +15,7 @@ namespace sms.viewmodels
        
         public int CustomerId { get; set; }
 
+        public int customerTypeMasterId { get; set; }
         public string InvoiceNumber { get; set; } = null!;
 
         public DateTime InvoiceDate { get; set; }
@@ -22,7 +23,12 @@ namespace sms.viewmodels
         public string? ShipmentDetails { get; set; }
 
         public byte[]? InvoiceCopy { get; set; }
-
+        public DateTime ExpectedDelivery { get; set; }
+        public string? TaxNumber { get; set; }
+        public float? Cheque { get; set; }
+        public float? Cash { get; set; }
+        public float? Online { get; set; }
+        public float? Cards { get; set; }
         public bool IsCanceled { get; set; }
 
         public bool IsActive { get; set; }

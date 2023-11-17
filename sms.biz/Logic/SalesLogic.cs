@@ -59,10 +59,17 @@ namespace sms.biz.Logic
                 if(sales != null)
                 {
                     sales.CustomerId = item.CustomerId;
+                    sales.customerTypeMasterId = item.customerTypeMasterId;
                     sales.InvoiceCopy = item.InvoiceCopy;
                     sales.InvoiceDate = item.InvoiceDate;
                     sales.InvoiceNumber = item.InvoiceNumber;
                     sales.ShipmentDetails = item.ShipmentDetails;
+                    sales.Cards = item.Cards;
+                    sales.Cash = item.Cash;
+                    sales.Cheque = item.Cheque;
+                    sales.Online = item.Online;
+                    sales.TaxNumber = item.TaxNumber;
+                    sales.ExpectedDelivery = item.ExpectedDelivery;
                     sales.IsCanceled = item.IsCanceled;
                     sales.IsActive = true;
                     _applicationDbContext.SaveChanges();

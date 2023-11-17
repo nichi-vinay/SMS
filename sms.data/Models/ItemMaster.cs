@@ -20,6 +20,7 @@ namespace sms.data.Models
         [Required]
         [ForeignKey("UnitTypeMaster")]
         public int UnitTypeMasterId { get; set; }
+        
         [Required]
         public bool IsActive { get; set; }
 

@@ -31,7 +31,8 @@ namespace sms.data.Models
         public bool IsSubmitted { get; set; }
         [Required]
         public bool IsActive { get; set; }
-
+        [Required]
+        public string Barcode { get; set; }
         public int CreatedBy { get; set; }
 
         public DateTime CreatedDate { get; set; }

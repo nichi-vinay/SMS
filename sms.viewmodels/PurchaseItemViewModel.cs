@@ -28,5 +28,6 @@ namespace sms.viewmodels
         public bool IsSubmitted { get; set; }
 
         public bool IsActive { get; set; }
+        public string Barcode { get; set; }
     }
 }

@@ -18,6 +18,8 @@ namespace sms.viewmodels
         public double Mrp { get; set; }
         public double? DiscountPercentage { get; set; }
         public double TotalPrice { get; set; }
+       
+        public string Barcode { get; set; }
         public bool IsActive { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }

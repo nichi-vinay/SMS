@@ -28,6 +28,6 @@ namespace sms.viewmodels
 
         public DateTime CreatedDate { get; set; }
 
-        public TaxTypeMaster TaxTypeMaster { get; set; } = null!;
+        
     }
 }

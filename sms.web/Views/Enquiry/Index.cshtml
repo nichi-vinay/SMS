@@ -19,129 +19,128 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        .form-check {
+            margin-top: 30px; /* Adjust the value as needed */
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="card">
-    <div class="card-header">
-            <div>
-                <a href="Create" class="btn btn-info float-right">
-                    <i class="fas fa-plus"></i> Add item
-                </a>
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="enquiry" name="radioOption" value="Enquiry" checked>
+                        <label class="form-check-label" for="enquiry">Enquiry</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="customer" name="radioOption" value="Customer">
+                        <label class="form-check-label" for="customer">Customer</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="followup" name="radioOption" value="followup">
+                        <label class="form-check-label" for="followup">Follow-up</label>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label for="fromDate">From Date</label>
+                        <input type="text" id="fromDate" class="form-control" placeholder="Select a date">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label for="toDate">To Date</label>
+                        <input type="text" id="toDate" class="form-control" placeholder="Select a date">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group text-right">
+                        <a href="@Url.Action("Create", "Enquiry")" class="btn btn-info">
+                            <i class="fas fa-plus"></i> Add item
+                        </a>
+                    </div>
+                </div>
             </div>
-        <table id="example1" class="table table-bordered table-striped">
-                <label>Enquiry List</label>
-                <select class="form-control select2" style="width: 30%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                </select>
-            <thead>
-               
-                <tr>
-                    <th>Customer Name</th>
-                    <th>Mobile</th>
-                    <th>Service Type</th>
-                    <th>Invoice Number</th>
-                    <th>Comments</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Customer1</td>
-                    <td>
-                        1234567890
-                    </td>
-                    <td>Win 95+</td>
-                    <td> XXXXXXXXXX4</td>
-                    <td>Bought</td>
-                        <td>
-                            <i class="bi bi-pencil-square"></i> 
-                        </td>
-                </tr>
+        </div>
+
+        <div class="card-body">
+            <div id="enquiry1">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+
                     <tr>
-                        <td>Customer 2</td>
+                        <th>EnquiryName</th>
+                        <th>Mobile</th>
+                        <th>Enquiry Type</th>
+                    
+                        <th>Comments</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td>Enquiry 1</td>
                         <td>
                             1234567890
                         </td>
                         <td>Win 95+</td>
-                        <td> XXXXXXXXXX4</td>
+                   
                         <td>Bought</td>
                         <td>
-                            <i class="bi bi-pencil-square"></i>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i>
                         </td>
                     </tr>
                     <tr>
-                        <td>Customer 3</td>
+                        <td>Enquiry 2</td>
                         <td>
                             1234567890
                         </td>
                         <td>Win 95+</td>
-                        <td> XXXXXXXXXX4</td>
-                        <td>Bought</td>
-                        <td>
-                            <i class="bi bi-pencil-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Customer 4</td>
-                        <td>
-                            1234567890
-                        </td>
-                        <td>Win 95+</td>
-                        <td> XXXXXXXXXX4</td>
-                        <td>Bought</td>
-                        <td>
-                            <i class="bi bi-pencil-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Customer 5</td>
-                        <td>
-                            1234567890
-                        </td>
-                        <td>Win 95+</td>
-                        <td> XXXXXXXXXX4</td>
-                        <td>Bought</td>
-                        <td>
-                            <i class="bi bi-pencil-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Customer 6</td>
-                        <td>
-                            1234567890
-                        </td>
-                        <td>Win 95+</td>
-                        <td> XXXXXXXXXX4</td>
-                        <td>Bought</td>
-                        <td>
-                            <i class="bi bi-pencil-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Customer 7</td>
-                        <td>
-                            1234567890
-                        </td>
-                        <td>Win 95+</td>
-                        <td> XXXXXXXXXX4</td>
-                        <td>Bought</td>
-                        <td>
-                            <i class="bi bi-pencil-square"></i>
-                        </td>
-                    </tr>
-            </tbody>
             
-        </table>
+                        <td>Bought</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enquiry 3</td>
+                        <td>
+                            1234567890
+                        </td>
+                        <td>Win 95+</td>
+                  
+                        <td>Bought</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enquiry 4</td>
+                        <td>
+                            1234567890
+                        </td>
+                        <td>Win 95+</td>
+                  
+                        <td>Bought</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i>
+                        </td>
+                    </tr>
+
+        
+
+            </table>
+            </div>
+        </div>
     </div>
-    </div>
-    <!-- /.card-body -->
-</div>
+
+
+ 
+
+
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -161,6 +160,8 @@
     <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script src="~/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
@@ -183,6 +184,57 @@
                 "responsive": true,
             });
         });
+        $(document).ready(function () {
+            // Function to load the "enquiry1" table
+            function loadEnquiryTable() {
+                $('#enquiry1').show();
+            }
+
+            // Initially, load the "enquiry1" table
+            loadEnquiryTable();
+
+            // Handle radio button click events
+            $('input[type=radio]').change(function () {
+                var selectedValue = $(this).val();
+
+                if (selectedValue === 'Enquiry') {
+                    // Use Ajax to load the corresponding partial view for Customer or Follow-up
+                    var url = '@Url.Action("GetPartialView", "Enquiry")?option=' + selectedValue;
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        success: function (result) {
+                            $('#example1').html(result).show();
+                        }
+                    });
+                
+                } else {
+                    // Use Ajax to load the corresponding partial view for Customer or Follow-up
+                    var url = '@Url.Action("GetPartialView", "Enquiry")?option=' + selectedValue;
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        success: function (result) {
+                            $('#example1').html(result).show();
+                        }
+                    });
+                }
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
+
+
+

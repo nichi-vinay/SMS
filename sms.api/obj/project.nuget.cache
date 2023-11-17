@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dmudmHJY05E6qHJVlLR6E1DKMc80mMqFHKtFgxEEVfkMUr7h5AgoJh1DLpQgnP6XH1JM0nsaCdLkNtbxci3+wQ==",
+  "dgSpecHash": "7MaTL5A6FQxJx8rn1s3DvFv18P/P4zz4Rguj9LGDQbSk2YncfhJmF5z2ETnWJJg85fM0lgoMJiFUsFAgJrzyRw==",
   "success": true,
   "projectFilePath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.api\\sms.api.csproj",
   "expectedPackageFiles": [
@@ -59,7 +59,8 @@
     "C:\\Users\\nichiuser\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\nichiuser\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\nichiuser\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
-    "C:\\Users\\nichiuser\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\nichiuser\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\nichiuser\\.nuget\\packages\\zxing.net\\0.16.9\\zxing.net.0.16.9.nupkg.sha512"
   ],
   "logs": []
 }

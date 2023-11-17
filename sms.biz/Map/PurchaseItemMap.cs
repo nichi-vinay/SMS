@@ -22,7 +22,8 @@ namespace sms.biz.Map
                 DiscountPercentage = purchaseItemMaster.DiscountPercentage,
                 Totalprice = purchaseItemMaster.Totalprice,
                 IsSubmitted = purchaseItemMaster.IsSubmitted,
-                IsActive = purchaseItemMaster.IsActive
+                IsActive = purchaseItemMaster.IsActive,
+                Barcode = purchaseItemMaster.Barcode,
                 
             };
             return viewModel;
@@ -46,6 +47,7 @@ namespace sms.biz.Map
                 Totalprice = purchaseItemViewModel.Totalprice,
                 IsSubmitted = purchaseItemViewModel.IsSubmitted,
                 IsActive = purchaseItemViewModel.IsActive,
+                Barcode = purchaseItemViewModel.Barcode,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now
            

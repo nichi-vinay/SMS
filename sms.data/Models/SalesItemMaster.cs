@@ -22,7 +22,8 @@ namespace sms.data.Models
         public int Quantity { get; set; }
         [Required]
         public double Mrp { get; set; }
-
+        [Required]
+        public string Barcode { get; set; }
         public double? DiscountPercentage { get; set; }
         [Required]
         public double TotalPrice { get; set; }

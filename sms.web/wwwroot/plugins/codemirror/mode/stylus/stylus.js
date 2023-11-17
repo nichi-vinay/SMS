@@ -30,7 +30,7 @@
         operatorsRegexp = /^\s*([.]{2,3}|&&|\|\||\*\*|[?!=:]?=|[-+*\/%<>]=?|\?:|\~)/,
         wordOperatorKeywordsRegexp = wordRegexp(wordOperatorKeywords_),
         blockKeywords = keySet(blockKeywords_),
-        vendorPrefixesRegexp = new RegExp(/^\-(moz|ms|o|webkit)-/i),
+        SupplierPrefixesRegexp = new RegExp(/^\-(moz|ms|o|webkit)-/i),
         commonAtoms = keySet(commonAtoms_),
         firstWordMatch = "",
         states = {},
@@ -84,9 +84,9 @@
           return ["builtin", "hash"];
         }
       }
-      // Vendor prefixes
-      if (stream.match(vendorPrefixesRegexp)) {
-        return ["meta", "vendor-prefixes"];
+      // Supplier prefixes
+      if (stream.match(SupplierPrefixesRegexp)) {
+        return ["meta", "Supplier-prefixes"];
       }
       // Numbers
       if (stream.match(/^-?[0-9]?\.?[0-9]/)) {
@@ -254,8 +254,8 @@
       return word.toLowerCase() in blockKeywords;
     }
 
-    function wordIsVendorPrefix(word) {
-      return word.toLowerCase().match(vendorPrefixesRegexp);
+    function wordIsSupplierPrefix(word) {
+      return word.toLowerCase().match(SupplierPrefixesRegexp);
     }
 
     function wordAsValue(word) {
@@ -373,8 +373,8 @@
         return pushContext(state, stream, "parens");
       }
 
-      if (type == "vendor-prefixes") {
-        return pushContext(state, stream, "vendorPrefixes");
+      if (type == "Supplier-prefixes") {
+        return pushContext(state, stream, "SupplierPrefixes");
       }
       if (type == "word") {
         var word = stream.current();
@@ -486,9 +486,9 @@
 
 
     /**
-     * Vendor prefixes
+     * Supplier prefixes
      */
-    states.vendorPrefixes = function(type, stream, state) {
+    states.SupplierPrefixes = function(type, stream, state) {
       if (type == "word") {
         override = "property";
         return pushContext(state, stream, "block", 0);
@@ -702,12 +702,12 @@
             } else {
               indent = lineIndent;
             }
-          } else if (!/,\s*$/.test(line) && (wordIsVendorPrefix(lineFirstWord) || wordIsProperty(lineFirstWord))) {
+          } else if (!/,\s*$/.test(line) && (wordIsSupplierPrefix(lineFirstWord) || wordIsProperty(lineFirstWord))) {
             if (wordIsBlock(prevLineFirstWord)) {
               indent = lineIndent <= prevLineIndent ? prevLineIndent : prevLineIndent + indentUnit;
             } else if (/^\{/.test(prevLineFirstWord)) {
               indent = lineIndent <= prevLineIndent ? lineIndent : prevLineIndent + indentUnit;
-            } else if (wordIsVendorPrefix(prevLineFirstWord) || wordIsProperty(prevLineFirstWord)) {
+            } else if (wordIsSupplierPrefix(prevLineFirstWord) || wordIsProperty(prevLineFirstWord)) {
               indent = lineIndent >= prevLineIndent ? prevLineIndent : lineIndent;
             } else if (/^(\.|#|:|\[|\*|&|@|\+|\-|>|~|\/)/.test(prevLineFirstWord) ||
                       /=\s*$/.test(prevLineFirstWord) ||

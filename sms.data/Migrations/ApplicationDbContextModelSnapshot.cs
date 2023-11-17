@@ -51,21 +51,21 @@ namespace sms.data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2fa45060-59e3-4f8d-89a9-c2e140045a07",
+                            Id = "05067fdf-26bb-4dca-9d3c-ae454a57f1f8",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "03e61844-ca8f-45a2-9c7b-7c2d34a95251",
+                            Id = "f74ef0a9-7dcb-4910-a6b7-b4ce2b96656e",
                             ConcurrencyStamp = "3",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "1f93b9a4-8c20-4394-b9c3-de833f2a91cf",
+                            Id = "a220ddb0-2874-463a-8f54-7402c50ab3cb",
                             ConcurrencyStamp = "2",
                             Name = "Executive",
                             NormalizedName = "Executive"
@@ -356,6 +356,35 @@ namespace sms.data.Migrations
                     b.ToTable("CustomerMaster");
                 });
 
+            modelBuilder.Entity("sms.data.Models.CustomerTypeMaster", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CustomerTypeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomerTypeMaster");
+                });
+
             modelBuilder.Entity("sms.data.Models.DashboardMaster", b =>
                 {
                     b.Property<int>("Id")
@@ -601,6 +630,10 @@ namespace sms.data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Barcode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
@@ -799,6 +832,10 @@ namespace sms.data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Barcode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
@@ -849,6 +886,15 @@ namespace sms.data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<float?>("Cards")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("Cash")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("Cheque")
+                        .HasColumnType("real");
+
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
@@ -857,6 +903,9 @@ namespace sms.data.Migrations
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("ExpectedDelivery")
+                        .HasColumnType("datetime2");
 
                     b.Property<byte[]>("InvoiceCopy")
                         .HasColumnType("varbinary(max)");
@@ -880,12 +929,23 @@ namespace sms.data.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<float?>("Online")
+                        .HasColumnType("real");
+
                     b.Property<string>("ShipmentDetails")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TaxNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("customerTypeMasterId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("customerTypeMasterId");
 
                     b.ToTable("SalesMaster");
                 });
@@ -1212,7 +1272,15 @@ namespace sms.data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("sms.data.Models.CustomerTypeMaster", "CustomerTypeMaster")
+                        .WithMany()
+                        .HasForeignKey("customerTypeMasterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("CustomerMaster");
+
+                    b.Navigation("CustomerTypeMaster");
                 });
 
             modelBuilder.Entity("sms.data.Models.VendorMaster", b =>

@@ -21,6 +21,7 @@ namespace sms.biz.Map
                 Mrp = salesItemMaster.Mrp,
                 DiscountPercentage = salesItemMaster.DiscountPercentage,
                 TotalPrice = salesItemMaster.TotalPrice,
+                Barcode = salesItemMaster.Barcode,
                 IsActive = salesItemMaster.IsActive,
                 CreatedBy = salesItemMaster.CreatedBy,
                 CreatedDate = salesItemMaster.CreatedDate
@@ -44,6 +45,7 @@ namespace sms.biz.Map
                 Mrp = salesItemMaster.Mrp,
                 DiscountPercentage = salesItemMaster.DiscountPercentage,
                 TotalPrice = salesItemMaster.TotalPrice,
+                Barcode = salesItemMaster.Barcode,
                 IsActive = true,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now,

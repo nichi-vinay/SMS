@@ -22,11 +22,7 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -36,23 +32,30 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Return List</h3>
+                            <h3 class="card-title">Order List</h3>
+                            <div class="col-lg-14 text-right">
+                                <a href="@Url.Action("AddReturn", "ReturnDetails")" class="btn btn-info">
+                                    <i class="fas fa-plus"></i> Add item
+                                </a>
+                            </div>
+                            
                         </div>
+
+                      
 
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
-                                    <button type="button" class="btn btn-primary float-right" id="addReturnButton"><i class="fas fa-plus"></i> Add Return</button>
+                                    
 
 
                                     <tr>
-                                        <th>Invoice Name</th>
-                                        <th>Return Number</th>
-                                        <th>Vendor Name</th>
-                                        <th>Return Date</th>
-                                        <th>Shipment Details</th>
-                                        <th> Action</th>
+                                        <th>Item Name</th>
+                                        <th>Item Number</th>
+                                        <th>Quantity</th>
+                                        <th>Action</th>
+                                        
 
                                     </tr>
                                 </thead>
@@ -63,9 +66,8 @@
                                             XXXXXXXX
                                         </td>
                                         <td>xxxx</td>
-                                        <td> xxxx</td>
-                                        <td>xxxx</td>
-                                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash-fill"></i> &nbsp;&nbsp;&nbsp; <i class="bi bi-box-arrow-down"></i></td>
+                                       
+                                        <td> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
                                     </tr>
                                     <tr>
                                         <td>Item 2</td>
@@ -73,9 +75,8 @@
                                             XXXXXXXX
                                         </td>
                                         <td>xxxx</td>
-                                        <td>xxxx</td>
-                                        <td>xxxx</td>
-                                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash-fill"></i>&nbsp;&nbsp;&nbsp; <i class="bi bi-box-arrow-down"></i></td>
+                                       
+                                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
                                     </tr>
                                     <tr>
                                         <td>Item 3</td>
@@ -83,9 +84,8 @@
                                             XXXXXXXX
                                         </td>
                                         <td>xxxx</td>
-                                        <td>xxxx</td>
-                                        <td>xxxx</td>
-                                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash-fill"></i> &nbsp;&nbsp;&nbsp; <i class="bi bi-box-arrow-down"></i></td>
+                                       
+                                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
                                     </tr>
                                     <tr>
                                         <td>Item 4</td>
@@ -93,9 +93,8 @@
                                             XXXXXXXX
                                         </td>
                                         <td>xxxx</td>
-                                        <td>xxxx</td>
-                                        <td>xxxx</td>
-                                        <td><i class="bi bi-pencil-square"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash-fill"></i> &nbsp;&nbsp;&nbsp; <i class="bi bi-box-arrow-down"></i></td>
+                                        
+                                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
                                     </tr>
 
                                 </tbody>

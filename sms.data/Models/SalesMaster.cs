@@ -16,13 +16,23 @@ namespace sms.data.Models
         [ForeignKey("CustomerMaster")]
         public int CustomerId { get; set; }
         [Required]
+        [ForeignKey("CustomerTypeMaster")]
+        public int customerTypeMasterId {  get; set; }
+        [Required]
         public string InvoiceNumber { get; set; } = null!;
         [Required]
         public DateTime InvoiceDate { get; set; }
 
         public string? ShipmentDetails { get; set; }
-
+        
         public byte[]? InvoiceCopy { get; set; }
+        [Required]
+        public DateTime ExpectedDelivery {get; set;}
+        public string? TaxNumber { get; set;}
+        public float? Cheque {  get; set;}
+        public float? Cash {  get; set;}
+        public float? Online { get; set;}
+        public float? Cards {  get; set;}
         [Required]
         public bool IsCanceled { get; set; }
         [Required]
@@ -37,5 +47,7 @@ namespace sms.data.Models
         public int? ModifiedBy { get; set; }
 
         public CustomerMaster CustomerMaster { get; set; } = null!;
+
+        public CustomerTypeMaster CustomerTypeMaster { get; set; } = null!;
     }
 }

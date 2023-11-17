@@ -52,8 +52,8 @@
             hOP: 'hasOwnProperty',
             bCR: 'getBoundingClientRect'
         };
-        var VENDORS = (function () {
-            //https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix
+        var SupplierS = (function () {
+            //https://developer.mozilla.org/en-US/docs/Glossary/Supplier_Prefix
             var jsCache = {};
             var cssCache = {};
             var cssPrefixes = ['-webkit-', '-moz-', '-o-', '-ms-'];
@@ -76,15 +76,15 @@
                     var resultPossibilities;
                     var i = 0;
                     var v;
-                    var currVendorWithoutDashes;
+                    var currSupplierWithoutDashes;
 
                     for (; i < cssPrefixes.length; i++) {
-                        currVendorWithoutDashes = cssPrefixes[i].replace(/-/g, '');
+                        currSupplierWithoutDashes = cssPrefixes[i].replace(/-/g, '');
                         resultPossibilities = [
                             name, //transition
                             cssPrefixes[i] + name, //-webkit-transition
-                            currVendorWithoutDashes + uppercasedName, //webkitTransition
-                            firstLetterToUpper(currVendorWithoutDashes) + uppercasedName //WebkitTransition
+                            currSupplierWithoutDashes + uppercasedName, //webkitTransition
+                            firstLetterToUpper(currSupplierWithoutDashes) + uppercasedName //WebkitTransition
                         ];
                         for (v = 0; v < resultPossibilities[LEXICON.l]; v++) {
                             if (elmStyle[resultPossibilities[v]] !== undefined) {
@@ -112,8 +112,8 @@
                     var prop;
 
                     for (; i < possbleValues[LEXICON.l]; i++) {
-                        for (; v < VENDORS._cssPrefixes[LEXICON.l]; v++) {
-                            prop = v < 0 ? possbleValues[i] : VENDORS._cssPrefixes[v] + possbleValues[i];
+                        for (; v < SupplierS._cssPrefixes[LEXICON.l]; v++) {
+                            prop = v < 0 ? possbleValues[i] : SupplierS._cssPrefixes[v] + possbleValues[i];
                             dummyStyle.cssText = property + ':' + prop + preparedSuffix;
                             if (dummyStyle[LEXICON.l]) {
                                 result = prop;
@@ -179,25 +179,25 @@
                  * Gets the MutationObserver Object or undefined if not supported.
                  * @returns {MutationObserver|*|undefined} The MutationsObserver Object or undefined.
                  */
-                mO: bind(VENDORS._jsAPI, 0, 'MutationObserver', true),
+                mO: bind(SupplierS._jsAPI, 0, 'MutationObserver', true),
 
                 /**
                  * Gets the ResizeObserver Object or undefined if not supported.
                  * @returns {MutationObserver|*|undefined} The ResizeObserver Object or undefined.
                  */
-                rO: bind(VENDORS._jsAPI, 0, 'ResizeObserver', true),
+                rO: bind(SupplierS._jsAPI, 0, 'ResizeObserver', true),
 
                 /**
                  * Gets the RequestAnimationFrame method or it's corresponding polyfill.
                  * @returns {*|Function} The RequestAnimationFrame method or it's corresponding polyfill.
                  */
-                rAF: bind(VENDORS._jsAPI, 0, 'requestAnimationFrame', false, function (func) { return window.setTimeout(func, 1000 / 60); }),
+                rAF: bind(SupplierS._jsAPI, 0, 'requestAnimationFrame', false, function (func) { return window.setTimeout(func, 1000 / 60); }),
 
                 /**
                  * Gets the CancelAnimationFrame method or it's corresponding polyfill.
                  * @returns {*|Function} The CancelAnimationFrame method or it's corresponding polyfill.
                  */
-                cAF: bind(VENDORS._jsAPI, 0, 'cancelAnimationFrame', false, function (id) { return window.clearTimeout(id); }),
+                cAF: bind(SupplierS._jsAPI, 0, 'cancelAnimationFrame', false, function (id) { return window.clearTimeout(id); }),
 
                 /**
                  * Gets the current time.
@@ -330,15 +330,15 @@
                 bind: bind
 
                 /**
-                 * Gets the vendor-prefixed CSS property by the given name.
+                 * Gets the Supplier-prefixed CSS property by the given name.
                  * For example the given name is "transform" and you're using a old Firefox browser then the returned value would be "-moz-transform".
-                 * If the browser doesn't need a vendor-prefix, then the returned string is the given name.
-                 * If the browser doesn't support the given property name at all (not even with a vendor-prefix) the returned value is null.
+                 * If the browser doesn't need a Supplier-prefix, then the returned string is the given name.
+                 * If the browser doesn't support the given property name at all (not even with a Supplier-prefix) the returned value is null.
                  * @param propName The unprefixed CSS property name.
-                 * @returns {string|null} The vendor-prefixed CSS property or null if the browser doesn't support the given CSS property.
+                 * @returns {string|null} The Supplier-prefixed CSS property or null if the browser doesn't support the given CSS property.
 
                 cssProp: function(propName) {
-                    return VENDORS._cssProperty(propName);
+                    return SupplierS._cssProperty(propName);
                 }
                 */
             }
@@ -1787,7 +1787,7 @@
                         return result;
                     })(),
                     overlayScrollbarDummySize: { x: 30, y: 30 },
-                    cssCalc: VENDORS._cssPropertyValue('width', 'calc', '(1px)') || null,
+                    cssCalc: SupplierS._cssPropertyValue('width', 'calc', '(1px)') || null,
                     restrictedMeasuring: (function () {
                         //https://bugzilla.mozilla.org/show_bug.cgi?id=1439305
                         //since 1.11.0 always false -> fixed via CSS (hopefully)
@@ -1823,8 +1823,8 @@
                             n: dummyContainerChildOffset.left !== dummyContainerChildOffsetAfterScroll.left
                         };
                     })(),
-                    supportTransform: !!VENDORS._cssProperty('transform'),
-                    supportTransition: !!VENDORS._cssProperty('transition'),
+                    supportTransform: !!SupplierS._cssProperty('transform'),
+                    supportTransition: !!SupplierS._cssProperty('transition'),
                     supportPassiveEvents: (function () {
                         var supportsPassive = false;
                         try {
@@ -3585,7 +3585,7 @@
                         //textareaDynOrigSize.w || _strAuto :: doesnt works because applied margin will shift width
                         contentGlueElementCSS[_strWidth] = _strAuto;
 
-                        contentElementCSS[_strWidth] = VENDORS._cssPropertyValue(_strWidth, 'max-content intrinsic') || _strAuto;
+                        contentElementCSS[_strWidth] = SupplierS._cssPropertyValue(_strWidth, 'max-content intrinsic') || _strAuto;
                         contentElementCSS[_strFloat] = isRTLRight;
                     }
                     else {
@@ -4888,8 +4888,8 @@
                     var scrollbarVars = getScrollbarVars(isHorizontal);
                     var scrollbarVarsInfo = scrollbarVars._info;
                     var strTranslateBrace = 'translate(';
-                    var strTransform = VENDORS._cssProperty('transform');
-                    var strTransition = VENDORS._cssProperty('transition');
+                    var strTransform = SupplierS._cssProperty('transform');
+                    var strTransition = SupplierS._cssProperty('transition');
                     var nativeScroll = isHorizontal ? _viewportElement[_strScrollLeft]() : _viewportElement[_strScrollTop]();
                     var currentScroll = scrollOrTransition === undefined || transition ? nativeScroll : scrollOrTransition;
 
@@ -5174,7 +5174,7 @@
                  * @returns {string} The CSS transition string from the given element.
                  */
                 function getCSSTransitionString(element) {
-                    var transitionStr = VENDORS._cssProperty('transition');
+                    var transitionStr = SupplierS._cssProperty('transition');
                     var assembledValue = element.css(transitionStr);
                     if (assembledValue)
                         return assembledValue;

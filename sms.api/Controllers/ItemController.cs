@@ -73,6 +73,10 @@ namespace sms.api.Controllers
             return CreatedAtRoute("GetItem", new { id = model.Id }, model);
         }
 
+        // The following loop sums the squares of the first group of boxed
+        // integers in mixedList. The list elements are objects, and cannot
+        // be multiplied or added to the sum until they are unboxed. The
+        // unboxing must be done explicitly.
         [HttpPut("{id:int}", Name = "UpdateItem")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

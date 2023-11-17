@@ -67,6 +67,7 @@ namespace sms.biz.Logic
                     Salesitem.Mrp = item.Mrp;
                     Salesitem.DiscountPercentage = item.DiscountPercentage;
                     Salesitem.TotalPrice = item.TotalPrice;
+                    Salesitem.Barcode = item.Barcode;
                     Salesitem.IsActive = true;
                     dbContext.SaveChanges();
                     return true;

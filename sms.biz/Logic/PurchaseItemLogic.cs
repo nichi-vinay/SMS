@@ -67,6 +67,7 @@ namespace sms.biz.Logic
                     purchaseItemmaster.DiscountPercentage = item.DiscountPercentage;
                     purchaseItemmaster.Totalprice = item.Totalprice;
                     purchaseItemmaster.IsActive = true;
+                    purchaseItemmaster.Barcode = item.Barcode;
 
                     db.SaveChanges();
                     return true;

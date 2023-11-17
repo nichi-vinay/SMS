@@ -235,3 +235,4 @@ D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\refint\s
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.pdb
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.genruntimeconfig.cache
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\ref\sms.api.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\bin\Debug\net6.0\zxing.dll
