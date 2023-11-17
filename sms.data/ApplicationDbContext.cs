@@ -62,7 +62,7 @@ namespace sms.data
 
         public virtual DbSet<UnitTypeMaster> UnitTypeMaster { get; set; }
 
-
+        public virtual DbSet<CustomerTypeMaster> CustomerTypeMaster { get; set; }
 
         public virtual DbSet<VendorMaster> VendorMaster { get; set; }
 

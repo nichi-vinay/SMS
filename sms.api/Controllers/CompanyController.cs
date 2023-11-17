@@ -14,7 +14,7 @@ namespace sms.api.Controllers
 
         public CompanyController(ApplicationDbContext applicationDbContext)
         {
-            companyMasterLogic = new CompanyMasterLogic(applicationDbContext);
+            companyMasterLogic = new CompanyMasterLogic(applicationDbContext); 
         }
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
