@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -32,8 +33,8 @@
                         <div class="form-group">
                             <label>Supplier</label>
                             <select class="form-control select2" style="width: 100%;">
-                            
-                                <option selected="selected">Supplier 1</option>
+                                <option selected="selected">Select</option>
+                                <option >Supplier 1</option>
                                 <option>Supplier 2</option>
                                 <option>Supplier 3</option>
                                 <option>Supplier 4</option>
@@ -43,8 +44,7 @@
                         </div>
                     </div>
 
-                </div>
-                <div class="row">
+           
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -53,8 +53,7 @@
                         </div>
                     </div>
 
-                </div>
-                <div class="row">
+         
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -62,13 +61,13 @@
                             <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                     </div>
-                </div>
-                <div class="row">
+                
                     <div class="col-sm-6">
                         <!-- select -->
                         <div class="form-group">
                             <label>Order Type</label>
                             <select class="form-control">
+                                <option selected="selected">Select</option>
                                 <option>In Process</option>
                                 <option>Return</option>
                                
@@ -76,8 +75,7 @@
                         </div>
                     </div>
 
-                </div>
-                <div class="row">
+       
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -85,8 +83,7 @@
                             <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                     </div>
-                </div>
-                <div class="row">
+              
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -111,14 +108,16 @@
                                 <tr>
                                     <td>
                                         <select class="form-control select2 item-name" style="width: 100%;">
-                                            <option selected="selected">Item 1</option>
+                                            <option selected="selected">Select</option>
+                                            <option >Item 1</option>
                                             <option>Item 2</option>
                                             <option>Item 3</option>
                                         </select>
                                     </td>
                                     <td>
                                         <select class="form-control select2 item-number" style="width: 100%;">
-                                            <option selected="selected">Item Number 1</option>
+                                            <option selected="selected">Select</option>
+                                            <option>Item Number 1</option>
                                             <option>Item Number 2</option>
                                             <option>Item Number 3</option>
                                         </select>
@@ -268,24 +267,27 @@
 
             if (allFieldsFilled) {
                 var newRow = `
-                            <tr>
-                               <td>
-                                        <select class="form-control select2 item-name" style="width: 100%;">
-                                            <option selected="selected">Item 1</option>
-                                            <option>Item 2</option>
-                                            <option>Item 3</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                 <select class="form-control select2 item-number" style="width: 100%;">
-                    <option selected="selected">Item Number 1</option>
-                    <option>Item Number 2</option>
-                    <option>Item Number 3</option>
-                </select>
-                </td>
-                                <td><input type="number" class="form-control" name="quantity[]"></td>
-                                                        </tr>
-                        `;
+                                    <tr>
+                                       <td>
+                                                <select class="form-control select2 item-name" style="width: 100%;">
+                                                            <option selected="selected">Select</option>
+                                                    <option selected="selected">Item 1</option>
+                                                    <option>Item 2</option>
+                                                    <option>Item 3</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                         <select class="form-control select2 item-number" style="width: 100%;">
+                                                     <option selected="selected">Select</option>
+                                                               <option >Item Number 1</option>
+                                    <option>Item Number 2</option>
+                                    <option>Item Number 3</option>
+
+                        </select>
+                        </td>
+                                        <td><input type="number" class="form-control" name="quantity[]"></td>
+                                                                </tr>
+                                `;
                 $("#addRow tbody").append(newRow);
                 // Initialize Select2 for the new row
                 $('.item-name, .item-number').select2({ height: '100%' });

@@ -42,8 +42,8 @@
                         <div class="form-group">
                            <label>Customer</label>
                             <select class="form-control select2" style="width: 100%;">
-
-                                <option selected="selected">Customer 1</option>
+                                <option selected="selected">Select</option>
+                                <option >Customer 1</option>
                                 <option>Customer 2</option>
                                 <option>Customer 3</option>
                                 <option>Customer 4</option>
@@ -53,8 +53,7 @@
                         </div>
                     </div>
 
-                </div>
-                <div class="row">
+           
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -72,8 +71,7 @@
                             <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                     </div>
-                </div>
-                <div class="row">
+           
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -81,11 +79,34 @@
                             <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <label>Customer Type</label>
+                        <select class="form-control select2" style="width: 100%;" id="customerType">
+
+                            <option selected="selected">Select</option>
+                            <option>B2B</option>
+                            <option>B2C</option>
+                          
+                        </select>
+                    </div>
+                   
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Expected Delivery Date</label>
+                            <input type="text" class="form-control" placeholder="Enter ...">
+                        </div>
+                    </div>
 
                 </div>
                 <hr />
                 <div class="card">
+                 
+                       
+
                     
+                
                     <div class="card-header">
 
                         <table id="addRow" class="table table-bordered table-striped">
@@ -96,7 +117,10 @@
                                 <tr>
                                     <th>Item Name</th>
                                     <th>Item Number</th>
-                                    <th>Quantity</th>
+                                    <th>Barcode</th>
+                                  
+                                   <th>Quantity</th>
+                                    <th id="taxTypeHeader">Tax Type</th>
                                     <th>MRP</th>
                                     <th>Discount Price</th>
                                     <th>Total Price</th>
@@ -107,19 +131,28 @@
                                 <tr>
                                     <td>
                                         <select class="form-control select2 item-name" style="width: 100%;">
-                                            <option selected="selected">Item 1</option>
+                                            <option selected="selected">Select</option>
+                                            <option >Item 1</option>
                                             <option>Item 2</option>
                                             <option>Item 3</option>
                                         </select>
                                     </td>
                                     <td>
                                         <select class="form-control select2 item-number" style="width: 100%;">
-                                            <option selected="selected">Item Number 1</option>
+                                            <option selected="selected">Select</option>
+                                            <option>Item Number 1</option>
                                             <option>Item Number 2</option>
                                             <option>Item Number 3</option>
                                         </select>
                                     </td>
+                                    <td><input type="number" class="form-control" name="barcode[]"></td>
                                     <td><input type="number" class="form-control" name="quantity[]" ></td>
+                                 
+                                    <!-- Add an id to the tax type element -->
+                                    <td id="taxTypeColumn">
+                                        <input type="number" class="form-control" name="taxType[]">
+                                    </td>
+
                                     <td><input type="number" class="form-control" name="mrp[]"></td>
                                     <td><input type="number" class="form-control" name="discount_price[]"></td>
                                     <td><input type="number" class="form-control" name="total_price[]" onkeydown="addRowOnEnter(event)"></td>
@@ -145,24 +178,87 @@
                                         <input type="text" class="form-control" placeholder="Enter ...">
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-6">
                                     <div class="form-group">
-                                        <label>Total Price</label>
-                                        <input type="text" class="form-control" placeholder="Enter ...">
+                                        <label>Total Amount</label>
+                                        <input type="text" class="form-control" id="totalSum" placeholder="Total Amount" readonly>
                                     </div>
+                                </div>
+                           
+                                <div class="col-6">
+                                    <label>Total Paid</label>
+                                   
+                                    <input type="text" class="form-control" id="totalPaid" placeholder="Total Paid" readonly onclick="openPaymentModal()">
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success">Print</button>
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-danger" onclick="goToIndexPage()">Cancel</button>
+                <button type="submit" class="btn btn-success" id="printButton">Print</button>
+                <button type="submit" class="btn btn-primary" id="saveButton">Save</button>
+                <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+                <button type="button" class="btn btn-danger" id="cancelButton" onclick="goToIndexPage()">Cancel</button>
             </form>
         </div>
         <!-- /.card-body -->
     </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #17a2b8; color: white;">
+                    <h5 class="modal-title" id="itemModalLabel">Add Payment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Check</label>
+                                    <input type="text" class="form-control" name="check" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Cash</label>
+                                    <input type="text" class="form-control" name="cash" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>UPI/Online</label>
+                                    <input type="text" class="form-control" name="upi" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Cards</label>
+                                    <input type="text" class="form-control" name="cards" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="paymentModalSubmitBtn">Submit</button>
+
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -219,86 +315,200 @@
         }
 
 
-      
 
 
-        // Function to add a new row to the table
-        function addNewRow() {
-            // Check if all input fields in the current row are filled
-            var currentRow = $("#addRow tbody tr:last");
-            var inputs = currentRow.find("input");
-            var allFieldsFilled = true;
 
-            inputs.each(function () {
-                if ($(this).val() === "") {
-                    allFieldsFilled = false;
-                    return false; // Exit the loop early
+        $(function () {
+            // Function to calculate and update the total sum
+            function updateTotalSum() {
+                var totalSum = 0;
+                $("input[name='total_price[]']").each(function () {
+                    var value = parseFloat($(this).val()) || 0;
+                    totalSum += value;
+                });
+                $("#totalSum").val(totalSum.toFixed(2)); // Update the total sum in the input field
+            }
+            // Add an event listener to the Customer Type dropdown
+            $("#customerType").on("change", function () {
+                var selectedCustomerType = $(this).val();
+                var taxTypeHeader = $("#taxTypeHeader");
+                var taxTypeColumn = $("#taxTypeColumn");
+
+                // Toggle the visibility of the tax type based on the selected customer type
+                if (selectedCustomerType === "B2B") {
+                    taxTypeColumn.show();
+                    taxTypeHeader.show();
+                } else {
+                    taxTypeColumn.hide();
+                    taxTypeHeader.hide();
                 }
             });
+            // Attach the input event handler to the "Total Price" column
+            $("#addRow tbody").on("input", "input[name='total_price[]']", function () {
+                updateTotalSum(); // Update the total sum when the "Total Price" value changes
+            });
 
-            if (allFieldsFilled) {
-                var newRow = `
-                            <tr>
-                                          <td>
-                                        <select class="form-control select2 item-name" style="width: 100%;">
-                                            <option selected="selected">Item 1</option>
-                                            <option>Item 2</option>
-                                            <option>Item 3</option>
-                                        </select>
-                                    </td>
-                                     <td>
-                                           <select class="form-control select2 item-number" style="width: 100%;">
-                                                     <option selected="selected">Item Number 1</option>
-                                                     <option>Item Number 2</option>
-                                                     <option>Item Number 3</option>
-                                            </select>
+            // Call the updateTotalSum function initially to set the initial total sum
+            updateTotalSum();
+
+            // Function to add a new row to the table
+            function addNewRow() {
+                // Check if all input fields in the current row are filled
+                var currentRow = $("#addRow tbody tr:last");
+                var inputs = currentRow.find("input");
+                var allFieldsFilled = true;
+
+                inputs.each(function () {
+                    if ($(this).val() === "") {
+                        allFieldsFilled = false;
+                        return false; // Exit the loop early
+                    }
+                });
+
+                if (allFieldsFilled) {
+                    var newRow = `
+                                        <tr>
+                                            <td>
+                                                <select class="form-control select2 item-name" style="width: 100%;">
+                                                    <option selected="selected">Select</option>
+                                                    <option>Item 1</option>
+                                                    <option>Item 2</option>
+                                                    <option>Item 3</option>
+                                                </select>
                                             </td>
+                                            <td>
+                                                <select class="form-control select2 item-number" style="width: 100%;">
+                                                    <option selected="selected">Select</option>
+                                                    <option>Item Number 1</option>
+                                                    <option>Item Number 2</option>
+                                                    <option>Item Number 3</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="number" class="form-control" name="barcode[]"></td>
+                                                                        <!-- Add an id to the tax type element -->
+       
+
                                             <td><input type="number" class="form-control" name="quantity[]"></td>
+                                                     <td id="taxTypeColumn">
+                    <input type="number" class="form-control" name="taxType[]">
+                </td>
                                             <td><input type="number" class="form-control" name="mrp[]"></td>
                                             <td><input type="number" class="form-control" name="discount_price[]"></td>
-                                            <td><input type="number" class="form-control" name="total_price[]" onkeydown="addRowOnEnter(event)"></td>
-                            </tr>
-                        `;
-                $("#addRow tbody").append(newRow);
-                // Initialize Select2 for the new row
-                $('.item-name, .item-number').select2({ height: '100%' });
-            } else {
-                alert("Please fill in all the columns in the current row.");
-            }
-        }
+                                            <td><input type="number" class="form-control" name="total_price[]"></td>
+                                        </tr>
+                                    `;
+                    $("#addRow tbody").append(newRow);
 
-        // Function to remove the last row when the "Total Price" field is empty or Backspace is pressed
-        function removeLastRow() {
-            var rowCount = $("#addRow tbody tr").length;
-            if (rowCount > 1) {
-                var lastRow = $("#addRow tbody tr:last");
-                var totalPriceInput = lastRow.find("input[name='total_price[]']");
-                if (totalPriceInput.val() === "") {
-                    if (confirm("Do you want to delete this row?")) {
-                        lastRow.remove();
+                    // Initialize Select2 for the new row
+                    $('.item-name, .item-number').select2({ height: '100%' });
+
+                    // Update the total sum after adding a new row
+                    updateTotalSum();
+                } else {
+                    alert("Please fill in all the columns in the current row.");
+                }
+            }
+
+            // Function to remove the last row when the "Total Price" field is empty or Backspace is pressed
+            function removeLastRow() {
+                var rowCount = $("#addRow tbody tr").length;
+                if (rowCount > 1) {
+                    var lastRow = $("#addRow tbody tr:last");
+                    var totalPriceInput = lastRow.find("input[name='total_price[]']");
+                    if (totalPriceInput.val() === "") {
+                        if (confirm("Do you want to delete this row?")) {
+                            lastRow.remove();
+                        }
                     }
                 }
             }
+
+            // Attach the keydown event handler to the "Total Price" column
+            $("#addRow tbody").on("keydown", "input[name='total_price[]']", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // Prevent the default behavior of Enter key
+                    addNewRow();
+                } else if (event.key === "Backspace") {
+                    var totalPriceInput = $(this);
+                    if (totalPriceInput.val() === "") {
+                        removeLastRow();
+                    }
+                }
+            });
+        });
+
+        function confirmBarcodeGeneration() {
+            var confirmGenerate = confirm("Do you want to generate Barcode?");
+            if (confirmGenerate) {
+                // Code to handle barcode generation goes here
+                alert("Barcode generated successfully!."); // Replace with actual code
+            } else {
+                // Code to handle if user chooses not to generate barcode
+                alert("Barcode generation canceled."); // Replace with actual code
+            }
         }
+
 
         // Attach the keydown event handler to the "Total Price" column
         $("#addRow tbody").on("keydown", "input[name='total_price[]']", function (event) {
             if (event.key === "Enter") {
                 event.preventDefault(); // Prevent the default behavior of Enter key
                 addNewRow();
-
             } else if (event.key === "Backspace") {
                 var totalPriceInput = $(this);
                 if (totalPriceInput.val() === "") {
-                    {
-                        removeLastRow();
-                    }
+                    removeLastRow();
                 }
             }
         });
 
+        function handlePaymentSubmit() {
+            // Calculate the total sum
+            var totalSum = parseFloat($("#totalSum").val()) || 0;
+
+            // Get values from payment modal fields (check, cash, upi, cards)
+            var checkAmount = parseFloat($("#paymentModal input[name='check']").val()) || 0;
+            var cashAmount = parseFloat($("#paymentModal input[name='cash']").val()) || 0;
+            var upiAmount = parseFloat($("#paymentModal input[name='upi']").val()) || 0;
+            var cardsAmount = parseFloat($("#paymentModal input[name='cards']").val()) || 0;
+
+            // Calculate the balance
+            var totalPaidAmount = (checkAmount + cashAmount + upiAmount + cardsAmount);
+
+            $("#totalPaid").val(totalPaidAmount.toFixed(2));
+
+            // Check if the total paid amount is equal to the total sum
+            if (totalPaidAmount === totalSum) {
+                // Enable the submit button
+                $("#submitButton").prop("disabled", false);
+            } else {
+                // Disable the submit button
+                $("#submitButton").prop("disabled", true);
+            }
+
+          
+            // Dismiss the payment modal
+            $("#paymentModal").modal("hide");
+
+            // Remove the modal-open class and modal-backdrop
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+        }
+
+        // Add an event listener to the Submit button in the payment modal
+        $("#paymentModalSubmitBtn").on("click", handlePaymentSubmit);
 
 
+        function openPaymentModal() {
+            // Reset the payment modal fields
+            $("#paymentModal input[name='check']").val("");
+            $("#paymentModal input[name='cash']").val("");
+            $("#paymentModal input[name='upi']").val("");
+            $("#paymentModal input[name='cards']").val("");
+
+            // Show the payment modal
+            $("#paymentModal").modal("show");
+        }
     </script>
 </body>
 </html>

@@ -609,6 +609,10 @@
       "PackagePath": "staticwebassets\\dist\\img\\avatar5.png"
     },
     {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\dist\\img\\barcode.jpg",
+      "PackagePath": "staticwebassets\\dist\\img\\barcode.jpg"
+    },
+    {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\dist\\img\\boxed-bg.jpg",
       "PackagePath": "staticwebassets\\dist\\img\\boxed-bg.jpg"
     },
@@ -1435,6 +1439,10 @@
     {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\index3.html",
       "PackagePath": "staticwebassets\\index3.html"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\Purchase.js",
+      "PackagePath": "staticwebassets\\js\\Ajax\\Purchase.js"
     },
     {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\site.js",

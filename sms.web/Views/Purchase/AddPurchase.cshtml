@@ -17,15 +17,27 @@
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
-     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
-     <style>
-    /* Increase the height of Select2 dropdown */
-    .select2-container--default .select2-selection--single {
-        height: 35px; /* Adjust the height as needed */
-      
-    }
-</style>
+    <style>
+        /* Increase the height of Select2 dropdown */
+        .select2-container--default .select2-selection--single {
+            height: 35px; /* Adjust the height as needed */
+        }
+
+        .custom-modal-dialog {
+            max-width: 80%; /* Adjust the maximum width as needed */
+        }
+
+        .custom-barcode-image {
+            max-width: 80%; /* Adjust the maximum width as needed */
+            max-height: 30vh; /* Adjust the maximum height as needed */
+            width: auto;
+            height: auto;
+            display: inline-block;
+            margin: auto; /* Center the image */
+        }
+    </style>
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -42,8 +54,8 @@
                         <div class="form-group">
                             <label>Supplier</label>
                             <select class="form-control select2" style="width: 100%;">
-                             
-                                <option selected="selected">Supplier 1</option>
+                                <option selected="selected">Select</option>
+                                <option>Supplier 1</option>
                                 <option>Supplier 2</option>
                                 <option>Supplier 3</option>
                                 <option>Supplier 4</option>
@@ -53,8 +65,8 @@
                         </div>
                     </div>
 
-                </div>
-                <div class="row">
+
+
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -72,8 +84,7 @@
                             <input type="text" class="form-control" placeholder="Enter ...">
                         </div>
                     </div>
-                </div>
-                <div class="row">
+
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -85,47 +96,61 @@
                 </div>
                 <hr />
                 <div class="card">
-                    <div>
-   <!-- Button to open the modal -->
-<button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#itemModal">
-    <i class="fas fa-plus"></i> Add item
-</button>
+                    <div class="row justify-content-end">
+                        <div class="mr-2">
+                            <!-- Button to open the modal -->
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-default" onclick=" confirmBarcodeGeneration() ">
+                                <i class="fas fa-plus"></i> Barcode Generate
+                            </button>
+                        </div>
+
+                        <div class="mr-2">
+                            <!-- Button to open the modal -->
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#itemModal">
+                                <i class="fas fa-plus"></i> Add item
+                            </button>
+                        </div>
                     </div>
 
- 
+
+
                     <div class="card-header">
-                      
+
                         <table id="addRow" class="table table-bordered table-striped">
-                       
+
 
                             <thead>
-                               
+
                                 <tr>
                                     <th>Item Name</th>
                                     <th>Item Number</th>
+                                    <th>Barcode</th>
                                     <th>Quantity</th>
                                     <th>MRP</th>
                                     <th>Discount Price</th>
                                     <th>Total Price</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                <select class="form-control select2 item-name" style="width: 100%;">
-                                    <option selected="selected">Item 1</option>
-                                    <option>Item 2</option>
-                                    <option>Item 3</option>
-                                </select>
-                            </td>
-                             <td>
-                                   <select class="form-control select2 item-number" style="width: 100%;">
-                                             <option selected="selected">Item Number 1</option>
-                                             <option>Item Number 2</option>
-                                             <option>Item Number 3</option>
-                                    </select>
+                                        <select class="form-control select2 item-name" style="width: 100%;">
+                                            <option selected="selected">Select</option>
+                                            <option>Item 1</option>
+                                            <option>Item 2</option>
+                                            <option>Item 3</option>
+                                        </select>
                                     </td>
+                                    <td>
+                                        <select class="form-control select2 item-number" style="width: 100%;">
+                                            <option selected="selected">Select</option>
+                                            <option>Item Number 1</option>
+                                            <option>Item Number 2</option>
+                                            <option>Item Number 3</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" class="form-control" name="barcode[]"></td>
                                     <td><input type="number" class="form-control" name="quantity[]"></td>
                                     <td><input type="number" class="form-control" name="mrp[]"></td>
                                     <td><input type="number" class="form-control" name="discount_price[]"></td>
@@ -152,12 +177,21 @@
                                         <input type="text" class="form-control" placeholder="Enter ...">
                                     </div>
                                 </div>
-                                <div class="col-12">
+
+                                <div class="col-6">
                                     <div class="form-group">
-                                        <label>Total Price</label>
+                                        <label>Total Amount</label>
+                                        <input type="text" class="form-control" id="totalSum" placeholder="Total Amount" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Balance</label>
                                         <input type="text" class="form-control" placeholder="Enter ...">
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -173,62 +207,84 @@
 
 
     <!-- Modal -->
-<div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="itemModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #17a2b8; color: white;">
-                <h5 class="modal-title" id="itemModalLabel">Add Item</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <!-- text input -->
-                            <div class="form-group">
-                                <label>Item Name</label>
-                                <input type="text" class="form-control" placeholder="Enter ...">
+    <div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="itemModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #17a2b8; color: white;">
+                    <h5 class="modal-title" id="itemModalLabel">Add Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Item Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter ...">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <!-- text input -->
-                            <div class="form-group">
-                                <label>Item Number</label>
-                                <input type="text" class="form-control" placeholder="Enter ...">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Item Number</label>
+                                    <input type="text" class="form-control" placeholder="Enter ...">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <!-- select -->
-                            <div class="form-group">
-                                <label>Order Type</label>
-                                <select class="form-control">
-                                    <option>option 1</option>
-                                    <option>option 2</option>
-                                    <option>option 3</option>
-                                    <option>option 4</option>
-                                    <option>option 5</option>
-                                </select>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- select -->
+                                <div class="form-group">
+                                    <label>Unit Type</label>
+                                    <select class="form-control">
+                                        <option selected="selected">Select</option>
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                   
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
+    <!-- Modal for Barcode Generation -->
+    <div class="modal fade" id="barcodeModal" tabindex="-1" role="dialog" aria-labelledby="barcodeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Barcode Generation</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center" style="width:100%">
+                    <!-- Content to show when generating barcode -->
+                    <img src="/dist/img/barcode.jpg" alt="AdminLTE Logo" class="brand-image img-rectangle custom-barcode-image">
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -249,7 +305,9 @@
     <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
@@ -257,13 +315,15 @@
     <!-- Page specific script -->
     <script>
         $(function () {
+
+
             // Initialize the date picker
             $('#datepicker').datepicker({
                 format: 'yyyy-mm-dd', // You can change the date format as needed
                 autoclose: true
             });
 
-               $(document).ready(function () {
+            $(document).ready(function () {
                 // Initialize Select2 for the initial row
                 $('.item-name, .item-number').select2();
             });
@@ -290,87 +350,150 @@
             window.location.href = "/Purchase"; // Replace with the actual URL of your index page
         }
 
-   
+
         $(function () {
             bsCustomFileInput.init();
         });
 
 
-        // Function to add a new row to the table
-        function addNewRow() {
-            // Check if all input fields in the current row are filled
-            var currentRow = $("#addRow tbody tr:last");
-            var inputs = currentRow.find("input");
-            var allFieldsFilled = true;
+        $(function () {
+            // Function to calculate and update the total sum
+            function updateTotalSum() {
+                var totalSum = 0;
+                $("input[name='total_price[]']").each(function () {
+                    var value = parseFloat($(this).val()) || 0;
+                    totalSum += value;
+                });
+                $("#totalSum").val(totalSum.toFixed(2)); // Update the total sum in the input field
+            }
 
-            inputs.each(function () {
-                if ($(this).val() === "") {
-                    allFieldsFilled = false;
-                    return false; // Exit the loop early
-                }
+            // Attach the input event handler to the "Total Price" column
+            $("#addRow tbody").on("input", "input[name='total_price[]']", function () {
+                updateTotalSum(); // Update the total sum when the "Total Price" value changes
             });
 
-            if (allFieldsFilled) {
-                var newRow = `
-                    <tr>
-                       <td>
-                                <select class="form-control select2 item-name" style="width: 100%;">
-                                    <option selected="selected">Item 1</option>
-                                    <option>Item 2</option>
-                                    <option>Item 3</option>
-                                </select>
-                            </td>
-                            <td>
-                         <select class="form-control select2 item-number" style="width: 100%;">
-            <option selected="selected">Item Number 1</option>
-            <option>Item Number 2</option>
-            <option>Item Number 3</option>
-        </select>
-        </td>
-                        <td><input type="number" class="form-control" name="quantity[]"></td>
-                        <td><input type="number" class="form-control" name="mrp[]"></td>
-                        <td><input type="number" class="form-control" name="discount_price[]"></td>
-                        <td><input type="number" class="form-control" name="total_price[]"></td>
-                    </tr>
-                `;
-                $("#addRow tbody").append(newRow);
+            // Call the updateTotalSum function initially to set the initial total sum
+            updateTotalSum();
+
+            // Function to add a new row to the table
+            function addNewRow() {
+                // Check if all input fields in the current row are filled
+                var currentRow = $("#addRow tbody tr:last");
+                var inputs = currentRow.find("input");
+                var allFieldsFilled = true;
+
+                inputs.each(function () {
+                    if ($(this).val() === "") {
+                        allFieldsFilled = false;
+                        return false; // Exit the loop early
+                    }
+                });
+
+                if (allFieldsFilled) {
+                    var newRow = `
+                            <tr>
+                                <td>
+                                    <select class="form-control select2 item-name" style="width: 100%;">
+                                        <option selected="selected">Select</option>
+                                        <option>Item 1</option>
+                                        <option>Item 2</option>
+                                        <option>Item 3</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-control select2 item-number" style="width: 100%;">
+                                        <option selected="selected">Select</option>
+                                        <option>Item Number 1</option>
+                                        <option>Item Number 2</option>
+                                        <option>Item Number 3</option>
+                                    </select>
+                                </td>
+                                <td><input type="number" class="form-control" name="barcode[]"></td>
+                                <td><input type="number" class="form-control" name="quantity[]"></td>
+                                <td><input type="number" class="form-control" name="mrp[]"></td>
+                                <td><input type="number" class="form-control" name="discount_price[]"></td>
+                                <td><input type="number" class="form-control" name="total_price[]"></td>
+                            </tr>
+                        `;
+                    $("#addRow tbody").append(newRow);
+
                     // Initialize Select2 for the new row
-                   $('.item-name, .item-number').select2({ height: '100%' });
-            } else {
-                alert("Please fill in all the columns in the current row.");
+                    $('.item-name, .item-number').select2();
+
+                    // Update the total sum after adding a new row
+                    updateTotalSum();
+                } else {
+                    alert("Please fill in all the columns in the current row.");
+                }
             }
+
+            // Function to remove the last row when the "Total Price" field is empty or Backspace is pressed
+            function removeLastRow() {
+                var rowCount = $("#addRow tbody tr").length;
+                if (rowCount > 1) {
+                    var lastRow = $("#addRow tbody tr:last");
+                    var totalPriceInput = lastRow.find("input[name='total_price[]']");
+                    if (totalPriceInput.val() === "") {
+                        if (confirm("Do you want to delete this row?")) {
+                            lastRow.remove();
+                        }
+                    }
+                }
+            }
+
+            // Attach the keydown event handler to the "Total Price" column
+            $("#addRow tbody").on("keydown", "input[name='total_price[]']", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // Prevent the default behavior of Enter key
+                    addNewRow();
+                } else if (event.key === "Backspace") {
+                    var totalPriceInput = $(this);
+                    if (totalPriceInput.val() === "") {
+                        removeLastRow();
+                    }
+                }
+            });
+        });
+
+        function confirmBarcodeGeneration() {
+            // Display the modal when the user clicks the "Generate Barcode" button
+            $('#barcodeModal').modal('show');
+
+            // Generate a random barcode
+            var randomBarcode = generateRandomBarcode();
+
+            // Generate barcode image using JsBarcode
+            JsBarcode("#barcodeImage", randomBarcode);
+
+            // Display success alert
+            alert("Barcode generated successfully!");
         }
 
-       // Function to remove the last row when the "Total Price" field is empty or Backspace is pressed
-function removeLastRow() {
-    var rowCount = $("#addRow tbody tr").length;
-    if (rowCount > 1) {
-        var lastRow = $("#addRow tbody tr:last");
-        var totalPriceInput = lastRow.find("input[name='total_price[]']");
-        if (totalPriceInput.val() === "") {
-            if (confirm("Do you want to delete this row?")) {
-                lastRow.remove();
-            }
-        }
-    }
-}
 
-// Attach the keydown event handler to the "Total Price" column
-$("#addRow tbody").on("keydown", "input[name='total_price[]']", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // Prevent the default behavior of Enter key
-        addNewRow();
-     
-    } else if (event.key === "Backspace") {
-        var totalPriceInput = $(this);
-        if (totalPriceInput.val() === "") {
-            {
-                removeLastRow();
+        // Function to generate a random barcode
+        function generateRandomBarcode() {
+            // Replace this logic with your actual barcode generation algorithm
+            var characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var barcode = '';
+            for (var i = 0; i < 10; i++) {
+                barcode += characters.charAt(Math.floor(Math.random() * characters.length));
             }
+            return barcode;
         }
-    }
-});
 
+
+        // Attach the keydown event handler to the "Total Price" column
+        $("#addRow tbody").on("keydown", "input[name='total_price[]']", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent the default behavior of Enter key
+                addNewRow();
+            } else if (event.key === "Backspace") {
+                var totalPriceInput = $(this);
+                if (totalPriceInput.val() === "") {
+                    removeLastRow();
+                }
+            }
+        });
 
     </script>
 </body>
