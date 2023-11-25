@@ -1,4 +1,5 @@
-﻿using sms.data.Models;
+﻿using sms.data;
+using sms.data.Models;
 using sms.viewmodels;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,40 @@ namespace sms.biz.Map
 {
     public static class PurchaseItemMap
     {
-        public static PurchaseItemViewModel GetallPurchaseItemDetails(this PurchaseItemMaster purchaseItemMaster )
+        public static PurchaseItemViewModel GetallPurchaseItemDetails(this PurchaseItemMaster purchaseItemMaster, ApplicationDbContext context)
         {
-            PurchaseItemViewModel viewModel = new PurchaseItemViewModel()
-            {
-                Id = purchaseItemMaster.Id,
-                ItemID = purchaseItemMaster.ItemID,
-                PurchasemasterId  = purchaseItemMaster.PurchasemasterId,
-                Quantity = purchaseItemMaster.Quantity,
-                Mrp = purchaseItemMaster.Mrp,
-                DiscountPercentage = purchaseItemMaster.DiscountPercentage,
-                Totalprice = purchaseItemMaster.Totalprice,
-                IsSubmitted = purchaseItemMaster.IsSubmitted,
-                IsActive = purchaseItemMaster.IsActive,
-                Barcode = purchaseItemMaster.Barcode,
-                
-            };
-            return viewModel;
+            var query = from pm in context.ItemMaster
+                        join it in context.PurchaseItemMaster on pm.Id equals it.ItemID
+                        join qm in context.PurchaseMaster on it.PurchasemasterId equals qm.Id into purchaseMasterGroup
+                        from qm in purchaseMasterGroup.DefaultIfEmpty() // Left Join
+
+                        where it.Id == purchaseItemMaster.Id
+                        select new PurchaseItemViewModel
+                        {
+                            Id = it.Id,
+                            ItemID = it.ItemID,
+                            PurchasemasterId = it.PurchasemasterId,
+                            Quantity = it.Quantity,
+                            Mrp = it.Mrp,
+                            DiscountPercentage = it.DiscountPercentage,
+                            Totalprice = it.Totalprice,
+                            //IsSubmitted = it.IsSubmitted,
+                            IsActive = it.IsActive,
+                            Barcode = it.Barcode,
+                            ItemName = pm.ItemName,
+                            ItemNumber = pm.ItemNumber
+                           
+                        };
+
+            return query.FirstOrDefault();
+
         }
 
-        public static List<PurchaseItemViewModel>MapPurchaseItem(this List<PurchaseItemMaster> purchaseItems)
+        public static List<PurchaseItemViewModel>MapPurchaseItem(this List<PurchaseItemMaster> purchaseItems, ApplicationDbContext context)
         {
-            return purchaseItems.Select(x =>x.GetallPurchaseItemDetails()).ToList();
+            return purchaseItems.Select(x =>x.GetallPurchaseItemDetails(context)).ToList();
         }
+       
 
         public static PurchaseItemMaster MapCreatePurchase(this PurchaseItemViewModel purchaseItemViewModel)
         {
@@ -45,12 +57,12 @@ namespace sms.biz.Map
                 Mrp = purchaseItemViewModel.Mrp,
                 DiscountPercentage = purchaseItemViewModel.DiscountPercentage,
                 Totalprice = purchaseItemViewModel.Totalprice,
-                IsSubmitted = purchaseItemViewModel.IsSubmitted,
+                //IsSubmitted = purchaseItemViewModel.IsSubmitted,
                 IsActive = purchaseItemViewModel.IsActive,
                 Barcode = purchaseItemViewModel.Barcode,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now
-           
+                
             };
         }
     }

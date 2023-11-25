@@ -1441,8 +1441,20 @@
       "PackagePath": "staticwebassets\\index3.html"
     },
     {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\AddPurchaseItem.js",
+      "PackagePath": "staticwebassets\\js\\Ajax\\AddPurchaseItem.js"
+    },
+    {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\Purchase.js",
       "PackagePath": "staticwebassets\\js\\Ajax\\Purchase.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\SalesJS\\AddSalesItem.js",
+      "PackagePath": "staticwebassets\\js\\Ajax\\SalesJS\\AddSalesItem.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\SalesJS\\Sales.js",
+      "PackagePath": "staticwebassets\\js\\Ajax\\SalesJS\\Sales.js"
     },
     {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\site.js",

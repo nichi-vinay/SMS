@@ -36,7 +36,9 @@ namespace sms.biz.Map
                 ItemName=itemViewModel.ItemName,
                 ItemNumber=itemViewModel.ItemNumber,
                 UnitTypeMasterId=itemViewModel.UnitTypeMasterId,
-                IsActive = itemViewModel.IsActive
+                IsActive = itemViewModel.IsActive,
+                CreatedBy = 1,
+                CreatedDate = System.DateTime.Now
             };
         }
     }

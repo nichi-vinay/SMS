@@ -22,20 +22,20 @@ namespace sms.biz.Logic
 
         public List<PurchaseItemViewModel> GetAllPurchaseItem()
         {
-            return PurchaseItemMap.MapPurchaseItem(_applicationDbContext.PurchaseItemMaster.Where(x=>x.IsActive==true).ToList());
+            return PurchaseItemMap.MapPurchaseItem(_applicationDbContext.PurchaseItemMaster.Where(x=>x.IsActive==true).ToList(), _applicationDbContext);
         }
 
         public PurchaseItemViewModel GetPurchaseItem(int id)
         {
-            return PurchaseItemMap.GetallPurchaseItemDetails(_applicationDbContext.PurchaseItemMaster.FirstOrDefault(x=>x.Id==id));
+            return PurchaseItemMap.GetallPurchaseItemDetails(_applicationDbContext.PurchaseItemMaster.FirstOrDefault(x=>x.Id==id), _applicationDbContext);
         }
 
         public int AddPurchaseItem(PurchaseItemViewModel item)
         {
             PurchaseItemMaster purchaseItemMaster = PurchaseItemMap.MapCreatePurchase(item);
 
+
             var EntityEntry = _applicationDbContext.PurchaseItemMaster.Add(purchaseItemMaster);
-            _applicationDbContext.SaveChanges();
 
             return EntityEntry.Entity.Id;
         }
@@ -62,7 +62,7 @@ namespace sms.biz.Logic
                     purchaseItemmaster.ItemID = item.Id;
                     purchaseItemmaster.PurchasemasterId = item.PurchasemasterId;
                     purchaseItemmaster.Quantity = item.Quantity;
-                    purchaseItemmaster.IsSubmitted=item.IsSubmitted;
+                    //purchaseItemmaster.IsSubmitted=item.IsSubmitted;
                     purchaseItemmaster.Mrp=item.Mrp;
                     purchaseItemmaster.DiscountPercentage = item.DiscountPercentage;
                     purchaseItemmaster.Totalprice = item.Totalprice;

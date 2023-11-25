@@ -2,11 +2,7 @@
 using sms.data;
 using sms.data.Models;
 using sms.viewmodels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace sms.biz.Logic
 {
@@ -17,29 +13,29 @@ namespace sms.biz.Logic
         {
             _applicationDbContext = applicationDbContext;
         }
-
-        public List<PurchaseViewModel>GetAllPurchases()
+        
+        public List<PurchaseViewModel> GetAllPurchases()
         {
-            return PurchaseMap.MapGetPurchase(_applicationDbContext.PurchaseMaster.Where(x=>x.IsActive==true).ToList());
+            return PurchaseMap.MapGetPurchase(_applicationDbContext.PurchaseMaster.Where(x => x.IsActive == true).ToList(), _applicationDbContext);
         }
+
 
         public PurchaseViewModel GetPurchase(int id)
         {
-            return PurchaseMap.GetPurchaseDetails(_applicationDbContext.PurchaseMaster.FirstOrDefault(x=>x.Id==id));
-
-           
+            return PurchaseMap.GetPurchaseDetails(_applicationDbContext.PurchaseMaster.FirstOrDefault(x => x.Id == id), _applicationDbContext);
         }
-        
-        public int AddPurchase(PurchaseViewModel purchaseViewModel)
+
+
+        public int AddPurchase(PurchaseViewModel purchaseViewModel, List<PurchaseItemViewModel> purchaseItems)
         {
-            PurchaseMaster purchaseMaster = PurchaseMap.MapCreatePurchase(purchaseViewModel);
+            var purchaseMaster = PurchaseMap.MapCreatePurchase(purchaseViewModel, purchaseItems, _applicationDbContext);
 
 
-            var entityEntry = _applicationDbContext.PurchaseMaster.Add(purchaseMaster);
             _applicationDbContext.SaveChanges();
 
-            return entityEntry.Entity.Id;
+            return purchaseMaster.Id;
         }
+
 
         public bool DeletePurchase(int id)
         {
@@ -55,24 +51,19 @@ namespace sms.biz.Logic
 
         public bool UpdatePurchase(PurchaseViewModel purchaseViewModel)
         {
-            using (var context = _applicationDbContext)
+            var purchasemaster = _applicationDbContext.PurchaseMaster.FirstOrDefault(x => x.Id == purchaseViewModel.Id);
+            if (purchasemaster != null)
             {
-                var purchasemaster = context.PurchaseMaster.FirstOrDefault(x=>x.Id == purchaseViewModel.Id);
-                if (purchasemaster != null)
-                {
-                    purchasemaster.InvoiceDate = purchaseViewModel.InvoiceDate;
-                    purchasemaster.InvoiceNumber = purchaseViewModel.InvoiceNumber;
-                    purchasemaster.VendorId = purchaseViewModel.VendorId;
-                    purchasemaster.IsSubmitted = purchaseViewModel.IsSubmitted;
-                    purchasemaster.ShipmentDetails = purchaseViewModel.ShipmentDetails;
-                    purchasemaster.IsActive = true;
-
-                    context.SaveChanges();
-                    return true;
-                    
-                }
-                return false;
+                purchasemaster.InvoiceDate = purchaseViewModel.InvoiceDate;
+                purchasemaster.InvoiceNumber = purchaseViewModel.InvoiceNumber;
+                purchasemaster.VendorId = purchaseViewModel.VendorId;
+                purchasemaster.IsSubmitted = purchaseViewModel.IsSubmitted;
+                purchasemaster.ShipmentDetails = purchaseViewModel.ShipmentDetails;
+                purchasemaster.IsActive = true;
+                _applicationDbContext.SaveChanges();
+                return true;
             }
+            return false;
         }
     }
 }

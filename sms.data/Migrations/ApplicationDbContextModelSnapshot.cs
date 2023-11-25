@@ -51,21 +51,21 @@ namespace sms.data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "05067fdf-26bb-4dca-9d3c-ae454a57f1f8",
+                            Id = "9d07af3e-74e7-4a68-9bff-140553d34375",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "f74ef0a9-7dcb-4910-a6b7-b4ce2b96656e",
+                            Id = "ae5655e7-3b05-4c2b-b8ac-0c6ef5a73385",
                             ConcurrencyStamp = "3",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "a220ddb0-2874-463a-8f54-7402c50ab3cb",
+                            Id = "e0688c71-b8f7-4cc2-a256-a338338ec331",
                             ConcurrencyStamp = "2",
                             Name = "Executive",
                             NormalizedName = "Executive"
@@ -249,6 +249,23 @@ namespace sms.data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("sms.data.Models.BarcodeMaster", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("BarcodeText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BarcodeMaster");
                 });
 
             modelBuilder.Entity("sms.data.Models.CompanyMaster", b =>
@@ -646,9 +663,6 @@ namespace sms.data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsSubmitted")
-                        .HasColumnType("bit");
-
                     b.Property<int>("ItemID")
                         .HasColumnType("int");
 
@@ -687,6 +701,15 @@ namespace sms.data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<float?>("Cards")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("Cash")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("Cheque")
+                        .HasColumnType("real");
+
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
@@ -712,8 +735,23 @@ namespace sms.data.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<float?>("Online")
+                        .HasColumnType("real");
+
                     b.Property<string>("ShipmentDetails")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<float?>("TotalAmount")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("TotalDiscount")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("TotalPaid")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("TotalTax")
+                        .HasColumnType("real");
 
                     b.Property<int>("VendorId")
                         .HasColumnType("int");
@@ -1194,7 +1232,7 @@ namespace sms.data.Migrations
                         .IsRequired();
 
                     b.HasOne("sms.data.Models.PurchaseMaster", "PurchaseMaster")
-                        .WithMany()
+                        .WithMany("purchaseItemMasters")
                         .HasForeignKey("PurchasemasterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1292,6 +1330,11 @@ namespace sms.data.Migrations
                         .IsRequired();
 
                     b.Navigation("TaxTypeMaster");
+                });
+
+            modelBuilder.Entity("sms.data.Models.PurchaseMaster", b =>
+                {
+                    b.Navigation("purchaseItemMasters");
                 });
 #pragma warning restore 612, 618
         }

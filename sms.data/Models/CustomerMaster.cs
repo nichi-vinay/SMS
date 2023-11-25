@@ -13,7 +13,7 @@ namespace sms.data.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; } = null!;
+        public string Name { get; set; }
         [Required]
         [ForeignKey ("EnquiryTypeMaster")]
         public int EnquirytypeId { get; set; }

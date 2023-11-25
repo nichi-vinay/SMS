@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "COp5DpPv6EtnizX2Zy1K3L9y2NjS+RHVXyluykJdWK8=",
+  "Hash": "/kV5apxi6m+ufuSTV94YilzLoztKfmf6TmRQJ9e1ESo=",
   "Source": "sms.web",
   "BasePath": "_content/sms.web",
   "Mode": "Default",
@@ -6137,6 +6137,23 @@
       "OriginalItemSpec": "wwwroot\\index3.html"
     },
     {
+      "Identity": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\AddPurchaseItem.js",
+      "SourceId": "sms.web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\",
+      "BasePath": "_content/sms.web",
+      "RelativePath": "js/Ajax/AddPurchaseItem.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Ajax\\AddPurchaseItem.js"
+    },
+    {
       "Identity": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\Purchase.js",
       "SourceId": "sms.web",
       "SourceType": "Discovered",
@@ -6152,6 +6169,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Ajax\\Purchase.js"
+    },
+    {
+      "Identity": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\SalesJS\\AddSalesItem.js",
+      "SourceId": "sms.web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\",
+      "BasePath": "_content/sms.web",
+      "RelativePath": "js/Ajax/SalesJS/AddSalesItem.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Ajax\\SalesJS\\AddSalesItem.js"
+    },
+    {
+      "Identity": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\SalesJS\\Sales.js",
+      "SourceId": "sms.web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\",
+      "BasePath": "_content/sms.web",
+      "RelativePath": "js/Ajax/SalesJS/Sales.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Ajax\\SalesJS\\Sales.js"
     },
     {
       "Identity": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\site.js",

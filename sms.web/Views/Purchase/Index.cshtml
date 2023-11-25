@@ -82,40 +82,14 @@
                 <th>PO Number</th>
                 <th>PO Date</th>
                 <th>Supplier Name</th>
-                <th>MRP</th>
+                <th>Total Amount</th>
                 <th>Discount Price</th>
                 <th>Total Price</th>
                 <th>Action</th>
             </tr>
         </thead>
          <tbody id="TableBody">
-            @* <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-            </tr>
-            <tr>
-                <td>xxxxxxxxxx</td>
-                <td>2023-10-24</td>
-                <td>Supplier 2</td>
-                <td>200</td>
-                <td>10%</td>
-                <td>180</td>
-                <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-            </tr>
-            <tr>
-                <td>xxxxxxxxxx</td>
-                <td>2023-10-24</td>
-                <td>Supplier 3</td>
-                <td>300</td>
-                <td>10%</td>
-                <td>270</td>
-                <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-            </tr> *@
+            
         </tbody>
 
         </table>
@@ -146,7 +120,8 @@
     <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/ajax/purchase.js"></script>
 
     <!-- Include jQuery (Chosen requires jQuery) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -164,7 +139,7 @@
 
         $(function () {
             $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "lengthChange": false, "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 

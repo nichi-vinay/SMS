@@ -19,6 +19,7 @@ namespace sms.data.Models
         [Required]
         [ForeignKey("OrderTypeMaster")]
         public int OrderTypeId { get; set; }
+        
         [Required]
         public string OrderName { get; set; } = null!;
         [Required]

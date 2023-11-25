@@ -48,6 +48,9 @@ namespace sms.api.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<ItemViewModel> CreateEnquiry([FromBody] ItemViewModel model)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

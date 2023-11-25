@@ -26,7 +26,17 @@ namespace sms.data.Models
         public bool IsSubmitted { get; set; }
         [Required]
         public bool IsActive { get; set; }
+      
+        public float? Cheque { get; set; }
+        public float? Cash { get; set; }
+        public float? Online { get; set; }
+        public float? Cards { get; set; }
 
+        public float? TotalDiscount{ get;set;}
+
+        public float? TotalTax { get; set; }
+        public float? TotalAmount { get; set; }
+        public float? TotalPaid { get; set; }
         public int CreatedBy { get; set; }
 
         public DateTime CreatedDate { get; set; }
@@ -36,5 +46,9 @@ namespace sms.data.Models
         public int? ModifiedBy { get; set; }
 
         public VendorMaster VendorMaster { get; set; } = null!;
+
+        public List<PurchaseItemMaster> purchaseItemMasters { get; set; }
+
+        
     }
 }

@@ -66,5 +66,7 @@ namespace sms.data
 
         public virtual DbSet<VendorMaster> VendorMaster { get; set; }
 
+        public virtual DbSet<BarcodeMaster> BarcodeMaster { get; set; }
+
     }
 }

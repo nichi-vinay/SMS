@@ -11,7 +11,7 @@ namespace sms.data.Models
     public class PurchaseItemMaster
     {
 
-        [Key]
+       
         public int Id { get; set; }
         [Required]
         [ForeignKey("PurchaseMaster")]
@@ -27,8 +27,7 @@ namespace sms.data.Models
         public double DiscountPercentage {  get; set; }
         [Required]
         public double Totalprice { get; set; }
-        [Required]
-        public bool IsSubmitted { get; set; }
+   
         [Required]
         public bool IsActive { get; set; }
         [Required]
