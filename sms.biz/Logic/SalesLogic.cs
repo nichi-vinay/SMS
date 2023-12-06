@@ -1,4 +1,5 @@
-﻿using sms.biz.Map;
+﻿using Microsoft.EntityFrameworkCore;
+using sms.biz.Map;
 using sms.data;
 using sms.data.Models;
 using sms.viewmodels;
@@ -21,22 +22,21 @@ namespace sms.biz.Logic
 
         public List<SalesViewModel> GetAllSales()
         {
-            return SalesMap.MapGetSales(_applicationDbContext.SalesMaster.Where(x=>x.IsActive==true).ToList());
+            return SalesMap.MapGetSales(_applicationDbContext.SalesMaster.Where(x=>x.IsActive==true).ToList(), _applicationDbContext);
         }
 
         public SalesViewModel GetSales(int id)
         {
-            return SalesMap.GetAllSales(_applicationDbContext.SalesMaster.FirstOrDefault(x=>x.Id==id));
+            return SalesMap.GetAllSales(_applicationDbContext.SalesMaster.FirstOrDefault(x=>x.Id==id), _applicationDbContext);
         }
 
-        public int AddSales(SalesViewModel item)
+        public int AddSales(SalesViewModel item, List<SalesItemViewModel> Salesitems)
         {
-            SalesMaster salesMaster = SalesMap.MapCreateSales(item);
+            SalesMaster salesMaster = SalesMap.MapCreateSales(item, Salesitems,_applicationDbContext);
 
-            var entityEntry = _applicationDbContext.SalesMaster.Add(salesMaster);
             _applicationDbContext.SaveChanges();
 
-            return entityEntry.Entity.Id;
+            return salesMaster.Id;
         }
         public bool DeleteSales(int id)
         {
@@ -51,32 +51,77 @@ namespace sms.biz.Logic
             return false;
         }
 
-        public bool UpdateSales(SalesViewModel item)
+        public bool UpdateSales(SalesViewModel item, List<SalesItemViewModel> SalesItem)
         {
-            using (var db =  _applicationDbContext)
+            var existingSalesMaster = _applicationDbContext.SalesMaster
+                .Include(sm => sm.salesItemMasters)
+                .FirstOrDefault(x => x.Id == item.Id);
+
+            if (existingSalesMaster != null)
             {
-                var sales = db.SalesMaster.FirstOrDefault(x=> x.Id == item.Id);
-                if(sales != null)
+                // Update SalesMaster properties
+                existingSalesMaster.CustomerId = item.CustomerId;
+                existingSalesMaster.customerTypeMasterId = item.customerTypeMasterId;
+                existingSalesMaster.InvoiceCopy = item.InvoiceCopy;
+                existingSalesMaster.InvoiceDate = item.InvoiceDate;
+                existingSalesMaster.InvoiceNumber = item.InvoiceNumber;
+                existingSalesMaster.ShipmentDetails = item.ShipmentDetails;
+                existingSalesMaster.Cards = item.Cards;
+                existingSalesMaster.Cash = item.Cash;
+                existingSalesMaster.Cheque = item.Cheque;
+                existingSalesMaster.Online = item.Online;
+                existingSalesMaster.TaxNumber = item.TaxNumber;
+                existingSalesMaster.ExpectedDelivery = item.ExpectedDelivery;
+                existingSalesMaster.IsCanceled = item.IsCanceled;
+                existingSalesMaster.IsActive = true;
+
+                // Update or add SalesItemMasters
+                foreach (var salesItem in SalesItem)
                 {
-                    sales.CustomerId = item.CustomerId;
-                    sales.customerTypeMasterId = item.customerTypeMasterId;
-                    sales.InvoiceCopy = item.InvoiceCopy;
-                    sales.InvoiceDate = item.InvoiceDate;
-                    sales.InvoiceNumber = item.InvoiceNumber;
-                    sales.ShipmentDetails = item.ShipmentDetails;
-                    sales.Cards = item.Cards;
-                    sales.Cash = item.Cash;
-                    sales.Cheque = item.Cheque;
-                    sales.Online = item.Online;
-                    sales.TaxNumber = item.TaxNumber;
-                    sales.ExpectedDelivery = item.ExpectedDelivery;
-                    sales.IsCanceled = item.IsCanceled;
-                    sales.IsActive = true;
-                    _applicationDbContext.SaveChanges();
-                    return true;
+                    var existingSalesItem = existingSalesMaster.salesItemMasters.FirstOrDefault(s => s.Id == salesItem.Id);
+                    if (existingSalesItem != null)
+                    {
+                        existingSalesItem.Id = salesItem.Id;
+                        // Update existing SalesItemMaster
+                        existingSalesItem.ItemID = salesItem.ItemID;
+                        existingSalesItem.TaxTypeID = salesItem.TaxTypeID;
+                        existingSalesItem.Quantity = salesItem.Quantity;
+                        existingSalesItem.Mrp = salesItem.Mrp;
+                        existingSalesItem.DiscountPercentage = salesItem.DiscountPercentage;
+                        existingSalesItem.TotalPrice = salesItem.TotalPrice;
+                        existingSalesItem.Barcode = salesItem.Barcode;
+                        existingSalesItem.IsActive = true;
+                        existingSalesItem.CreatedBy = 1;
+                        existingSalesItem.CreatedDate = DateTime.Now;
+                    }
+                    else
+                    {
+                        // Add new SalesItemMaster
+                        existingSalesMaster.salesItemMasters.Add(new SalesItemMaster
+                        {
+                            SalesmasterId = existingSalesMaster.Id,
+                            ItemID = salesItem.ItemID,
+                            TaxTypeID = salesItem.TaxTypeID,
+                            Quantity = salesItem.Quantity,
+                            Mrp = salesItem.Mrp,
+                            DiscountPercentage = salesItem.DiscountPercentage,
+                            TotalPrice = salesItem.TotalPrice,
+                            Barcode = salesItem.Barcode,
+                            IsActive = true,
+                            CreatedBy = 1,
+                            CreatedDate = DateTime.Now
+                        });
+                    }
                 }
-                return false;
+
+                // Save changes to the database
+                _applicationDbContext.SaveChanges();
+
+                return true;
             }
+
+            return false;
         }
+
     }
 }

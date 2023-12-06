@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | General Form Elements</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
+
+    <style>
+        /* Increase the height of Select2 dropdown */
+        .select2-container--default .select2-selection--single {
+            height: 35px; /* Adjust the height as needed */
+        }
+    </style>
+
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Edit Sales</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form id="salesForm" onsubmit="return false;">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- select -->
+                        <div class="form-group">
+                            <label>Customer</label>
+                            <select id="CustomerDropDown" class="form-control select2" style="width: 100%;">
+                                <option selected="selected">Select</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Invoice Number</label>
+                            <input id="invoiceNumber" type="text" class="form-control" placeholder="Enter ... ">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Invoice Date</label>
+                            <div class="input-group date" data-target-input="nearest">
+                                <input id="InvoiceDate" type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" />
+                                <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Shipment Details</label>
+                            <input id="ShipmentDetails" type="text" class="form-control" placeholder="Enter ...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <label>Customer Type</label>
+                        <select id="CustomerTypeDropDown" class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Select</option>
+
+                        </select>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Expected Delivery Date</label>
+                            <input id="ExpextedDate" type="text" class="form-control" placeholder="Enter ...">
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+                <div class="card">
+                    <div class="card-header">
+                        <table id="salesItemsTable" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Item Number</th>
+                                    <th>Barcode</th>
+
+                                    <th>Quantity</th>
+                                    <th>Rate</th>
+                                    <th>Tax Type</th>
+
+                                    <th>Discount Price</th>
+                                    <th>Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <select id="ItemName" class="form-control select2 item-name" style="width: 100%;">
+                                            <option value="" selected="selected">Select</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select id="ItemNumber" class="form-control select2 item-number" style="width: 100%;">
+                                            <option value="" selected="selected">Select</option>
+                                        </select>
+                                    </td>
+                                    <td><input id="Barcode" type="number" class="form-control " name="barcode[]"></td>
+                                    <td><input id="quantity" type="number" class="form-control" name="quantity[]"></td>
+                                    <td><input id="mrp" type="number" class="form-control" name="mrp[]"></td>
+                                    <!-- Add an id to the tax type element -->
+                                    <td>
+                                        <select id="taxTypeColumn" class="form-control select2 taxtype-name" style="width: 100%;"><option value="" selected="selected">Select</option></select>
+                                    </td>
+
+
+                                    <td><input id="discountpercentage" type="number" class="form-control" name="discount_percentage[]"></td>
+                                    <td><input id="totalprice" type="number" class="form-control" name="total_price[]" onkeydown="addRowOnEnter(event)"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6"></div> <!-- Empty column to create space -->
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Total Discount Price</label>
+                                        <input id="TotalDiscount" type="text" class="form-control" placeholder="Enter ..." oninput="updateTotalDiscount()">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Total Tax</label>
+                                        <input id="TotalTax" type="text" class="form-control" placeholder="Enter ..." oninput="updatePayableAmount()">
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Payable Amount</label>
+                                        <input type="text" class="form-control" id="totalSum" placeholder="Total Amount" readonly>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-6">
+                                    <label>Total Paid</label>
+
+                                    <input type="text" class="form-control" id="totalPaid" placeholder="Total Paid" readonly onclick="openPaymentModal()">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" id="printButton">Print</button>
+                <button type="submit" class="btn btn-primary" id="saveButton">Save</button>
+                <button type="submit" class="btn btn-primary" id="submitBtn" disabled>Submit</button>
+                <button type="button" class="btn btn-danger" id="cancelButton" onclick="goToIndexPage()">Cancel</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #17a2b8; color: white;">
+                    <h5 class="modal-title" id="itemModalLabel">Add Payment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Cheque</label>
+                                    <input id="Check" type="text" class="form-control" name="check" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Cash</label>
+                                    <input id="Cash" type="text" class="form-control" name="cash" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Cards</label>
+                                    <input id="Cards" type="text" class="form-control" name="cards" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>UPI/Online</label>
+                                    <input id="UPIOnline" type="text" class="form-control" name="upi" placeholder="Enter ..." oninput="updateTotalPayment()">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="paymentModalSubmitBtn">Submit</button>
+
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="../../plugins/jszip/jszip.min.js"></script>
+    <script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+    <!-- Bootstrap JS (required for datetimepicker) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <!-- Page specific script -->
+
+    <script src="~/js/ajax/salesjs/editsales.js"></script>
+    <script src="~/js/ajax/salesjs/sales.js"></script>
+
+</body>
+</html>

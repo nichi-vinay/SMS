@@ -54,41 +54,15 @@
                         <th>Invoice Number</th>
                         <th>Invoice Date</th>
                         <th>Quantity</th>
-                        <th>MRP</th>
-                        <th>Discount Percentage</th>
-                        <th>Total Amount</th>
+                        <th>Total MRP</th>
+                        <th>Total Discount</th>
+                        <th>Total Paid</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>xxxxxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-                    </tr>
-                    <tr>
-                        <td>xxxxxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-                    </tr>
-                    <tr>
-                        <td>xxxxxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-file fa-lg" style="color: #511f51;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-                    </tr>
+                <tbody id="TableBody">
                 </tbody>
+
 
             </table>
         </div>
@@ -119,6 +93,8 @@
 
     <script src="~/js/ajax/salesjs/sales.js"></script>
     <script src="~/js/ajax/salesjs/addsalesitem.js"></script>
+    <!-- Include your JavaScript file and set the edit URL as a data attribute -->
+    <script src="~/js/ajax/salesjs/editsales.js" data-edit-url="@Url.Action("Edit", "Sales")"></script>
 
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>

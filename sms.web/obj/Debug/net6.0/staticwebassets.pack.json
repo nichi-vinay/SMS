@@ -1453,6 +1453,10 @@
       "PackagePath": "staticwebassets\\js\\Ajax\\SalesJS\\AddSalesItem.js"
     },
     {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\SalesJS\\EditSales.js",
+      "PackagePath": "staticwebassets\\js\\Ajax\\SalesJS\\EditSales.js"
+    },
+    {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\SalesJS\\Sales.js",
       "PackagePath": "staticwebassets\\js\\Ajax\\SalesJS\\Sales.js"
     },

@@ -10,7 +10,7 @@ namespace sms.data.Models
     public class TaxTypeMaster
     {
         [Key]
-        public int Id { get; set; }
+        public int TAXTypeId { get; set; }
         [Required]
         public string Name { get; set; } = null!;
         [Required]

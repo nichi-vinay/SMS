@@ -19,6 +19,9 @@ namespace sms.data.Models
         [ForeignKey("ItemMaster")]
         public int ItemID { get; set; }
         [Required]
+        [ForeignKey("TaxTypeMaster")]
+        public int TaxTypeID {  get; set; }
+        [Required]
         public int Quantity { get; set; }
         [Required]
         public double Mrp { get; set; }
@@ -41,5 +44,7 @@ namespace sms.data.Models
         public SalesMaster SalesMaster { get; set; } = null!;
 
         public ItemMaster ItemMaster { get; set; } = null!;
+
+        public TaxTypeMaster TaxTypeMaster { get; set; } = null!;
     }
 }

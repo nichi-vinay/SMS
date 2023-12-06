@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var baseUrl = Url.Action("Edit", "Sales");
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -37,13 +40,7 @@
                         <div class="form-group" style="margin-left: 0px;">
                         <select class="form-control select2" style="width: 100%;">
                                             <option selected="selected">Select</option>
-                            <option >Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                     
                         </select>
                         </div>
                     </div>
@@ -89,7 +86,7 @@
             </tr>
         </thead>
          <tbody id="TableBody">
-            
+                                
         </tbody>
 
         </table>
@@ -156,3 +153,4 @@
    
 </body>
 </html>
+

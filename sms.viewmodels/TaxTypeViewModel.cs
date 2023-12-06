@@ -10,7 +10,7 @@ namespace sms.viewmodels
     public class TaxTypeViewModel
     {
         [Key]
-        public int Id { get; set; }
+        public int TAXTypeId { get; set; }
 
         public string Name { get; set; } = null!;
 

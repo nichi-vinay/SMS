@@ -51,21 +51,21 @@ namespace sms.data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9d07af3e-74e7-4a68-9bff-140553d34375",
+                            Id = "54a52ebc-8a81-4793-9070-09ff3fdcbfea",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "ae5655e7-3b05-4c2b-b8ac-0c6ef5a73385",
+                            Id = "4c2ed5ab-897e-4f5e-8520-548937db110e",
                             ConcurrencyStamp = "3",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "e0688c71-b8f7-4cc2-a256-a338338ec331",
+                            Id = "65bc46f4-6711-4fcf-b931-b2b75013fc3e",
                             ConcurrencyStamp = "2",
                             Name = "Executive",
                             NormalizedName = "Executive"
@@ -747,6 +747,9 @@ namespace sms.data.Migrations
                     b.Property<float?>("TotalDiscount")
                         .HasColumnType("real");
 
+                    b.Property<float?>("TotalMRP")
+                        .HasColumnType("real");
+
                     b.Property<float?>("TotalPaid")
                         .HasColumnType("real");
 
@@ -904,6 +907,9 @@ namespace sms.data.Migrations
                     b.Property<int>("SalesmasterId")
                         .HasColumnType("int");
 
+                    b.Property<int>("TaxTypeID")
+                        .HasColumnType("int");
+
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
 
@@ -912,6 +918,8 @@ namespace sms.data.Migrations
                     b.HasIndex("ItemID");
 
                     b.HasIndex("SalesmasterId");
+
+                    b.HasIndex("TaxTypeID");
 
                     b.ToTable("SalesItemMaster");
                 });
@@ -976,6 +984,21 @@ namespace sms.data.Migrations
                     b.Property<string>("TaxNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("TotalAmount")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("TotalDiscount")
+                        .HasColumnType("float");
+
+                    b.Property<float?>("TotalMrp")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("TotalPaid")
+                        .HasColumnType("real");
+
+                    b.Property<double?>("TotalTax")
+                        .HasColumnType("float");
+
                     b.Property<int>("customerTypeMasterId")
                         .HasColumnType("int");
 
@@ -990,11 +1013,11 @@ namespace sms.data.Migrations
 
             modelBuilder.Entity("sms.data.Models.TaxTypeMaster", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TAXTypeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TAXTypeId"), 1L, 1);
 
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
@@ -1015,7 +1038,7 @@ namespace sms.data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("TAXTypeId");
 
                     b.ToTable("TaxTypeMaster");
                 });
@@ -1292,14 +1315,22 @@ namespace sms.data.Migrations
                         .IsRequired();
 
                     b.HasOne("sms.data.Models.SalesMaster", "SalesMaster")
-                        .WithMany()
+                        .WithMany("salesItemMasters")
                         .HasForeignKey("SalesmasterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("sms.data.Models.TaxTypeMaster", "TaxTypeMaster")
+                        .WithMany()
+                        .HasForeignKey("TaxTypeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ItemMaster");
 
                     b.Navigation("SalesMaster");
+
+                    b.Navigation("TaxTypeMaster");
                 });
 
             modelBuilder.Entity("sms.data.Models.SalesMaster", b =>
@@ -1335,6 +1366,11 @@ namespace sms.data.Migrations
             modelBuilder.Entity("sms.data.Models.PurchaseMaster", b =>
                 {
                     b.Navigation("purchaseItemMasters");
+                });
+
+            modelBuilder.Entity("sms.data.Models.SalesMaster", b =>
+                {
+                    b.Navigation("salesItemMasters");
                 });
 #pragma warning restore 612, 618
         }

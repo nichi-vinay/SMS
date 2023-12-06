@@ -26,7 +26,7 @@ namespace sms.data.Models
         public bool IsSubmitted { get; set; }
         [Required]
         public bool IsActive { get; set; }
-      
+        public float ?TotalMRP { get; set; }
         public float? Cheque { get; set; }
         public float? Cash { get; set; }
         public float? Online { get; set; }

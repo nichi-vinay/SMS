@@ -14,7 +14,7 @@ namespace sms.biz.Map
         {
             TaxTypeViewModel taxTypeViewModel = new TaxTypeViewModel
             {
-                Id = taxTypeMaster.Id,
+                TAXTypeId = taxTypeMaster.TAXTypeId,
                 Name = taxTypeMaster.Name,
                 IsActive = taxTypeMaster.IsActive,
                 CreatedBy = taxTypeMaster.CreatedBy,
@@ -32,7 +32,7 @@ namespace sms.biz.Map
         {
             return new TaxTypeMaster
             {
-                Id = taxTypeViewModel.Id,
+                TAXTypeId = taxTypeViewModel.TAXTypeId,
                 Name = taxTypeViewModel.Name,
                 IsActive = true,
                 CreatedBy = 1,

@@ -24,20 +24,24 @@ namespace sms.data.Models
         public DateTime InvoiceDate { get; set; }
 
         public string? ShipmentDetails { get; set; }
-        
+        public double? TotalDiscount { get; set; }
+        public float? TotalPaid { get; set; }
         public byte[]? InvoiceCopy { get; set; }
         [Required]
         public DateTime ExpectedDelivery {get; set;}
         public string? TaxNumber { get; set;}
         public float? Cheque {  get; set;}
         public float? Cash {  get; set;}
-        public float? Online { get; set;}
-        public float? Cards {  get; set;}
+        public float? Online { get; set; }
+        public float? Cards { get; set; }
+        public double TotalAmount {  get; set; }
+        public double?TotalTax { get; set; }
         [Required]
         public bool IsCanceled { get; set; }
         [Required]
         public bool IsActive { get; set; }
 
+        public float? TotalMrp { get; set; }
         public int CreatedBy { get; set; }
 
         public DateTime CreatedDate { get; set; }
@@ -49,5 +53,8 @@ namespace sms.data.Models
         public CustomerMaster CustomerMaster { get; set; } = null!;
 
         public CustomerTypeMaster CustomerTypeMaster { get; set; } = null!;
+
+        public List<SalesItemMaster> salesItemMasters { get; set; }
+
     }
 }

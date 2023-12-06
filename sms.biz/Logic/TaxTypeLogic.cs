@@ -26,7 +26,7 @@ namespace sms.biz.Logic
 
         public TaxTypeViewModel GetTaxType(int id)
         {
-            return TaxTypeMap.GetAllTaxtype(_context.TaxTypeMaster.FirstOrDefault(x=>x.Id==id));
+            return TaxTypeMap.GetAllTaxtype(_context.TaxTypeMaster.FirstOrDefault(x=>x.TAXTypeId == id));
         }
 
         public int AddTaxType(TaxTypeViewModel item)
@@ -36,12 +36,12 @@ namespace sms.biz.Logic
             var entityEntry = _context.TaxTypeMaster.Add(salesMaster);
             _context.SaveChanges();
 
-            return entityEntry.Entity.Id;
+            return entityEntry.Entity.TAXTypeId;
         }
 
         public bool DeleteTaxType(int id)
         {
-            var taxtype = _context.TaxTypeMaster.FirstOrDefault(x => x.Id == id);
+            var taxtype = _context.TaxTypeMaster.FirstOrDefault(x => x.TAXTypeId == id);
             if (taxtype != null)
             {
                 taxtype.IsActive = false;
@@ -56,7 +56,7 @@ namespace sms.biz.Logic
         {
             using (var context = _context)
             {
-                var TaxType = _context.TaxTypeMaster.FirstOrDefault(x=>x.Id == item.Id);
+                var TaxType = _context.TaxTypeMaster.FirstOrDefault(x=>x.TAXTypeId == item.TAXTypeId);
 
                 if (TaxType != null)
                 {

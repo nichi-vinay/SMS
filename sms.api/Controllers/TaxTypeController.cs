@@ -57,21 +57,21 @@ namespace sms.api.Controllers
             {
                 return BadRequest(model);
             }
-            if (model.Id > 0)
+            if (model.TAXTypeId > 0)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             }
-            if (_taxTypeLogic.GetAllTaxType().FirstOrDefault(u => u.Id == model.Id) != null)
+            if (_taxTypeLogic.GetAllTaxType().FirstOrDefault(u => u.TAXTypeId == model.TAXTypeId) != null)
             {
                 ModelState.AddModelError("", "Taxtype already Exists!");
                 return BadRequest(ModelState);
             }
-            if (model.Id == 0)
+            if (model.TAXTypeId == 0)
             {
                 int id = _taxTypeLogic.AddTaxType(model);
             }
-            return CreatedAtRoute("GetTaxType", new { id = model.Id }, model);
+            return CreatedAtRoute("GetTaxType", new { id = model.TAXTypeId }, model);
         }
 
         [HttpPut("{id:int}", Name = "UpdateTaxType")]
@@ -80,7 +80,7 @@ namespace sms.api.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult UpdateTaxType(int id, [FromBody] TaxTypeViewModel model)
         {
-            if (model.Id == null || id != model.Id)
+            if (model.TAXTypeId == null || id != model.TAXTypeId)
             {
                 return BadRequest(ModelState);
             }

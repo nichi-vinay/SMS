@@ -29,7 +29,7 @@ namespace sms.biz.Map
                             ShipmentDetails = pm.ShipmentDetails,
                             SupplierName = pm.VendorMaster.Name,
                             TotalAmount = pm.TotalAmount,
-                            DiscountPercentage = pi.DiscountPercentage
+                            TotalDiscount = pm.TotalDiscount
                         };
 
             return query.FirstOrDefault();

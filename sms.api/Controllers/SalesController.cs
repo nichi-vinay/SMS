@@ -48,6 +48,9 @@ namespace sms.api.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<SalesViewModel> CreateSalesItem([FromBody] SalesViewModel model)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -68,7 +71,7 @@ namespace sms.api.Controllers
             }
             if (model.Id == 0)
             {
-                int id = salesLogic.AddSales(model);
+                int id = salesLogic.AddSales(model,model.SalesItems);
             }
             return CreatedAtRoute("GetSales", new { id = model.Id }, model);
         }
@@ -83,7 +86,7 @@ namespace sms.api.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var Sales = salesLogic.UpdateSales(model);
+            var Sales = salesLogic.UpdateSales(model,model.SalesItems);
             return Ok(Sales);
         }
 

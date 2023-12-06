@@ -14,6 +14,7 @@ namespace sms.viewmodels
         public int Id { get; set; }
         public int SalesmasterId { get; set; }
         public int ItemID { get; set; }
+        public int TaxTypeID { get; set; }
         public int Quantity { get; set; }
         public double Mrp { get; set; }
         public double? DiscountPercentage { get; set; }
