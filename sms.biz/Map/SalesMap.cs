@@ -16,6 +16,7 @@ namespace sms.biz.Map
         {
             var query = context.SalesMaster
          .Include(sm => sm.salesItemMasters)
+         .Include(sim =>sim.SalesTransactionsMaster)
          .Where(sm => sm.Id == salesMaster.Id);
             var result = query.Select(sm=>new  SalesViewModel
             {
@@ -28,14 +29,14 @@ namespace sms.biz.Map
                 totaltax   = sm.TotalTax,
                 TotaDiscount = sm.TotalDiscount,
                 TotalMRP = sm.TotalMrp,
-                TotalPaid = sm.TotalPaid,
+                TotalPaid = sm.SalesTransactionsMaster.TotalPaid,
                 TotalAmount = sm.TotalAmount,
                 ShipmentDetails = sm.ShipmentDetails,
                 ExpectedDelivery = sm.ExpectedDelivery,
-                Cards = sm.Cards,
-                Cash= sm.Cash,
-                Cheque= sm.Cheque,
-                Online= sm.Online,
+                Cards = sm.SalesTransactionsMaster.Cards,
+                Cash= sm.SalesTransactionsMaster.Cash,
+                Cheque= sm.SalesTransactionsMaster.Cheque,
+                Online= sm.SalesTransactionsMaster.Online,
                 IsActive= sm.IsActive,
                 IsCanceled= sm.IsCanceled,
                 TaxNumber = sm.TaxNumber,
@@ -47,7 +48,7 @@ namespace sms.biz.Map
                     TaxTypeID=si.TaxTypeID,
                     Quantity=si.Quantity,
                     Mrp = si.Mrp,
-                    DiscountPercentage=si.DiscountPercentage,
+                    TaxPercentage =si.TaxPercentage,
                     TotalPrice=si.TotalPrice,
                     Barcode=si.Barcode,
                 }).ToList(),
@@ -85,19 +86,14 @@ namespace sms.biz.Map
                 CustomerId = salesMaster.CustomerId,
                 customerTypeMasterId = salesMaster.customerTypeMasterId,
                 InvoiceNumber = formattedInvoiceNumber,
-                InvoiceDate = salesMaster.InvoiceDate,
+                InvoiceDate = DateTime.Today,
                 ShipmentDetails = salesMaster.ShipmentDetails,
                 TotalDiscount = salesMaster.TotaDiscount,
                 TaxNumber = salesMaster.TaxNumber,
-                TotalAmount = salesMaster.TotalAmount,
-                TotalPaid = salesMaster.TotalPaid,
+                TotalAmount = salesMaster.TotalAmount,              
                 TotalTax = salesMaster.totaltax,
                 InvoiceCopy = salesMaster.InvoiceCopy,
                 ExpectedDelivery = salesMaster.ExpectedDelivery,
-                Cheque = salesMaster.Cheque,
-                Cash = salesMaster.Cash,
-                Cards = salesMaster.Cards,
-                Online = salesMaster.Online,
                 IsActive = true,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now,
@@ -105,27 +101,39 @@ namespace sms.biz.Map
                 TotalMrp = salesMaster.TotalMRP
 
             };
+          
             var savedSalesMaster = context.SalesMaster.Add(salesMasters);
             context.SaveChanges();
             int newSalesMasterId = savedSalesMaster.Entity.Id;
-
+           
             var SalesItemMaster = SalesItem.Select(item => new SalesItemMaster
             {
                 SalesmasterId = newSalesMasterId,
                 ItemID = item.ItemID,
                 TaxTypeID = item.TaxTypeID,
                 Quantity = item.Quantity,
-                Mrp= item.Mrp,
-                DiscountPercentage = item.DiscountPercentage,
+                Mrp = item.Mrp,
+                TaxPercentage = item.TaxPercentage,
                 TotalPrice = item.TotalPrice,
                 Barcode = item.Barcode,
                 IsActive = true,
-                CreatedBy =1,
+                CreatedBy = 1,
                 CreatedDate = System.DateTime.Now
 
             }).ToList();
-
             salesMasters.salesItemMasters = SalesItemMaster;
+            var salesTransaction = new SalesTransactionsMaster
+            {
+                Cards = salesMaster.Cards,
+                Cash = salesMaster.Cash,
+                Cheque = salesMaster.Cheque,
+                Online = salesMaster.Online,
+                TotalPaid = salesMaster.TotalPaid,
+                SalesmasterId = newSalesMasterId,
+                CreatedBy = 1,
+                CreatedDate = System.DateTime.Now
+            };
+            salesMasters.SalesTransactionsMaster = salesTransaction;
             return salesMasters;
 
         }

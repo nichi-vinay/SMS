@@ -10,14 +10,14 @@ namespace sms.biz.Map
 {
     public static class OrderItemMap
     {
-        public static OrderItemViewModel GetAllOrderItem(this OrderItmeMaster orderItmeMaster)
+        public static OrderItemViewModel GetAllOrderItem(this OrderItemMaster orderItmeMaster)
         {
             OrderItemViewModel orderItemViewModel = new OrderItemViewModel()
             {
                 Id = orderItmeMaster.Id,
                 OrderMasterId = orderItmeMaster.OrderMasterId,
                 ItemID = orderItmeMaster.ItemID,
-                IsProcessed = orderItmeMaster.IsProcessed,
+                //IsProcessed = orderItmeMaster.IsProcessed,
                 IsActive = orderItmeMaster.IsActive,
                 CreatedBy = orderItmeMaster.CreatedBy,
                 CreatedDate = orderItmeMaster.CreatedDate
@@ -25,19 +25,19 @@ namespace sms.biz.Map
             return orderItemViewModel;
         }
 
-        public static List<OrderItemViewModel>MapGetOrderItem(this List<OrderItmeMaster> orderItmeMasterList)
+        public static List<OrderItemViewModel>MapGetOrderItem(this List<OrderItemMaster> orderItmeMasterList)
         {
             return orderItmeMasterList.Select(x=>x.GetAllOrderItem()).ToList();    
         }
 
-        public static OrderItmeMaster MapCreateOrderItem(this OrderItemViewModel orderItemViewModel)
+        public static OrderItemMaster MapCreateOrderItem(this OrderItemViewModel orderItemViewModel)
         {
-            return new OrderItmeMaster
+            return new OrderItemMaster
             {
                 Id = orderItemViewModel.Id,
                 OrderMasterId = orderItemViewModel.OrderMasterId,
                 ItemID = orderItemViewModel.ItemID,
-                IsProcessed = orderItemViewModel.IsProcessed,
+                //IsProcessed = orderItemViewModel.IsProcessed,
                 IsActive = true,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now

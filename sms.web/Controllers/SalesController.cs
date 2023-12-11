@@ -17,5 +17,11 @@ namespace sms.web.Controllers
         {
             return View();
         }
+
+        public IActionResult Views()
+        {
+            // Your logic to retrieve and display the data for the view
+            return View();
+        }
     }
 }

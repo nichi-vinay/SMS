@@ -31,7 +31,7 @@ namespace sms.biz.Logic
 
         public int  AddOrderItem(OrderItemViewModel orderItem)
         {
-            OrderItmeMaster orderItmeMaster = OrderItemMap.MapCreateOrderItem(orderItem);
+            OrderItemMaster orderItmeMaster = OrderItemMap.MapCreateOrderItem(orderItem);
 
             var EntityEntry = _applicationDbContext.OrderItmeMaster.Add(orderItmeMaster);
             _applicationDbContext.SaveChanges();
@@ -57,7 +57,7 @@ namespace sms.biz.Logic
             {
                 items.OrderMasterId = item.OrderMasterId;
                 items.ItemID = item.ItemID;
-                items.IsProcessed = item.IsProcessed;
+                //items.IsProcessed = item.IsProcessed;
                 items.IsActive = true;
                 _applicationDbContext.SaveChanges();
                 return true;

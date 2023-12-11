@@ -62,7 +62,7 @@
                         <div class="form-group">
                             <label>Invoice Date</label>
                             <div class="input-group date" data-target-input="nearest">
-                                <input id="InvoiceDate" type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" />
+                                <input id="InvoiceDate" type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" disabled/>
                                 <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                 </div>
@@ -109,7 +109,7 @@
                                     <th>Rate</th>
                                     <th>Tax Type</th>
                                    
-                                    <th>Discount Price</th>
+                                    <th>GST %</th>
                                     <th>Total Price</th>
                                 </tr>
                             </thead>
@@ -149,16 +149,17 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label>Total Discount Price</label>
-                                        <input id="TotalDiscount" type="text" class="form-control" placeholder="Enter ..." oninput="updateTotalDiscount()">
+                                        <label>Total Tax</label>
+                                        <input id="TotalDiscount" type="text" class="form-control" placeholder="Enter ..." oninput="updatePayableAmount()">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label>Total Tax</label>
-                                        <input id="TotalTax" type="text" class="form-control" placeholder="Enter ..." oninput="updatePayableAmount()">
+                                        <label>Total Discount Price</label>
+                                        <input id="TotalTax" type="text" class="form-control" placeholder="Enter ..." oninput="updateTotalDiscount()">
                                     </div>
                                 </div>
+                            
 
                                 <div class="col-6">
                                     <div class="form-group">

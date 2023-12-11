@@ -54,8 +54,9 @@ namespace sms.biz.Logic
         public bool UpdateSales(SalesViewModel item, List<SalesItemViewModel> SalesItem)
         {
             var existingSalesMaster = _applicationDbContext.SalesMaster
-                .Include(sm => sm.salesItemMasters)
-                .FirstOrDefault(x => x.Id == item.Id);
+    .Include(sm => sm.salesItemMasters)
+    .Include(sm => sm.SalesTransactionsMaster) // Include SalesTransactionsMaster here
+    .FirstOrDefault(x => x.Id == item.Id);
 
             if (existingSalesMaster != null)
             {
@@ -66,10 +67,12 @@ namespace sms.biz.Logic
                 existingSalesMaster.InvoiceDate = item.InvoiceDate;
                 existingSalesMaster.InvoiceNumber = item.InvoiceNumber;
                 existingSalesMaster.ShipmentDetails = item.ShipmentDetails;
-                existingSalesMaster.Cards = item.Cards;
-                existingSalesMaster.Cash = item.Cash;
-                existingSalesMaster.Cheque = item.Cheque;
-                existingSalesMaster.Online = item.Online;
+                existingSalesMaster.SalesTransactionsMaster.SalesmasterId = item.Id;
+                existingSalesMaster.SalesTransactionsMaster.Cards = item.Cards;
+                existingSalesMaster.SalesTransactionsMaster.Cash = item.Cash;
+                existingSalesMaster.SalesTransactionsMaster.Cheque = item.Cheque;
+                existingSalesMaster.SalesTransactionsMaster.Online = item.Online;
+                existingSalesMaster.SalesTransactionsMaster.TotalPaid = item.TotalPaid;
                 existingSalesMaster.TaxNumber = item.TaxNumber;
                 existingSalesMaster.ExpectedDelivery = item.ExpectedDelivery;
                 existingSalesMaster.IsCanceled = item.IsCanceled;
@@ -87,7 +90,7 @@ namespace sms.biz.Logic
                         existingSalesItem.TaxTypeID = salesItem.TaxTypeID;
                         existingSalesItem.Quantity = salesItem.Quantity;
                         existingSalesItem.Mrp = salesItem.Mrp;
-                        existingSalesItem.DiscountPercentage = salesItem.DiscountPercentage;
+                        existingSalesItem.TaxPercentage = salesItem.TaxPercentage;
                         existingSalesItem.TotalPrice = salesItem.TotalPrice;
                         existingSalesItem.Barcode = salesItem.Barcode;
                         existingSalesItem.IsActive = true;
@@ -104,7 +107,7 @@ namespace sms.biz.Logic
                             TaxTypeID = salesItem.TaxTypeID,
                             Quantity = salesItem.Quantity,
                             Mrp = salesItem.Mrp,
-                            DiscountPercentage = salesItem.DiscountPercentage,
+                            TaxPercentage = salesItem.TaxPercentage,
                             TotalPrice = salesItem.TotalPrice,
                             Barcode = salesItem.Barcode,
                             IsActive = true,

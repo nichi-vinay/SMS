@@ -19,7 +19,7 @@
                         '<td>' + purchase.invoiceDate + '</td>' +
                         '<td>' + purchase.supplierName + '</td>' +
                         '<td>' + purchase.totalAmount + '</td>' +
-                        '<td>' + purchase.discountPercentage + '</td>' +
+                        '<td class="hide-quantity">' + purchase.discountPercentage + '</td>' +
                         '<td>' + calculateTotalPrice(purchase.totalAmount, purchase.discountPercentage) + '</td>' +
                         '<td><a href="#" onclick="editPurchase(' + purchase.id + ')">Edit</a></td>' +
                         '</tr>';

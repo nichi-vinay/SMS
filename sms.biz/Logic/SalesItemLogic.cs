@@ -65,7 +65,7 @@ namespace sms.biz.Logic
                     Salesitem.ItemID = item.ItemID;
                     Salesitem.Quantity = item.Quantity;
                     Salesitem.Mrp = item.Mrp;
-                    Salesitem.DiscountPercentage = item.DiscountPercentage;
+                    Salesitem.TaxPercentage = item.TaxPercentage;
                     Salesitem.TotalPrice = item.TotalPrice;
                     Salesitem.Barcode = item.Barcode;
                     Salesitem.IsActive = true;

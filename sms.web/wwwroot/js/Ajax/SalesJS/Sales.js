@@ -1,6 +1,26 @@
 ﻿$(document).ready(function () {
 
-    var baseUrl = 'Sales/Edit/';
+    // Initialize DataTable
+    var dataTable = $("#example1").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": [
+            'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
+        ]
+    });
+
+    // Initialize DataTables Buttons
+    new $.fn.dataTable.Buttons(dataTable, {
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
+        ]
+    });
+
+    // Append Buttons container to the DataTable wrapper
+    dataTable.buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+    var baseUrl = 'Sales/';
     // Function to fetch and display data in the tableSales
     function loadData() {
         $.ajax({
@@ -9,26 +29,44 @@
             dataType: 'json',
             success: function (data) {
                 console.log(data);
-                // Clear existing table rows
-                $('#TableBody').empty();
+                var tableBody = $('#TableBody');
+                tableBody.empty(); // Clear existing rows
+               
 
                 // Loop through the data and append rows to the table
                 $.each(data, function (index, Sales) {
+                    var buttonText = Sales.isCanceled === false ? 'View' : 'Edit';
+                    var buttonUrl = Sales.isCanceled === false ? baseUrl + 'Views/' + Sales.id : baseUrl + 'Edit/' + Sales.id;
+
                     var row = '<tr>' +
                         '<td>' + Sales.invoiceNumber + '</td>' +
                         '<td>' + Sales.invoiceDate + '</td>' +
-                        '<td>' + Sales.quantity + '</td>' +
+                        '<td class="hide-quantity">' + Sales.quantity + '</td>' +
                         '<td>' + Sales.totalMRP + '</td>' +
                         '<td>' + Sales.totaDiscount + '</td>' +
                         '<td>' + Sales.totalPaid + '</td>' +
-                        '<td><a href="' + baseUrl+Sales.id + '">Edit</a></td>' +
+                        '<td>';
 
+                    if (Sales.isCanceled) {
+                        // Show Delete and Edit buttons
+                        row += '<button class="btn btn-danger delete-button" data-sales-id="' + Sales.id + '">Delete</button>' + 
+                            '<a href="' + baseUrl + 'Edit/' + Sales.id + '" class="btn btn-info">Edit</a>';
+                    } else {
+                        // Show only the View button
+                        row += '<a href="' + baseUrl + 'Views/' + Sales.id + '" class="btn btn-info">View</a>';
+                    }
+
+                    row += '</td>' +
                         '</tr>';
+
                     $('#TableBody').append(row);
                 });
 
+
                 // Initialize DataTable
-                $('#example1').DataTable();
+      
+                // Update DataTable
+                dataTable.clear().rows.add(tableBody.find('tr')).draw();
                 //$(".chosen-select").chosen();
             },
             error: function (error) {
@@ -40,11 +78,6 @@
     loadData();
 });
 
-// Function to handle edit action (replace with your actual edit logic)
-function editSales(id) {
-    var baseUrl = 'https://localhost:7224/api/Sales/';
-    window.location.href = baseUrl + 'Edit/' + id;
-}
 
 var salesId = "";
 ///fetch the values by ID
@@ -114,7 +147,7 @@ function PopulateTaxTypeDropdown(row) {
         error: function (error) {
             console.error('Error fetching item data:', error);
         }
-        });
+    });
 }
 
 function populateItemDropdown(row) {
@@ -147,13 +180,13 @@ function BindItemValues(itemId, ctrl) {
     var items = "";
     if (ctrl == "name") {
         $.each(ItemValues, function (index, item) {
-         
+
             items = items + '<option value="' + item.id + '"> ' + item.itemName + '</option> '
         });
     }
     else {
         $.each(ItemValues, function (index, item) {
-        
+
             items = items + '<option value="' + item.id + '" >' + item.itemNumber + '</option>'
         });
     }
@@ -162,6 +195,7 @@ function BindItemValues(itemId, ctrl) {
 
     return items;
 }
+var SalesItemID = [];
 function getSalesDataById() {
     $.ajax({
         url: 'https://localhost:7224/api/Sales/' + salesId,
@@ -188,15 +222,26 @@ function getSalesDataById() {
             $('#Cards').val(data.cards);
 
             $('#isCanceled').val(data.isCanceled);
-            getSalesItemsData(data.salesItems);
+            var isCanceled = data.isCanceled;
+
+            SalesItemID = [];
+            data.salesItems.forEach(function (salesItem) {
+                if (!SalesItemID.includes(salesItem.id)) {
+                    SalesItemID.push(salesItem.id);
+                }
+            });
+            getSalesItemsData(data.salesItems, isCanceled);
+            console.log("SalesItemID", SalesItemID);
         },
+
         error: function (error) {
             console.log('Error fetching sales data by ID:', error);
         }
+
     });
 }
 
-function getSalesItemsData(salesItems) {
+function getSalesItemsData(salesItems, isCanceled) {
     // Clear existing table rows
     $('#salesItemsTable tbody').empty();
 
@@ -205,44 +250,51 @@ function getSalesItemsData(salesItems) {
         let itemValueOptions = BindItemValues(salesItem.itemID, "name");
         let itemNumberOptions = BindItemValues(salesItem.itemID, "");
         let taxtypeOptions = BindTaxtypeValue(salesItem.taxTypeID, "taxtypppe");
-   
+        let itemnumbers = BindTaxtypeValue(salesItem.id, "id");
+
+        // Check the value of isCanceled to determine if the fields should be disabled
+        var disableFields = isCanceled ? '' : 'disabled'; 
+
         var row = '<tr>' +
-            '<td><select class="form-control select2 itemName item-name-' + salesItem.id+' " style="width: 100%;">' + itemValueOptions + '</select></td>' +
-            '<td><select class="form-control select2 itemNumber item-number-' + salesItem.id +'" style="width: 100%;">' + itemNumberOptions + '</select></td>' +
-            '<td><input type="number" class="form-control" name="barcode[]" value="' + salesItem.barcode + '"></td>' +
-            '<td><input type="number" class="form-control" name="quantity[]" value="' + salesItem.quantity + '"></td>' +
-            '<td><input type="number" class="form-control" name="mrp[]" value="' + salesItem.mrp + '"></td>' +
-            '<td><select class="form-control select2 taxtypename taxtype-name-' + salesItem.id + ' " style="width: 100%;">' + taxtypeOptions +'</select></td>' +
-            '<td><input type="number" class="form-control" name="discount_percentage[]" value="' + salesItem.discountPercentage + '"></td>' +
-            '<td><input type="number" class="form-control" name="total_price[]" value="' + salesItem.totalPrice + '"></td>' +
+            '<td style="display:none"><input type="number" class="form-control" name="id[]" value="' + salesItem.id + '" ' + disableFields + '>' + itemnumbers + '</select></td>' +
+            '<td><select class="form-control select2 itemName item-name-' + salesItem.id + ' " style="width: 100%;" ' + disableFields + '>' + itemValueOptions + '</select></td>' +
+            '<td><select class="form-control select2 itemNumber item-number-' + salesItem.id + '" style="width: 100%;" ' + disableFields + '>' + itemNumberOptions + '</select></td>' +
+            '<td><input type="number" class="form-control" name="barcode[]" value="' + salesItem.barcode + '" ' + disableFields + '></td>' +
+            '<td><input type="number" class="form-control" name="quantity[]" value="' + salesItem.quantity + '" ' + disableFields + '></td>' +
+            '<td><input type="number" class="form-control" name="mrp[]" value="' + salesItem.mrp + '" ' + disableFields + '></td>' +
+            '<td><select class="form-control select2 taxtypename taxtype-name-' + salesItem.id + ' " style="width: 100%;" ' + disableFields + '>' + taxtypeOptions + '</select></td>' +
+            '<td><input type="number" class="form-control" name="discount_percentage[]" value="' + salesItem.discountPercentage + '" ' + disableFields + '></td>' +
+            '<td><input type="number" class="form-control" name="total_price[]" value="' + salesItem.totalPrice + '" ' + disableFields + '></td>' +
             '</tr>';
         $('#salesItemsTable tbody').append(row);
-        $(".item-name-" + salesItem.id + "").val(salesItem.itemID); // Select the option with a value of '1'
+        $(".item-name-" + salesItem.id + "").val(salesItem.itemID);
         $(".item-name-" + salesItem.id + "").trigger('change');
-
 
         $(".taxtype-name-" + salesItem.id + "").val(salesItem.taxTypeID);
         $(".taxtype-name-" + salesItem.id + "").trigger('change');
 
-        $(".item-number-" + salesItem.id + "").val(salesItem.itemID); // Select the option with a value of '1'
+        $(".item-number-" + salesItem.id + "").val(salesItem.itemID);
         $(".item-number-" + salesItem.id + "").trigger('change');
 
-
-    
         console.log("Row", row);
     });
 
     // Initialize Select2 for dynamically added elements
     $('.select2').select2();
     console.log("Slaes", salesItems);
-
 }
+
 $(document).ready(function () {
     populateItemDropdown();
 });
+
 $(document).ready(function () {
     PopulateTaxTypeDropdown();
 });
+
+
+
+
 
 
 $('#salesItemsTable tbody').on('keydown', 'tr:last input[name="total_price[]"]', function (e) {
@@ -269,12 +321,12 @@ function addNewRowToSalesItemsTable() {
     var length = $("#salesItemsTable tbody tr").length + 1;
     if (allFieldsFilled) {
         let newRow = '<tr>' +
-            '<td><select class="form-control select2 itemName" id="item-name-'  + length+'" style = "width: 100%;" ></select></td > ' +
-            '<td><select class="form-control select2 itemNumber " id="item-number-' + length +'" style="width: 100%;"></select></td>' +
+            '<td><select class="form-control select2 itemName" id="item-name-' + length + '" style = "width: 100%;" ></select></td > ' +
+            '<td><select class="form-control select2 itemNumber " id="item-number-' + length + '" style="width: 100%;"></select></td>' +
             '<td><input type="number" class="form-control" name="barcode[]"></td>' +
             '<td><input type="number" class="form-control" name="quantity[]"></td>' +
             '<td><input type="number" class="form-control" name="mrp[]"></td>' +
-            '<td><select class="form-control select2 taxtypename" id="taxtype-name-' + length +'" style="width: 100%;"></select></td>' +
+            '<td><select class="form-control select2 taxtypename" id="taxtype-name-' + length + '" style="width: 100%;"></select></td>' +
             '<td><input type="number" class="form-control" name="discount_percentage[]"></td>' +
             '<td><input type="number" class="form-control" name="total_price[]"></td>' +
             '</tr>';
@@ -284,8 +336,8 @@ function addNewRowToSalesItemsTable() {
         populateItemDropdowns($(newRow), length);
         populateTaxTypeDropdowns($(newRow), length);
     }
-    
-    
+
+
 }
 
 // Function to populate item dropdowns in a row
@@ -303,7 +355,7 @@ function populateItemDropdowns(row, length) {
             $('.itemName').on('input', function () {
                 var selectedItemId = $(this).val();
                 var itemNumberDropdown = $(this).closest('tr').find('.itemNumber');
-               
+
                 $.each(data, function (index, item) {
                     if (item.id == selectedItemId) {
                         itemNumberDropdown.append('<option value="' + item.id + '">' + item.itemNumber + '</option>');
@@ -327,7 +379,7 @@ function populateTaxTypeDropdowns(row, length) {
                 $('#taxtype-name-' + length).append('<option value="' + taxtype.taxTypeId + '">' + taxtype.name + '</option>');
             });
             $('.taxtype-name-').on('input', function () {
-                var selectedItemIds = $(this).val();             
+                var selectedItemIds = $(this).val();
                 selectedItemIds.find('option:selected').val(selectedItemIds);
             });
         },
@@ -339,13 +391,13 @@ function populateTaxTypeDropdowns(row, length) {
 
 $(document).ready(function () {
 
-    $(document).on('change', '.itemName', function ()  {
+    $(document).on('change', '.itemName', function () {
         var selectedItemId = $(this).val();
         var itemNumberDropdown = $(this).closest('tr').find('.itemNumber');
         itemNumberDropdown.val(selectedItemId).change();
     })
 
-   
+
     populateTaxTypeDropdowns();
 
 });
@@ -545,7 +597,16 @@ function serializeForm(isCanceled) {
     var totalMRPArray = []; // Array to store MRP values
     totalPriceArray = [];
     $("#salesItemsTable tbody tr").each(function () {
+        // Check if it's a new sales item
         var item = {
+            //        if($(this).find("[name='id[]']").val() === undefined || $(this).find("[name='id[]']").val() == undefined ){
+            //    id: "0";
+            //}
+            //        else {
+
+            id: $(this).find("[name='id[]']").val() || 0,
+            //   }
+
             itemID: $(this).find(".itemName").val(),
             barcode: $(this).find("[name='barcode[]']").val(),
             quantity: $(this).find("[name='quantity[]']").val(),
@@ -554,6 +615,7 @@ function serializeForm(isCanceled) {
             discountPercentage: $(this).find("[name='discount_percentage[]']").val(),
             totalPrice: $(this).find("[name='total_price[]']").val()
         };
+        var itemid = parseInt(item.id) || 0;
         var mrpValue = parseFloat(item.mrp) || 0;
         var quantity = parseInt(item.quantity) || 1; // Default to 1 if quantity is not provided
         totalMRPArray.push(mrpValue * quantity); // Multiply by quantity
@@ -610,3 +672,54 @@ $("#submitBtn").on("click", function (event) {
     event.preventDefault(); // Prevent the default form submission
     submitForm(false);
 });
+
+$('#TableBody').on('click', '.delete-button', function () {
+    // Get the sales ID from the data-sales-id attribute
+    var salesId = $(this).data('sales-id');
+
+    // Show the delete confirmation modal
+    $('#deleteModal').modal('show');
+
+    // Store the sales ID in a data attribute of the modal for reference
+    $('#deleteModal').data('sales-id', salesId);
+});
+
+$('#confirmDelete').on('click', function () {
+    // Get the sales ID from the data attribute of the modal
+    var salesId = $('#deleteModal').data('sales-id');
+
+    // Perform the deletion logic here (call the deleteSalesRecord function)
+    deleteSalesRecord(salesId);
+
+    // Once the record is deleted, close the modal
+    $('#deleteModal').modal('hide');
+
+    // You can refresh the table or update the UI as needed
+    // For example, you can reload the data by calling the loadData function
+    loadData();
+});
+
+// Function to delete a sales record by salesId
+function deleteSalesRecord(salesId) {
+    // AJAX request to delete the sales record
+    $.ajax({
+        type: 'DELETE',
+        url: 'https://localhost:7224/api/Sales/' + salesId,
+        success: function (response) {
+            // Handle the success response
+            console.log("Success:", response);
+            location.reload();
+        },
+        error: function (xhr, status, error) {
+            // Handle the error response
+            console.log("Error:", xhr);
+            console.log("Status:", status);
+            console.log("Error thrown:", error);
+
+            // Check if there's a responseJSON property containing the server's error details
+            if (xhr.responseJSON) {
+                console.log("Server Error Details:", xhr.responseJSON);
+            }
+        }
+    });
+}

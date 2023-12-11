@@ -75,7 +75,7 @@ $(function () {
 
 
         // Update Payable Amount
-        var payableAmount = totalSum + totalTax;
+        var payableAmount = totalSum - totalTax;
         $("#totalSum").val(payableAmount.toFixed(2));
 
         // Trigger the updateTotalPayment function
@@ -327,7 +327,7 @@ function updatePrice(row) {
     var discountAmount = MRPS * (discountPercentage / 100);
 
     // Calculate the discounted price
-    var discountedPrice = MRPS - discountAmount;
+    var discountedPrice = MRPS + discountAmount;
 
 
     // Calculate the total price
@@ -386,11 +386,15 @@ function updateTotalPayment() {
 }
 
 function serializeForm(isCanceled) {
+    var currentDate = new Date();
+
+    // Format the date as a DateTime string (adjust the format as needed)
+    var formattedDate = currentDate.toLocaleString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit'});
     var formData = {
         customerId: $("#CustomerDropDown").val(),
         customerTypeMasterId: $("#CustomerTypeDropDown").val(),
         invoiceNumber: $("#invoiceNumber").val(),
-        invoiceDate: $("#InvoiceDate").val(),
+        invoiceDate: currentDate,
         shipmentDetails: $("#ShipmentDetails").val(),
         totaltax: $("#TotalTax").val(),
         isCanceled: isCanceled,

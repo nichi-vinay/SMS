@@ -19,7 +19,9 @@ namespace sms.data.Models
         [Required]
         [ForeignKey("OrderTypeMaster")]
         public int OrderTypeId { get; set; }
-        
+
+
+
         [Required]
         public string OrderName { get; set; } = null!;
         [Required]
@@ -33,6 +35,9 @@ namespace sms.data.Models
         [Required]
         public bool IsActive { get; set; }
 
+        [Required]
+        public bool IsSubmitted { get; set; }
+
         public int CreatedBy { get; set; }
 
         public DateTime CreatedDate { get; set; }
@@ -44,5 +49,9 @@ namespace sms.data.Models
         public VendorMaster VendorMaster { get; set; } = null!;
 
         public OrderTypeMaster OrderTypeMaster { get; set; } = null!;
+
+        public List<OrderItemMaster> orderItemMasters { get; set; }
+
+
     }
 }

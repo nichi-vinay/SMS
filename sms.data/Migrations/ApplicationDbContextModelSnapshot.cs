@@ -51,21 +51,21 @@ namespace sms.data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "54a52ebc-8a81-4793-9070-09ff3fdcbfea",
+                            Id = "14aea3bf-b1fa-4815-b265-df8b19a59f4a",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "4c2ed5ab-897e-4f5e-8520-548937db110e",
+                            Id = "d2576e6c-b3c1-46cd-9b4d-c77ab51c2653",
                             ConcurrencyStamp = "3",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "65bc46f4-6711-4fcf-b931-b2b75013fc3e",
+                            Id = "52d25c94-0132-438c-a96e-d32271fd898e",
                             ConcurrencyStamp = "2",
                             Name = "Executive",
                             NormalizedName = "Executive"
@@ -510,7 +510,7 @@ namespace sms.data.Migrations
                     b.ToTable("ItemMaster");
                 });
 
-            modelBuilder.Entity("sms.data.Models.OrderItmeMaster", b =>
+            modelBuilder.Entity("sms.data.Models.OrderItemMaster", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -527,9 +527,6 @@ namespace sms.data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsProcessed")
-                        .HasColumnType("bit");
-
                     b.Property<int>("ItemID")
                         .HasColumnType("int");
 
@@ -541,6 +538,10 @@ namespace sms.data.Migrations
 
                     b.Property<int>("OrderMasterId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Quantity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -569,6 +570,9 @@ namespace sms.data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsCancelled")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSubmitted")
                         .HasColumnType("bit");
 
                     b.Property<int?>("ModifiedBy")
@@ -932,15 +936,6 @@ namespace sms.data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<float?>("Cards")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("Cash")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("Cheque")
-                        .HasColumnType("real");
-
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
@@ -975,9 +970,6 @@ namespace sms.data.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<float?>("Online")
-                        .HasColumnType("real");
-
                     b.Property<string>("ShipmentDetails")
                         .HasColumnType("nvarchar(max)");
 
@@ -993,9 +985,6 @@ namespace sms.data.Migrations
                     b.Property<float?>("TotalMrp")
                         .HasColumnType("real");
 
-                    b.Property<float?>("TotalPaid")
-                        .HasColumnType("real");
-
                     b.Property<double?>("TotalTax")
                         .HasColumnType("float");
 
@@ -1009,6 +998,52 @@ namespace sms.data.Migrations
                     b.HasIndex("customerTypeMasterId");
 
                     b.ToTable("SalesMaster");
+                });
+
+            modelBuilder.Entity("sms.data.Models.SalesTransactionsMaster", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<float?>("Cards")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("Cash")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("Cheque")
+                        .HasColumnType("real");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<float?>("Online")
+                        .HasColumnType("real");
+
+                    b.Property<int>("SalesmasterId")
+                        .HasColumnType("int");
+
+                    b.Property<float?>("TotalPaid")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SalesmasterId")
+                        .IsUnique();
+
+                    b.ToTable("SalesTransactions");
                 });
 
             modelBuilder.Entity("sms.data.Models.TaxTypeMaster", b =>
@@ -1208,7 +1243,7 @@ namespace sms.data.Migrations
                     b.Navigation("UnitTypeMaster");
                 });
 
-            modelBuilder.Entity("sms.data.Models.OrderItmeMaster", b =>
+            modelBuilder.Entity("sms.data.Models.OrderItemMaster", b =>
                 {
                     b.HasOne("sms.data.Models.ItemMaster", "ItemMaster")
                         .WithMany()
@@ -1217,7 +1252,7 @@ namespace sms.data.Migrations
                         .IsRequired();
 
                     b.HasOne("sms.data.Models.OrderMaster", "OrderMaster")
-                        .WithMany()
+                        .WithMany("orderItemMasters")
                         .HasForeignKey("OrderMasterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1352,6 +1387,17 @@ namespace sms.data.Migrations
                     b.Navigation("CustomerTypeMaster");
                 });
 
+            modelBuilder.Entity("sms.data.Models.SalesTransactionsMaster", b =>
+                {
+                    b.HasOne("sms.data.Models.SalesMaster", "SalesMaster")
+                        .WithOne("SalesTransactionsMaster")
+                        .HasForeignKey("sms.data.Models.SalesTransactionsMaster", "SalesmasterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SalesMaster");
+                });
+
             modelBuilder.Entity("sms.data.Models.VendorMaster", b =>
                 {
                     b.HasOne("sms.data.Models.TaxTypeMaster", "TaxTypeMaster")
@@ -1363,6 +1409,11 @@ namespace sms.data.Migrations
                     b.Navigation("TaxTypeMaster");
                 });
 
+            modelBuilder.Entity("sms.data.Models.OrderMaster", b =>
+                {
+                    b.Navigation("orderItemMasters");
+                });
+
             modelBuilder.Entity("sms.data.Models.PurchaseMaster", b =>
                 {
                     b.Navigation("purchaseItemMasters");
@@ -1370,6 +1421,9 @@ namespace sms.data.Migrations
 
             modelBuilder.Entity("sms.data.Models.SalesMaster", b =>
                 {
+                    b.Navigation("SalesTransactionsMaster")
+                        .IsRequired();
+
                     b.Navigation("salesItemMasters");
                 });
 #pragma warning restore 612, 618

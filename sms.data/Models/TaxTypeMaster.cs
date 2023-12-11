@@ -23,5 +23,6 @@ namespace sms.data.Models
         public DateTime? ModifiedDate { get; set; }
 
         public int? ModifiedBy { get; set; }
+
     }
 }

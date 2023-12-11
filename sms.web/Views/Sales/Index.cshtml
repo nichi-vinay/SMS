@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | DataTables</title>
-
+    <!-- Add Pikaday CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -17,7 +18,20 @@
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
+    <style>
+        .hide-quantity {
+            display: none;
+        },
+        .form-check {
+            margin-top: 30px; /* Adjust the value as needed */
+        }
 
+        /* Add some styles to the datepicker input */
+        #datepicker {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -27,13 +41,17 @@
                 <div class="col-lg-2">
                     <label for="selectBox" style="margin-top: 40px;">Sales List</label>
                 </div>
-                <div class="col-lg-2" style="margin-left: 20px;">
-                    <label for="datepicker">From Date</label>
-                    <input type="text" id="datepicker" class="form-control" style="width: 100%;" placeholder="Select a date">
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label for="datepicker">Select a Date:</label>
+                        <input type="text" id="datepicker" placeholder="Select a date" class="form-control">
+                    </div>
                 </div>
-                <div class="col-lg-2" style="margin-left: 20px;">
-                    <label for="datepicker">To Date</label>
-                    <input type="text" id="datepicker" class="form-control" style="width: 100%;" placeholder="Select a date">
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label for="datepicker">Select a Date:</label>
+                        <input type="text" id="datepicker" placeholder="Select a date" class="form-control">
+                    </div>
                 </div>
                 <div class="col-lg-5 text-right">
                     <a href="@Url.Action("Create", "Sales")" class="btn btn-info">
@@ -53,7 +71,7 @@
                     <tr>
                         <th>Invoice Number</th>
                         <th>Invoice Date</th>
-                        <th>Quantity</th>
+                        <th class="hide-quantity">Quantity</th>
                         <th>Total MRP</th>
                         <th>Total Discount</th>
                         <th>Total Paid</th>
@@ -68,10 +86,31 @@
         </div>
     </div>
     
+  @*  Delete Model popup  *@
+    <div class="modal fade" id="deleteModal" aria-modal="true" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Confirmation</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this record?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
     <!-- /.content -->
+
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -89,25 +128,30 @@
     <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 
-    <script src="~/js/ajax/salesjs/sales.js"></script>
+    <!-- Add Pikaday and Moment.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+    <script src="~/js/ajax/salesjs/sales.js?version=0.02"></script>
     <script src="~/js/ajax/salesjs/addsalesitem.js"></script>
     <!-- Include your JavaScript file and set the edit URL as a data attribute -->
     <script src="~/js/ajax/salesjs/editsales.js" data-edit-url="@Url.Action("Edit", "Sales")"></script>
-
+    @* //<script src="~/js/ajax/salesjs/editsales.js" data-edit-url="@Url.Action("Views", "Sales")"></script> *@
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-        $(function () {
-            $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Pikaday
+            var picker = new Pikaday({
+                field: document.getElementById('datepicker'),
+                format: 'MM/DD/YYYY', // Set the desired date format
+                yearRange: [1900, moment().year()], // Set the range of years
+                showYearDropdown: true, // Show a dropdown for selecting years
+            });
         });
 
     </script>

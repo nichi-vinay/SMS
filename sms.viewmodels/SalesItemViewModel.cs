@@ -17,7 +17,7 @@ namespace sms.viewmodels
         public int TaxTypeID { get; set; }
         public int Quantity { get; set; }
         public double Mrp { get; set; }
-        public double? DiscountPercentage { get; set; }
+        public double? TaxPercentage { get; set; }
         public double TotalPrice { get; set; }
        
         public string Barcode { get; set; }

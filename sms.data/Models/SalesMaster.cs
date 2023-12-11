@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -25,15 +26,12 @@ namespace sms.data.Models
 
         public string? ShipmentDetails { get; set; }
         public double? TotalDiscount { get; set; }
-        public float? TotalPaid { get; set; }
+     
         public byte[]? InvoiceCopy { get; set; }
         [Required]
         public DateTime ExpectedDelivery {get; set;}
         public string? TaxNumber { get; set;}
-        public float? Cheque {  get; set;}
-        public float? Cash {  get; set;}
-        public float? Online { get; set; }
-        public float? Cards { get; set; }
+      
         public double TotalAmount {  get; set; }
         public double?TotalTax { get; set; }
         [Required]
@@ -53,6 +51,7 @@ namespace sms.data.Models
         public CustomerMaster CustomerMaster { get; set; } = null!;
 
         public CustomerTypeMaster CustomerTypeMaster { get; set; } = null!;
+        public SalesTransactionsMaster SalesTransactionsMaster { get; set; }
 
         public List<SalesItemMaster> salesItemMasters { get; set; }
 
