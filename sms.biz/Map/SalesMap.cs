@@ -16,7 +16,7 @@ namespace sms.biz.Map
         {
             var query = context.SalesMaster
          .Include(sm => sm.salesItemMasters)
-         .Include(sim =>sim.SalesTransactionsMaster)
+         .Include(sim =>sim.SalesTransactionsMasters)
          .Where(sm => sm.Id == salesMaster.Id);
             var result = query.Select(sm=>new  SalesViewModel
             {
@@ -24,19 +24,16 @@ namespace sms.biz.Map
                 CustomerId = sm.CustomerId,
                 customerTypeMasterId = sm.customerTypeMasterId,
                 InvoiceCopy = sm.InvoiceCopy,
-                InvoiceDate = sm.InvoiceDate,
+                InvoiceDate = sm.InvoiceDate.ToString("dd-MM-yyyy"),
                 InvoiceNumber = sm.InvoiceNumber,
                 totaltax   = sm.TotalTax,
                 TotaDiscount = sm.TotalDiscount,
                 TotalMRP = sm.TotalMrp,
-                TotalPaid = sm.SalesTransactionsMaster.TotalPaid,
+            
                 TotalAmount = sm.TotalAmount,
                 ShipmentDetails = sm.ShipmentDetails,
-                ExpectedDelivery = sm.ExpectedDelivery,
-                Cards = sm.SalesTransactionsMaster.Cards,
-                Cash= sm.SalesTransactionsMaster.Cash,
-                Cheque= sm.SalesTransactionsMaster.Cheque,
-                Online= sm.SalesTransactionsMaster.Online,
+                ExpectedDelivery = sm.ExpectedDelivery.ToString("dd-MM-yyyy"),
+          
                 IsActive= sm.IsActive,
                 IsCanceled= sm.IsCanceled,
                 TaxNumber = sm.TaxNumber,
@@ -52,8 +49,17 @@ namespace sms.biz.Map
                     TotalPrice=si.TotalPrice,
                     Barcode=si.Barcode,
                 }).ToList(),
+                SalesTransactions =sm.SalesTransactionsMasters.Select(ss=>new SalesTransactionViewModel
 
-
+                {
+                    Id = ss.Id,
+                    SalesmasterId = ss.SalesmasterId,
+                    Cards = ss.Cards,
+                    Cash = ss.Cash,
+                    Cheque = ss.Cheque,
+                    Online = ss.Online,
+                    TotalPaid = ss.TotalPaid
+                }).ToList()
 
             }).FirstOrDefault();
         
@@ -67,7 +73,7 @@ namespace sms.biz.Map
             return salesMasterList.Select(x => x.GetAllSales(context)).ToList();
         }
 
-        public static SalesMaster MapCreateSales(this SalesViewModel salesMaster, List<SalesItemViewModel> SalesItem,ApplicationDbContext context)
+        public static SalesMaster MapCreateSales(this SalesViewModel salesMaster, List<SalesItemViewModel> SalesItem,ApplicationDbContext context,List<SalesTransactionViewModel>salesTransactionViews)
         {
             string latestInvoiceNumber = context.SalesMaster
         .Where(x => x.IsActive)
@@ -93,7 +99,7 @@ namespace sms.biz.Map
                 TotalAmount = salesMaster.TotalAmount,              
                 TotalTax = salesMaster.totaltax,
                 InvoiceCopy = salesMaster.InvoiceCopy,
-                ExpectedDelivery = salesMaster.ExpectedDelivery,
+                ExpectedDelivery = Convert.ToDateTime(salesMaster.ExpectedDelivery),
                 IsActive = true,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now,
@@ -122,18 +128,18 @@ namespace sms.biz.Map
 
             }).ToList();
             salesMasters.salesItemMasters = SalesItemMaster;
-            var salesTransaction = new SalesTransactionsMaster
+            var salesTransaction = salesTransactionViews.Select(i=>new SalesTransactionsMaster
             {
-                Cards = salesMaster.Cards,
-                Cash = salesMaster.Cash,
-                Cheque = salesMaster.Cheque,
-                Online = salesMaster.Online,
-                TotalPaid = salesMaster.TotalPaid,
+                Cards = i.Cards,
+                Cash = i.Cash,
+                Cheque = i.Cheque,
+                Online = i.Online,
+                TotalPaid = i.TotalPaid,
                 SalesmasterId = newSalesMasterId,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now
-            };
-            salesMasters.SalesTransactionsMaster = salesTransaction;
+            }).ToList();
+            salesMasters.SalesTransactionsMasters = salesTransaction;
             return salesMasters;
 
         }

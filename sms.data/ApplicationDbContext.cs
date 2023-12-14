@@ -44,6 +44,7 @@ namespace sms.data
 
         public virtual DbSet<OrderTypeMaster> OrderTypeMaster { get; set; }
 
+        public virtual DbSet<PurchaseTransactionsMaster>Purchasetransaction {  get; set; }
         public virtual DbSet<PurchaseItemMaster> PurchaseItemMaster { get; set; }
 
         public virtual DbSet<PurchaseMaster> PurchaseMaster { get; set; }
@@ -67,6 +68,8 @@ namespace sms.data
         public virtual DbSet<VendorMaster> VendorMaster { get; set; }
 
         public virtual DbSet<BarcodeMaster> BarcodeMaster { get; set; }
+
+        public virtual DbSet<CompanyInfo> CompanyInfos { get; set; }
 
     }
 }

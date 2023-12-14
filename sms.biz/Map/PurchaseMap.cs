@@ -15,24 +15,50 @@ namespace sms.biz.Map
        
         public static PurchaseViewModel GetPurchaseDetails(this PurchaseMaster purchaseMaster, ApplicationDbContext context)
         {
-            var query = from pm in context.PurchaseMaster
-                        join pi in context.PurchaseItemMaster on pm.Id equals pi.PurchasemasterId
-                        where pm.Id == purchaseMaster.Id
-                        select new PurchaseViewModel
-                        {
-                            Id = pm.Id,
-                            InvoiceNumber = pm.InvoiceNumber,
-                            VendorId = pm.VendorId,
-                            InvoiceDate = pm.InvoiceDate,
-                            IsActive = pm.IsActive,
-                            IsSubmitted = pm.IsSubmitted,
-                            ShipmentDetails = pm.ShipmentDetails,
-                            SupplierName = pm.VendorMaster.Name,
-                            TotalAmount = pm.TotalAmount,
-                            TotalDiscount = pm.TotalDiscount
-                        };
+            var query = context.PurchaseMaster
+                        .Include(pm => pm.purchaseItemMasters)
+                        .Include(ptm => ptm.PurchaseTransactionsMaster)
+                        .Where(nm => nm.Id == purchaseMaster.Id);
+            var result = query.Select(mm => new PurchaseViewModel
+            {
+                Id=purchaseMaster.Id,
+                VendorId = mm.VendorId,
+                SupplierName = mm.VendorMaster.Name,
+                InvoiceDate = mm.InvoiceDate,
+                InvoiceNumber = mm.InvoiceNumber,
+                ShipmentDetails = mm.ShipmentDetails,
+                IsSubmitted = mm.IsSubmitted,
+                IsActive = mm.IsActive,
+                TotalAmount = mm.TotalAmount,
+                TotalDiscount = mm.TotalDiscount,
+                TotalTax = mm.TotalTax,
+                Cards = mm.PurchaseTransactionsMaster.Cards,
+                Cash = mm.PurchaseTransactionsMaster.Cash,
+                Cheque = mm.PurchaseTransactionsMaster.Cheque,
+                Online  = mm.PurchaseTransactionsMaster.Online,
+                TotalPaid =mm.PurchaseTransactionsMaster.TotalPaid,
+                PurchaseItems =mm.purchaseItemMasters.Select(pi=> new PurchaseItemViewModel
+                { 
+                    Id=pi.Id,
+                    PurchasemasterId = pi.PurchasemasterId,
+                    ItemID = pi.ItemID,
+                    Quantity = pi.Quantity,
+                    Mrp = pi.Mrp,
+                    DiscountPercentage=pi.DiscountPercentage,
+                    Totalprice = pi.Totalprice,
+                    IsActive=pi.IsActive,
+                    Barcode = pi.Barcode,
 
-            return query.FirstOrDefault();
+
+
+                }).ToList(),
+
+
+            }).FirstOrDefault();
+
+
+
+            return result ?? new PurchaseViewModel();
         }
 
 
@@ -53,13 +79,10 @@ namespace sms.biz.Map
                 ShipmentDetails = purchaseViewModel.ShipmentDetails,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now,
-                Cash = purchaseViewModel.Cash,
-                Cards = purchaseViewModel.Cards,
-                Cheque = purchaseViewModel.Cheque,
-                Online = purchaseViewModel.Online,
+              
                 TotalAmount = purchaseViewModel.TotalAmount,
                 TotalDiscount = purchaseViewModel.TotalDiscount,
-                TotalPaid = purchaseViewModel.TotalPaid,
+                
                 TotalTax = purchaseViewModel.TotalTax
                 
             };
@@ -84,6 +107,17 @@ namespace sms.biz.Map
 
             // Assign the mapped purchaseItemMasters to purchaseMaster
             purchaseMaster.purchaseItemMasters = purchaseItemMasters;
+            var purchaseTransaction = new PurchaseTransactionsMaster
+            {
+                Cards = purchaseViewModel.Cards,
+                Cash = purchaseViewModel.Cash,
+                Cheque = purchaseViewModel.Cheque,
+                Online = purchaseViewModel.Online,
+                TotalPaid = purchaseViewModel.TotalPaid,
+                CreatedBy = 1,
+                CreatedDate = System.DateTime.Now,
+            };
+            purchaseMaster.PurchaseTransactionsMaster = purchaseTransaction;
 
             return purchaseMaster;
         }

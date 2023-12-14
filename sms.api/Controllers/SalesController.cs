@@ -71,7 +71,7 @@ namespace sms.api.Controllers
             }
             if (model.Id == 0)
             {
-                int id = salesLogic.AddSales(model,model.SalesItems);
+                int id = salesLogic.AddSales(model,model.SalesItems,model.SalesTransactions);
             }
             return CreatedAtRoute("GetSales", new { id = model.Id }, model);
         }
@@ -86,7 +86,7 @@ namespace sms.api.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var Sales = salesLogic.UpdateSales(model,model.SalesItems);
+            var Sales = salesLogic.UpdateSales(model,model.SalesItems,model.SalesTransactions);
             return Ok(Sales);
         }
 

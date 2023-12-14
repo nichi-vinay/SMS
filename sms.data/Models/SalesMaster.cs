@@ -51,7 +51,8 @@ namespace sms.data.Models
         public CustomerMaster CustomerMaster { get; set; } = null!;
 
         public CustomerTypeMaster CustomerTypeMaster { get; set; } = null!;
-        public SalesTransactionsMaster SalesTransactionsMaster { get; set; }
+        public List<SalesTransactionsMaster> SalesTransactionsMasters { get; set; }
+        
 
         public List<SalesItemMaster> salesItemMasters { get; set; }
 

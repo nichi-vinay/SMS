@@ -602,14 +602,6 @@ C:\Users\nichiuser\Downloads\SMS_Git\sms.web\obj\Debug\net6.0\refint\sms.web.dll
 C:\Users\nichiuser\Downloads\SMS_Git\sms.web\obj\Debug\net6.0\sms.web.pdb
 C:\Users\nichiuser\Downloads\SMS_Git\sms.web\obj\Debug\net6.0\sms.web.genruntimeconfig.cache
 C:\Users\nichiuser\Downloads\SMS_Git\sms.web\obj\Debug\net6.0\ref\sms.web.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\appsettings.Development.json
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\appsettings.json
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\bundleconfig.json
@@ -628,6 +620,7 @@ D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsof
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Features.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Features.dll
@@ -635,14 +628,18 @@ D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsof
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Scripting.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\NuGet.Common.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\NuGet.Configuration.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
@@ -661,6 +658,7 @@ D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\System.C
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\System.Drawing.Common.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\System.Security.Permissions.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\System.Windows.Extensions.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\af\Humanizer.resources.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\ar\Humanizer.resources.dll
@@ -768,6 +766,7 @@ D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\es\Micro
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Features.resources.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
@@ -801,6 +800,7 @@ D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\tr\Micro
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

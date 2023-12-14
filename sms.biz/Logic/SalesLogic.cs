@@ -30,9 +30,9 @@ namespace sms.biz.Logic
             return SalesMap.GetAllSales(_applicationDbContext.SalesMaster.FirstOrDefault(x=>x.Id==id), _applicationDbContext);
         }
 
-        public int AddSales(SalesViewModel item, List<SalesItemViewModel> Salesitems)
+        public int AddSales(SalesViewModel item, List<SalesItemViewModel> Salesitems,List<SalesTransactionViewModel> salestransaction)
         {
-            SalesMaster salesMaster = SalesMap.MapCreateSales(item, Salesitems,_applicationDbContext);
+            SalesMaster salesMaster = SalesMap.MapCreateSales(item, Salesitems,_applicationDbContext, salestransaction);
 
             _applicationDbContext.SaveChanges();
 
@@ -51,11 +51,11 @@ namespace sms.biz.Logic
             return false;
         }
 
-        public bool UpdateSales(SalesViewModel item, List<SalesItemViewModel> SalesItem)
+        public bool UpdateSales(SalesViewModel item, List<SalesItemViewModel> SalesItem,List<SalesTransactionViewModel> salesTransactionViewModels)
         {
             var existingSalesMaster = _applicationDbContext.SalesMaster
     .Include(sm => sm.salesItemMasters)
-    .Include(sm => sm.SalesTransactionsMaster) // Include SalesTransactionsMaster here
+    .Include(sm => sm.SalesTransactionsMasters) // Include SalesTransactionsMaster here
     .FirstOrDefault(x => x.Id == item.Id);
 
             if (existingSalesMaster != null)
@@ -64,17 +64,12 @@ namespace sms.biz.Logic
                 existingSalesMaster.CustomerId = item.CustomerId;
                 existingSalesMaster.customerTypeMasterId = item.customerTypeMasterId;
                 existingSalesMaster.InvoiceCopy = item.InvoiceCopy;
-                existingSalesMaster.InvoiceDate = item.InvoiceDate;
+                existingSalesMaster.InvoiceDate = Convert.ToDateTime(item.InvoiceDate);
                 existingSalesMaster.InvoiceNumber = item.InvoiceNumber;
                 existingSalesMaster.ShipmentDetails = item.ShipmentDetails;
-                existingSalesMaster.SalesTransactionsMaster.SalesmasterId = item.Id;
-                existingSalesMaster.SalesTransactionsMaster.Cards = item.Cards;
-                existingSalesMaster.SalesTransactionsMaster.Cash = item.Cash;
-                existingSalesMaster.SalesTransactionsMaster.Cheque = item.Cheque;
-                existingSalesMaster.SalesTransactionsMaster.Online = item.Online;
-                existingSalesMaster.SalesTransactionsMaster.TotalPaid = item.TotalPaid;
+       
                 existingSalesMaster.TaxNumber = item.TaxNumber;
-                existingSalesMaster.ExpectedDelivery = item.ExpectedDelivery;
+                existingSalesMaster.ExpectedDelivery = Convert.ToDateTime(item.ExpectedDelivery);
                 existingSalesMaster.IsCanceled = item.IsCanceled;
                 existingSalesMaster.IsActive = true;
 
@@ -111,6 +106,40 @@ namespace sms.biz.Logic
                             TotalPrice = salesItem.TotalPrice,
                             Barcode = salesItem.Barcode,
                             IsActive = true,
+                            CreatedBy = 1,
+                            CreatedDate = DateTime.Now
+                        });
+                    }
+
+                    
+                }
+                foreach (var salesTransaction in salesTransactionViewModels)
+                {
+                    var existingSalesTransaction = existingSalesMaster.SalesTransactionsMasters.FirstOrDefault(t => t.Id == salesTransaction.Id);
+
+                    if (existingSalesTransaction != null)
+                    {
+                        existingSalesTransaction.Id = salesTransaction.Id;
+                        // Update existing SalesTransactionsMaster
+                        existingSalesTransaction.Cards = salesTransaction.Cards;
+                        existingSalesTransaction.Cheque = salesTransaction.Cheque;
+                        existingSalesTransaction.Online = salesTransaction.Online;
+                        existingSalesTransaction.Cash = salesTransaction.Cash;
+                        existingSalesTransaction.TotalPaid = salesTransaction.TotalPaid;
+                        existingSalesTransaction.CreatedBy = 1;
+                        existingSalesTransaction.CreatedDate = DateTime.Now;
+                    }
+                    else
+                    {
+                        // Add new SalesTransactionsMaster
+                        existingSalesMaster.SalesTransactionsMasters.Add(new SalesTransactionsMaster
+                        {
+                            SalesmasterId = existingSalesMaster.Id,
+                            Cards = salesTransaction.Cards,
+                            Cheque = salesTransaction.Cheque,
+                            Online = salesTransaction.Online,
+                            Cash = salesTransaction.Cash,
+                            TotalPaid = salesTransaction.TotalPaid,
                             CreatedBy = 1,
                             CreatedDate = DateTime.Now
                         });

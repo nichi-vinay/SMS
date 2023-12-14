@@ -30,7 +30,7 @@ namespace sms.data.Models
         public int? ModifiedBy { get; set; }
 
 
-        public SalesMaster SalesMaster { get; set; } 
+        //public SalesMaster SalesMaster { get; set; } 
 
     }
 }

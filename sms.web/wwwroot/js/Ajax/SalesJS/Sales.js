@@ -44,7 +44,7 @@
                         '<td class="hide-quantity">' + Sales.quantity + '</td>' +
                         '<td>' + Sales.totalMRP + '</td>' +
                         '<td>' + Sales.totaDiscount + '</td>' +
-                        '<td>' + Sales.totalPaid + '</td>' +
+                        '<td>' + Sales.salesTransactions[0].totalPaid + '</td>' + 
                         '<td>';
 
                     if (Sales.isCanceled) {
@@ -196,12 +196,15 @@ function BindItemValues(itemId, ctrl) {
     return items;
 }
 var SalesItemID = [];
+
 function getSalesDataById() {
     $.ajax({
         url: 'https://localhost:7224/api/Sales/' + salesId,
         type: 'GET',
         dataType: 'json',
-        success: function (data) {
+        success: function (data) {           
+
+            localStorage.setItem("PrintInvoice", data);     
             // Populate form fields with the received data
             $('#CustomerDropDown').val(data.customerId);
             $('#CustomerTypeDropDown').val(data.customerTypeMasterId);
@@ -211,17 +214,14 @@ function getSalesDataById() {
             $('#quantity').val(data.quantity);
             $('#totalMRP').val(data.totalMRP);
             $('#TotalDiscount').val(data.totaDiscount);
-            $('#totalPaid').val(data.totalPaid);
             $('#ExpextedDate').val(data.expectedDelivery);
             $('#TotalTax').val(data.totaltax);
             $('#totalSum').val(data.totalAmount);
             $('#taxNumber').val(data.taxNumber);
-            $('#Check').val(data.cheque);
-            $('#Cash').val(data.cash);
-            $('#UPIOnline').val(data.online);
-            $('#Cards').val(data.cards);
+   
 
             $('#isCanceled').val(data.isCanceled);
+
             var isCanceled = data.isCanceled;
 
             SalesItemID = [];
@@ -230,15 +230,38 @@ function getSalesDataById() {
                     SalesItemID.push(salesItem.id);
                 }
             });
+            var transactionsBody = $('#transactionsBody');
+            transactionsBody.empty(); // Clear existing rows
+            // Set values for transactions
+            data.salesTransactions.forEach(function (transaction) {
+                var row = $('<tr>');
+                row.append('<td style="display:none">' + transaction.id + '</td>');
+                row.append('<td style="display:none">' + transaction.salesmasterId + '</td>');
+                row.append('<td>' + transaction.cheque + '</td>');
+                row.append('<td>' + transaction.cash + '</td>');
+                row.append('<td>' + transaction.online + '</td>');
+                row.append('<td>' + transaction.cards + '</td>');
+                row.append('<td>' + transaction.totalPaid + '</td>');
+
+
+
+                transactionsBody.append(row);
+            });
+
+            // Call getSalesItemsData outside of the loop
             getSalesItemsData(data.salesItems, isCanceled);
+         
             console.log("SalesItemID", SalesItemID);
+            PrintInvoice = data;
+          
+         
         },
 
         error: function (error) {
             console.log('Error fetching sales data by ID:', error);
         }
-
     });
+   
 }
 
 function getSalesItemsData(salesItems, isCanceled) {
@@ -263,7 +286,7 @@ function getSalesItemsData(salesItems, isCanceled) {
             '<td><input type="number" class="form-control" name="quantity[]" value="' + salesItem.quantity + '" ' + disableFields + '></td>' +
             '<td><input type="number" class="form-control" name="mrp[]" value="' + salesItem.mrp + '" ' + disableFields + '></td>' +
             '<td><select class="form-control select2 taxtypename taxtype-name-' + salesItem.id + ' " style="width: 100%;" ' + disableFields + '>' + taxtypeOptions + '</select></td>' +
-            '<td><input type="number" class="form-control" name="discount_percentage[]" value="' + salesItem.discountPercentage + '" ' + disableFields + '></td>' +
+            '<td><input type="number" class="form-control" name="discount_percentage[]" value="' + salesItem.taxPercentage + '" ' + disableFields + '></td>' +
             '<td><input type="number" class="form-control" name="total_price[]" value="' + salesItem.totalPrice + '" ' + disableFields + '></td>' +
             '</tr>';
         $('#salesItemsTable tbody').append(row);
@@ -440,7 +463,7 @@ function updatePayableAmount() {
     var totalTax = parseFloat($("#TotalTax").val()) || 0;
     var totalSum = parseFloat($("#totalSum").val()) || 0;
     // Update Payable Amount
-    var payableAmount = totalSum + totalTax;
+    var payableAmount = totalSum - totalTax;
     $("#totalSum").val(payableAmount.toFixed(2));
     // Trigger the updateTotalPayment function
     updateTotalPayment();
@@ -514,7 +537,7 @@ function updatePrice(row) {
     var discountAmount = MRPS * (discountPercentage / 100);
 
     // Calculate the discounted price
-    var discountedPrice = MRPS - discountAmount;
+    var discountedPrice = MRPS + discountAmount;
 
 
     // Calculate the total price
@@ -583,37 +606,25 @@ function serializeForm(isCanceled) {
         totaltax: $("#TotalTax").val(),
         isCanceled: isCanceled,
         totaDiscount: $("#TotalDiscount").val(),
-        totalPaid: $("#totalPaid").val(),
-        //invoiceCopy: $("").val(),
         expectedDelivery: $("#ExpextedDate").val(),
         taxNumber: $("#CustomerTypeDropDown").val(),
         totalAmount: $("#totalSum").val(),
-        cheque: $("#Check").val(),
-        cash: $("#Cash").val(),
-        online: $("#UPIOnline").val(),
-        cards: $("#Cards").val(),
-        salesItems: []
+        salesItems: [],
+        salesTransactions: []
     };
     var totalMRPArray = []; // Array to store MRP values
     totalPriceArray = [];
     $("#salesItemsTable tbody tr").each(function () {
         // Check if it's a new sales item
         var item = {
-            //        if($(this).find("[name='id[]']").val() === undefined || $(this).find("[name='id[]']").val() == undefined ){
-            //    id: "0";
-            //}
-            //        else {
-
             id: $(this).find("[name='id[]']").val() || 0,
-            //   }
-
             itemID: $(this).find(".itemName").val(),
             barcode: $(this).find("[name='barcode[]']").val(),
             quantity: $(this).find("[name='quantity[]']").val(),
             taxTypeID: $(this).find(".taxtypename").val(),
             mrp: $(this).find("[name='mrp[]']").val(),
-            discountPercentage: $(this).find("[name='discount_percentage[]']").val(),
-            totalPrice: $(this).find("[name='total_price[]']").val()
+            taxPercentage: $(this).find("[name='discount_percentage[]']").val(),
+            totalPrice: $(this).find("[name='total_price[]']").val(),
         };
         var itemid = parseInt(item.id) || 0;
         var mrpValue = parseFloat(item.mrp) || 0;
@@ -623,16 +634,24 @@ function serializeForm(isCanceled) {
         formData.salesItems.push(item);
         totalPriceArray.push(parseFloat(item.totalPrice) || 0);
     });
+    var transaction = {
+        id: 0,  // Set appropriate value for id
+        salesmasterId: salesId,
+        cheque: $("#Check").val(),
+        cash: $("#Cash").val(),
+        online: $("#UPIOnline").val(),
+        cards: $("#Cards").val(),
+        totalPaid: $("#totalPaid").val(),        
+    };
+    formData.salesTransactions.push(transaction);
     formData.totalMRP = totalMRPArray.reduce(function (a, b) {
         return a + b;
     }, 0);
-
     formData.totalDiscount = $("#TotalDiscount").val();
     formData.totalPaid = $("#totalPaid").val();
     console.log("Form Data:", formData);
     return JSON.stringify(formData);
 }
-
 function submitForm(isCanceled) {
     console.log("Submitting form...");
 
@@ -694,8 +713,6 @@ $('#confirmDelete').on('click', function () {
     // Once the record is deleted, close the modal
     $('#deleteModal').modal('hide');
 
-    // You can refresh the table or update the UI as needed
-    // For example, you can reload the data by calling the loadData function
     loadData();
 });
 
@@ -722,4 +739,92 @@ function deleteSalesRecord(salesId) {
             }
         }
     });
+}
+
+
+            //Print Modal
+;
+function populateInvoicePrintModal() {
+
+    if (PrintInvoice.invoiceNumber != null) {
+        var Customer = document.getElementById("select2-CustomerDropDown-container")
+     
+
+        // Assuming you have elements in your modal with appropriate IDs
+        $('#modalInvoiceNumber').text('Invoice Number: '+ PrintInvoice.invoiceNumber);
+        $('#modalInvoiceDate').text('Invoice Date: ' + PrintInvoice.invoiceDate);
+        $('#modalCustomer').text(Customer.textContent);
+        $('#modalExpectedDelivery').text(PrintInvoice.expectedDelivery);
+        $('#modalTotalTax').text(PrintInvoice.totaltax);
+        $('#modalTotalDiscount').text(PrintInvoice.totaDiscount);
+        $('#modalTotalPayable').text(PrintInvoice.totalAmount);
+        $('#modalTotalPaid').text(PrintInvoice.salesTransactions.totalPaid);
+
+        
+
+        // Assuming 'salesItems' is an array of items in your data
+        var itemsTable = $('#modalItemsTable');
+     
+
+        PrintInvoice.salesItems.forEach(function (item) {
+            var ItemsNameByID;
+            var ItemNumberByID;
+            var TaxTypeNameByID;
+            let itemValueOptions = BindItemValues(item.itemID, "name");
+            let itemNumberOptions = BindItemValues(item.itemID, "");
+            let taxtypeOptions = BindTaxtypeValue(item.taxTypeID, "taxtypppe");
+
+            console.log("items", item);
+            var table = document.getElementById("salesItemsTable");
+            $("#salesItemsTable > tbody  > tr").each(function (index, tr) {
+
+                var td = $(this).find("td:eq(1)")[0];
+                var temp = $(td).find("select");
+                var id = temp.val();
+                console.log("temp", id);
+                console.log("Item Values", ItemValues);
+                var filteredData = ItemValues.filter(function (item) {
+                    return item.id == id;
+                });
+
+                var taxtype = TaxTypeVAlue.filter(function (item) { return item.taxTypeId == id });
+                console.log("Tax", taxtype);
+                TaxTypeNameByID = taxtype[0].name;
+                console.log("FilterData", filteredData[0].itemName);
+                ItemsNameByID = filteredData[0].itemName;
+                ItemNumberByID = filteredData[0].itemNumber;
+                console.log("ItemName", ItemsNameByID)
+               
+
+            });
+            var row = $('<tr>');
+            row.append('<td style=" border: 1px solid #ddd; padding: 8px;">' + ItemsNameByID + '</td>');
+            row.append('<td style=" border: 1px solid #ddd; padding: 8px;">' + ItemNumberByID + '</td>');
+            row.append('<td style=" border: 1px solid #ddd; padding: 8px;">' + item.barcode + '</td>');
+            row.append('<td style=" border: 1px solid #ddd; padding: 8px;">' + item.quantity + '</td>');
+            row.append('<td style=" border: 1px solid #ddd; padding: 8px;">' + item.mrp + '</td>');
+            row.append('<td style=" border: 1px solid #ddd; padding: 8px;">' + TaxTypeNameByID + '</td>');
+            row.append('<td style=" border: 1px solid #ddd; padding: 8px;">' + item.taxPercentage + '</td>');
+            row.append('<td style=" border: 1px solid #ddd; padding: 8px;">' + item.totalPrice + '</td>');
+
+            
+
+            
+
+      
+
+            itemsTable.append(row);
+        });
+
+        // Populate other elements in your modal...
+    } else {
+        console.error('Invalid data object or missing required properties');
+        // Handle the error or provide feedback to the user
+    }
+
+
+    // Other elements in your modal...
+
+    // Show the modal
+    $('#modal-xl').modal('show');
 }

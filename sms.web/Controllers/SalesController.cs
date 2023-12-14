@@ -23,5 +23,10 @@ namespace sms.web.Controllers
             // Your logic to retrieve and display the data for the view
             return View();
         }
+        public IActionResult Reports()
+        {
+            // Your logic to retrieve and display the data for the view
+            return View();
+        }
     }
 }

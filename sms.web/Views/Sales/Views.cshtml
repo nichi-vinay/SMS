@@ -27,6 +27,15 @@
         .select2-container--default .select2-selection--single {
             height: 35px; /* Adjust the height as needed */
         }
+
+        .small-button {
+            padding: 5px 10px;
+            font-size: 17px;
+        }
+        .logo-image {
+            max-width: 80px;
+            max-height: 60px;
+        }
     </style>
 
 </head>
@@ -110,7 +119,7 @@
                                     <th>Rate</th>
                                     <th>Tax Type</th>
 
-                                    <th>Discount Price</th>
+                                    <th>GST %</th>
                                     <th>Total Price</th>
                                 </tr>
                             </thead>
@@ -127,7 +136,7 @@
                                             <option value="" selected="selected">Select</option>
                                         </select>
                                     </td>
-                                    <td><input id="Barcode" type="number" class="form-control " name="barcode[]" disabled></td>
+                                    <td><input id="barcode" type="number" class="form-control " name="barcode[]" disabled></td>
                                     <td><input id="quantity" type="number" class="form-control" name="quantity[]" disabled></td>
                                     <td><input id="mrp" type="number" class="form-control" name="mrp[]"></td>
                                     <!-- Add an id to the tax type element -->
@@ -149,16 +158,17 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label>Total Discount Price</label>
+                                        <label> Total Tax</label>
                                         <input id="TotalDiscount" type="text" class="form-control" placeholder="Enter ..." oninput="updateTotalDiscount()" disabled>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label>Total Tax</label>
+                                        <label>Total Discount Price</label>
                                         <input id="TotalTax" type="text" class="form-control" placeholder="Enter ..." oninput="updatePayableAmount()" disabled>
                                     </div>
                                 </div>
+                               
 
                                 <div class="col-6">
                                     <div class="form-group">
@@ -179,7 +189,10 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success" id="printButton">Print</button>
+                @* <button type="submit" class="btn btn-success" id="printButton">Print</button> *@
+                <button type="button" class="btn btn-success small-button" data-toggle="modal" data-target="#modal-xl" onclick="populateInvoicePrintModal()">
+                    Print
+                </button>
                 <button type="submit" class="btn btn-primary" id="saveButton" disabled>Save</button>
                 <button type="submit" class="btn btn-primary" id="submitBtn" disabled>Submit</button>
                 <button type="button" class="btn btn-danger" id="cancelButton" onclick="cancelButtonClick()">Cancel</button>
@@ -241,6 +254,115 @@
         </div>
     </div>
 
+    <!-- Invoice Print Modal -->
+
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Print Invoice</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <header style="background-color:white; border:1px">
+                         <div>
+                            <img src="~/dist/img/sms_logo.png" alt="Company Logo" class="logo-image" style="text-align:left" />
+                        </div>
+                        <div class="invoice-details" style="text-align:center">
+                            <label><b>Invoice Copy</b></label>
+                        </div>
+                        <div class="invoice-details">
+                            <table style="width:100%">
+                                <tr>
+                                    <td id="modalInvoiceNumber">
+                                    </td>
+                                    
+                                    <td id="modalInvoiceDate" style="text-align:right">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </header>
+
+                    <section>
+                        <table style="background-color:white;width:100%">
+                            <tr>
+                                <td style="width: 50%; border: 1px solid #ddd; padding: 8px;"><b>To:</b> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shashank S Patel<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6th Main, 7th cross<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Banashankari 3rd stage<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bangalore-560085</td>
+                                <td style="width: 50%; border: 1px solid #ddd; padding: 8px;"><b>From:</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nichi-In Software Solutions Pvt.Ltd<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;813, Outer Ring Rd<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Banashankari 3rd stage<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bangalore-560085</td>
+                            </tr>
+
+                            <!-- Add more rows as needed -->
+                        </table><br />
+                    </section>
+                    <section>
+                        <table style="width:100%">
+                            <tr>
+                                <td style="width: 50%; border: 1px solid #ddd; padding: 8px;"><b>Customer</b></td>
+                                <td id="modalCustomer" style="width: 50%; border: 1px solid #ddd; padding: 8px;"></td>
+                            </tr>
+
+                            <tr>
+                                <td style="width: 50%; border: 1px solid #ddd; padding: 8px;"><b>Expected Delivery Date</b></td>
+                                <td id="modalExpectedDelivery" style="width: 50%; border: 1px solid #ddd; padding: 8px;"></td>
+                            </tr>
+
+
+                            <!-- Add more rows as needed -->
+                        </table><br />
+                    </section>
+                    <section>
+                        <table id="modalItemsTable" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Item Name</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Item Number</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Barcode</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Quantity</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Rate</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Tax Type</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">GST %</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Dynamic rows will be added here -->
+                            </tbody>
+                        </table>
+                    </section><br />
+
+                    <section>
+                        <table style="width:50%; float:right">
+                            <tr>
+                                <th style="width: 70%; border: 1px solid #ddd; padding: 8px;">Total Tax</th>
+                                <td id="modalTotalTax" style="width: 30%; border: 1px solid #ddd; padding: 8px;"></td>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%; border: 1px solid #ddd; padding: 8px;">Total Discount</th>
+                                <td id="modalTotalDiscount" style="width: 30%; border: 1px solid #ddd; padding: 8px;">100</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%; border: 1px solid #ddd; padding: 8px;">Total Payable</th>
+                                <td id="modalTotalPayable" style="width: 30%; border: 1px solid #ddd; padding: 8px;">1000</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%; border: 1px solid #ddd; padding: 8px;">Total Paid</th>
+                                <td id="modalTotalPaid" style="width: 30%; border: 1px solid #ddd; padding: 8px;"></td>
+                            </tr>
+                        </table>
+                    </section>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
 
     <script src="../../plugins/jquery/jquery.min.js"></script>
