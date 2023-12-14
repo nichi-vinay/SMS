@@ -26,7 +26,7 @@ namespace sms.data.Models
 
         public string? Comments { get; set; }
 
-        public DateTime? FollowUpdate { get; set; }
+        public DateTime FollowUpdate { get; set; }
         [Required]
 
         public bool IsWhatsapp { get; set; }

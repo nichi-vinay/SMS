@@ -19,12 +19,12 @@ namespace sms.biz.Logic
 
         public List<VendorViewModel> GetAllVendors()
         {
-            return VendorMap.MapGetVendor(_applicationDbContext.VendorMaster.Where(x => x.IsActive == true).ToList());
+            return VendorMap.MapGetVendor(_applicationDbContext.VendorMaster.Where(x => x.IsActive == true).ToList(), _applicationDbContext);
         }
 
         public VendorViewModel GetVendor(int id)
         {
-            var data = VendorMap.GetVendorDetails(_applicationDbContext.VendorMaster.FirstOrDefault(x => x.Id == id));
+            var data = VendorMap.GetVendorDetails(_applicationDbContext.VendorMaster.FirstOrDefault(x => x.Id == id), _applicationDbContext);
             return data;
         }
 
@@ -65,6 +65,7 @@ namespace sms.biz.Logic
                     vendorMaster.TaxTypeMasterId = vendor.TaxTypeMasterId;
                     vendorMaster.TaxNumber = vendor.TaxNumber;
                     vendorMaster.IsActive = true;
+               
 
                     dbContext.SaveChanges(); // Save the changes to the database
                     return true;

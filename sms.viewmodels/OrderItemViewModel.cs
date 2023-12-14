@@ -14,8 +14,11 @@ namespace sms.viewmodels
         public int Id { get; set; }
         public int OrderMasterId { get; set; }
         public int ItemID { get; set; }
-        public bool IsProcessed { get; set; }
+   
         public bool IsActive { get; set; }
+
+        public string Quantity { get; set; }
+        public bool IsSubmitted { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
     }

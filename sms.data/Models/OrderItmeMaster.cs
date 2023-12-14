@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace sms.data.Models
 {
-    public class OrderItemMaster
+    public class OrderItmeMaster
     {
         [Key]
         public int Id { get; set; }
@@ -21,12 +21,9 @@ namespace sms.data.Models
         [ForeignKey("ItemMaster")]
         public int ItemID { get; set; }
         [Required]
-        public bool IsActive { get; set; }
-
-
-
+        public bool IsProcessed { get; set; }
         [Required]
-        public string Quantity { get; set; }
+        public bool IsActive { get; set; }
 
         public int CreatedBy { get; set; }
 
@@ -39,5 +36,6 @@ namespace sms.data.Models
         public OrderMaster OrderMaster { get; set; } = null!;
 
         public ItemMaster ItemMaster { get; set; } = null!;
+        public string Quantity { get; set; }
     }
 }

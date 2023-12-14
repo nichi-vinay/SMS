@@ -41,47 +41,8 @@
 
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Item 1</td>
-                                        <td>
-                                            XXXXXXXX
-                                        </td>
-                                        <td>xxxx</td>
-                                        <td> 50</td>
-                                        <td>xxxx</td>
-                                        <td>xxxx</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Item 2</td>
-                                        <td>
-                                            XXXXXXXX
-                                        </td>
-                                        <td>xxxx</td>
-                                        <td>40</td>
-                                        <td>xxxx</td>
-                                        <td>xxxx</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Item 3</td>
-                                        <td>
-                                            XXXXXXXX
-                                        </td>
-                                        <td>xxxx</td>
-                                        <td>9</td>
-                                        <td>xxxx</td>
-                                        <td>xxxx</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Item 4</td>
-                                        <td>
-                                            XXXXXXXX
-                                        </td>
-                                        <td>xxxx</td>
-                                        <td>15</td>
-                                        <td>xxxx</td>
-                                        <td>xxxx</td>
-                                    </tr>
+                                <tbody id ="TableBody">
+                               
 
                                 </tbody>
                             
@@ -123,14 +84,10 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
     <!-- Page specific script -->
-    <script>
-        $(function () {
-            $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    <script src="~/js/Inventory.js"> </script>
 
-        });
+    <script>
+  
         $(document).ready(function () {
             // Iterate through each table row
             $('#example1 tbody tr').each(function () {

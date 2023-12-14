@@ -35,7 +35,7 @@
                             <h3 class="card-title">Order List</h3>
                             <div class="col-lg-14 text-right">
                                 <a href="@Url.Action("AddReturn", "ReturnDetails")" class="btn btn-info">
-                                    <i class="fas fa-plus"></i> Add Orders
+                                    <i class="fas fa-plus"></i> Add item
                                 </a>
                             </div>
                             
@@ -45,57 +45,27 @@
 
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table  id = "example1" class="table table-bordered table-striped">
                                 <thead>
                                     
 
 
                                     <tr>
-                                        <th>Item Name</th>
-                                        <th>Item Number</th>
-                                        <th>Quantity</th>
+                                  
+                                        <th>Order Name</th>
+                                        <th>Order Number</th>
+                                        <th>Order Date</th>
+                                        <th>Order Type </th>
+                                        <th>Supplier Name</th>
+                            
+
                                         <th>Action</th>
                                         
 
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Item 1</td>
-                                        <td>
-                                            XXXXXXXX
-                                        </td>
-                                        <td>xxxx</td>
-                                       
-                                        <td> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Item 2</td>
-                                        <td>
-                                            XXXXXXXX
-                                        </td>
-                                        <td>xxxx</td>
-                                       
-                                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Item 3</td>
-                                        <td>
-                                            XXXXXXXX
-                                        </td>
-                                        <td>xxxx</td>
-                                       
-                                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Item 4</td>
-                                        <td>
-                                            XXXXXXXX
-                                        </td>
-                                        <td>xxxx</td>
-                                        
-                                        <td><i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash fa-lg" style="color: #e81111;"></i>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-down fa-lg"></i></td>
-                                    </tr>
+                                <tbody id="TableBody">
+                                    
 
                                 </tbody>
                                
@@ -113,6 +83,63 @@
         </div>
     </div>
 
+    <!-- Edit Modal for Orders -->
+    <div class="modal" id="editOrderModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Order</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editOrderForm">
+                        <!-- Add form fields for editing orders here -->
+                        <div class="form-group" style="display: none;">
+                            <label for="editOrderId" >Order Id</label>
+                            <input type="text" class="form-control" id="editOrderId" name="editOrderName">
+                        </div>
+                        <div class="form-group" >
+                            <label for="editOrderName">Order Name</label>
+                            <input type="text" class="form-control" id="editOrderName" name="editOrderName">
+                        </div>
+                        <div class="form-group">
+                            <label for="editOrderNumber">Order Number</label>
+                            <input type="text" class="form-control" id="editOrderNumber" name="editOrderNumber">
+                        </div>
+                   
+                        <div class="form-group" >
+                            <label for="editShipmentDetails" style="display: none;">ShipmentDetails</label>
+                            <input type="text" class="form-control" id="editShipmentDetails" name="editShipmentDetails">
+                        </div>
+                        <div class="form-group" >
+                            <label for="editOrderTypeId" style="display: none;">OrderType ID</label>
+                            <input type="text" class="form-control" id="editOrderTypeId" name="editOrderTypeId">
+                        </div>
+                        <div class="form-group" >
+                            <label for="editVendorId" style="display: none;">Vendor ID</label>
+                            <input type="text" class="form-control" id="editVendorId" name="editVendorId">
+                        </div>
+                        <div class="form-group">
+                            <label for="editName" style="display: none;">Name</label>
+                            <input type="text" class="form-control" id="editName" name="editName">
+                        </div>
+                        <div class="form-group">
+                            <label for="editOrderTypeName" style="display: none;">Name</label>
+                            <input type="text" class="form-control" id="editOrderTypeName" name="editOrderTypeName">
+                        </div>
+                   
+                      
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveOrderChangesBtn">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- /.content -->
     <!-- jQuery -->
@@ -133,7 +160,7 @@
     <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
-
+    <script src="~/js/return.js"></script>
 
 
 
@@ -142,16 +169,8 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
     <!-- Page specific script -->
-    <script>
-        $(function () {
-            $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  
 
-        });
-
-    </script>
 
 
 

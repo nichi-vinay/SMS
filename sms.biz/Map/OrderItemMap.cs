@@ -10,34 +10,34 @@ namespace sms.biz.Map
 {
     public static class OrderItemMap
     {
-        public static OrderItemViewModel GetAllOrderItem(this OrderItemMaster orderItmeMaster)
+        public static OrderItemViewModel GetAllOrderItem(this OrderItmeMaster OrderItmeMaster)
         {
             OrderItemViewModel orderItemViewModel = new OrderItemViewModel()
             {
-                Id = orderItmeMaster.Id,
-                OrderMasterId = orderItmeMaster.OrderMasterId,
-                ItemID = orderItmeMaster.ItemID,
-                //IsProcessed = orderItmeMaster.IsProcessed,
-                IsActive = orderItmeMaster.IsActive,
-                CreatedBy = orderItmeMaster.CreatedBy,
-                CreatedDate = orderItmeMaster.CreatedDate
+                Id = OrderItmeMaster.Id,
+                OrderMasterId = OrderItmeMaster.OrderMasterId,
+                ItemID = OrderItmeMaster.ItemID,
+              Quantity = OrderItmeMaster.Quantity,
+                IsActive = OrderItmeMaster.IsActive,
+                CreatedBy = OrderItmeMaster.CreatedBy,
+                CreatedDate = OrderItmeMaster.CreatedDate
             };
             return orderItemViewModel;
         }
 
-        public static List<OrderItemViewModel>MapGetOrderItem(this List<OrderItemMaster> orderItmeMasterList)
+        public static List<OrderItemViewModel>MapGetOrderItem(this List<OrderItmeMaster> OrderItmeMasterList)
         {
-            return orderItmeMasterList.Select(x=>x.GetAllOrderItem()).ToList();    
+            return OrderItmeMasterList.Select(x=>x.GetAllOrderItem()).ToList();    
         }
 
-        public static OrderItemMaster MapCreateOrderItem(this OrderItemViewModel orderItemViewModel)
+        public static OrderItmeMaster MapCreateOrderItem(this OrderItemViewModel orderItemViewModel)
         {
-            return new OrderItemMaster
+            return new OrderItmeMaster
             {
                 Id = orderItemViewModel.Id,
                 OrderMasterId = orderItemViewModel.OrderMasterId,
                 ItemID = orderItemViewModel.ItemID,
-                //IsProcessed = orderItemViewModel.IsProcessed,
+                Quantity = orderItemViewModel.Quantity,
                 IsActive = true,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now

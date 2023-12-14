@@ -19,23 +19,24 @@ namespace sms.biz.Logic
 
         public List<OrderViewModel> GetAllOrders()
         {
-            return OrderMap.MapGetOrder(_applicationDbContext.OrderMaster.Where(x => x.IsActive == true).ToList());
+            return OrderMap.MapGetOrder(_applicationDbContext.OrderMaster.Where(x => x.IsActive == true).ToList(), _applicationDbContext);
         }
 
         public OrderViewModel GetOrder(int id)
         {
-            var data = OrderMap.GetOrderDetails(_applicationDbContext.OrderMaster.FirstOrDefault(x => x.Id == id));
+            var data = OrderMap.GetOrderDetails(_applicationDbContext.OrderMaster.FirstOrDefault(x => x.Id == id), _applicationDbContext);
             return data;
         }
 
-        public int AddOrder(OrderViewModel order)
+        public int AddOrder(OrderViewModel orderViewModel, List<OrderItemViewModel> orderItems)
         {
-            OrderMaster orderMaster = OrderMap.MapCreateOrder(order);
+            
 
-            var entityEntry = _applicationDbContext.OrderMaster.Add(orderMaster);
+            var orderMaster = OrderMap.MapCreateOrder(orderViewModel, orderItems, _applicationDbContext);
+
             _applicationDbContext.SaveChanges();
 
-            return entityEntry.Entity.Id;
+            return orderMaster.Id;
         }
 
         public bool DeleteOrder(int id)
@@ -65,7 +66,10 @@ namespace sms.biz.Logic
                 orderMaster.OrderDate = order.OrderDate;
                 orderMaster.ShipmentDetails = order.ShipmentDetails;
                 orderMaster.IsCancelled = order.IsCancelled;
-                orderMaster.IsActive = order.IsActive;
+                orderMaster.IsActive = true;
+                orderMaster.IsSubmitted = orderMaster.IsSubmitted;
+               
+
 
                 dbContext.SaveChanges();
             }

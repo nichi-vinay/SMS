@@ -20,12 +20,12 @@ namespace sms.biz.Logic
 
         public List<CustomerViewModel> GetAllCustomers()
         {
-            return CustomerMap.MapGetCustomer(_applicationDbContext.CustomerMaster.Where(x => x.IsActive == true).ToList());
+            return CustomerMap.MapGetCustomer(_applicationDbContext.CustomerMaster.Where(x => x.IsActive == true).ToList(), _applicationDbContext);
         }
 
         public CustomerViewModel GetCustomer(int id)
         {
-            var data = CustomerMap.GetCustomerDetails(_applicationDbContext.CustomerMaster.FirstOrDefault(x => x.Id == id));
+            var data = CustomerMap.GetCustomerDetails(_applicationDbContext.CustomerMaster.FirstOrDefault(x => x.Id == id), _applicationDbContext);
             return data;
         }
 
@@ -66,7 +66,9 @@ namespace sms.biz.Logic
                 customerMaster.Comments = customer.Comments;
                 customerMaster.FollowUpdate = customer.FollowUpdate;
                 customerMaster.IsWhatsapp = customer.IsWhatsapp;
-                customerMaster.IsActive = customer.IsActive;
+                customerMaster.IsActive = true;
+                customerMaster.EnquirytypeId = customer.EnquirytypeId;
+
 
                 dbContext.SaveChanges();
             }

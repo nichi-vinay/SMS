@@ -1,4 +1,5 @@
-﻿using sms.data.Models;
+﻿using sms.data;
+using sms.data.Models;
 using sms.viewmodels;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,15 @@ namespace sms.biz.Map
 {
     public static class VendorMap
     {
-        public static VendorViewModel GetVendorDetails(this VendorMaster vendorMaster)
+        public static VendorViewModel GetVendorDetails(this VendorMaster vendorMaster, ApplicationDbContext context)
         {
-            VendorViewModel vendorViewModel = new VendorViewModel()
-            {
+            var query = from vm in context.VendorMaster
+                       join ttm in context.TaxTypeMaster on vm.TaxTypeMasterId equals ttm.TAXTypeId
+
+                      
+                        where vm.Id == vendorMaster.Id
+                        select new VendorViewModel
+                        {
                 Id = vendorMaster.Id,
                 Name = vendorMaster.Name,
                 Address = vendorMaster.Address,
@@ -23,15 +29,16 @@ namespace sms.biz.Map
                 TaxTypeMasterId = vendorMaster.TaxTypeMasterId,
                 IsActive = vendorMaster.IsActive,
                 CreatedBy = vendorMaster.CreatedBy,
-                CreatedDate = vendorMaster.CreatedDate
+                CreatedDate = vendorMaster.CreatedDate,
+                TaxTypeName = ttm.Name,
 
-            };
-            return vendorViewModel;
+                        };
+            return query.FirstOrDefault();
         }
         
-        public static List<VendorViewModel>MapGetVendor(this List<VendorMaster> vendorMasterList)
+        public static List<VendorViewModel>MapGetVendor(this List<VendorMaster> vendorMasterList, ApplicationDbContext context)
         {
-            return vendorMasterList.Select(x=>x.GetVendorDetails()).ToList();
+            return vendorMasterList.Select(x=>x.GetVendorDetails(context)).ToList();
         }
 
         public static VendorMaster MapCreateVendor(this VendorViewModel vendorViewModel) 
@@ -45,7 +52,7 @@ namespace sms.biz.Map
                 Mobile = vendorViewModel.Mobile,
                 TaxNumber = vendorViewModel.TaxNumber,
                 TaxTypeMasterId= vendorViewModel.TaxTypeMasterId,
-                IsActive = vendorViewModel.IsActive,
+                IsActive = true,
                 CreatedBy=1,
                 CreatedDate = System.DateTime.Now,
             };

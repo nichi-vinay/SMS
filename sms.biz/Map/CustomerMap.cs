@@ -1,4 +1,5 @@
-﻿using sms.data.Models;
+﻿using sms.data;
+using sms.data.Models;
 using sms.viewmodels;
 using System;
 using System.Collections.Generic;
@@ -15,24 +16,32 @@ namespace sms.biz.Map
         /// </summary>
         /// <param name="customerMaster">The CustomerMaster model to map.</param>
         /// <returns>A CustomerViewModel instance representing the provided CustomerMaster model.</returns>
-        public static CustomerViewModel GetCustomerDetails(this CustomerMaster customerMaster)
+        public static CustomerViewModel GetCustomerDetails(this CustomerMaster customerMaster, ApplicationDbContext context)
         {
-            CustomerViewModel customerViewModel = new CustomerViewModel()
-            {
-                Id = customerMaster.Id,
-                Name = customerMaster.Name,
-                Address = customerMaster.Address,
-                Email = customerMaster.Email,
-                Mobile = customerMaster.Mobile,
-                Comments = customerMaster.Comments,
-                FollowUpdate = customerMaster.FollowUpdate,
-                IsWhatsapp = customerMaster.IsWhatsapp,
-                IsActive = customerMaster.IsActive,
-                CreatedBy = customerMaster.CreatedBy,
-                CreatedDate = customerMaster.CreatedDate,
-                EnquirytypeId = customerMaster.EnquirytypeId
-            };
-            return customerViewModel;
+            var query = from cm in context.CustomerMaster
+                        //join etm in context.EnquiryTypeMaster on cm.EnquirytypeId equals etm.Id
+                        join sm in context.SalesMaster on cm.Id equals sm.CustomerId into salesGroup
+                        from sm in salesGroup.DefaultIfEmpty()
+                        where cm.Id == customerMaster.Id
+                        select new CustomerViewModel
+                        {
+                            Id = cm.Id,
+                            Name = cm.Name,
+                            Address = cm.Address,
+                            Email = cm.Email,
+                            Mobile = cm.Mobile,
+                            Comments = cm.Comments,
+                            FollowUpdate = cm.FollowUpdate.Date,
+                            IsWhatsapp = cm.IsWhatsapp,
+                            IsActive = cm.IsActive,
+                            IsCustomer = cm.IsCustomer,
+                            CreatedBy = cm.CreatedBy,
+                            CreatedDate = cm.CreatedDate,
+                            EnquirytypeId = cm.EnquirytypeId,
+                            EnquiryTypeName = cm.EnquiryTypeMaster.EnquiryTypeName,
+                            InvoiceNumber = sm != null ? sm.InvoiceNumber : null
+                        };
+            return query.FirstOrDefault();
         }
 
         /// <summary>
@@ -40,9 +49,9 @@ namespace sms.biz.Map
         /// </summary>
         /// <param name="customerMasterList">The list of CustomerMaster models to map.</param>
         /// <returns>A list of CustomerViewModel instances representing the provided list of CustomerMaster models.</returns>
-        public static List<CustomerViewModel> MapGetCustomer(this List<CustomerMaster> customerMasterList)
+        public static List<CustomerViewModel> MapGetCustomer(this List<CustomerMaster> customerMasterList, ApplicationDbContext context)
         {
-            return customerMasterList.Select(x => x.GetCustomerDetails()).ToList();
+            return customerMasterList.Select(x => x.GetCustomerDetails(context)).ToList();
         }
 
         /// <summary>
@@ -54,7 +63,7 @@ namespace sms.biz.Map
         {
             return new CustomerMaster
             {
-                Id = customerViewModel.Id,
+            
                 Name = customerViewModel.Name,
                 Address = customerViewModel.Address,
                 Email = customerViewModel.Email,
@@ -62,10 +71,11 @@ namespace sms.biz.Map
                 Comments = customerViewModel.Comments,
                 FollowUpdate = customerViewModel.FollowUpdate,
                 IsWhatsapp = customerViewModel.IsWhatsapp,
-                IsActive = customerViewModel.IsActive,
+                IsCustomer = customerViewModel.IsCustomer,
+                IsActive = true,
                 CreatedBy = 1,
                 CreatedDate = System.DateTime.Now,
-                EnquirytypeId = customerViewModel.EnquirytypeId
+                EnquirytypeId = customerViewModel.EnquirytypeId,
             };
         }
     }

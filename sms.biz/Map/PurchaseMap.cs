@@ -40,6 +40,8 @@ namespace sms.biz.Map
                 PurchaseItems =mm.purchaseItemMasters.Select(pi=> new PurchaseItemViewModel
                 { 
                     Id=pi.Id,
+                    ItemName = pi.ItemMaster.ItemName,
+                    ItemNumber = pi.ItemMaster.ItemNumber,
                     PurchasemasterId = pi.PurchasemasterId,
                     ItemID = pi.ItemID,
                     Quantity = pi.Quantity,

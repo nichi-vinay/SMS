@@ -1,11 +1,17 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | DataTables</title>
-    
+
+
+  <!-- Add Pikaday CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
+
+    <!-- Optional: Add a theme for styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,12 +26,20 @@
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <style>
+  
+  <style>
         .form-check {
             margin-top: 30px; /* Adjust the value as needed */
         }
+
+        /* Add some styles to the datepicker input */
+        #datepicker {
+            width: 100%;
+            padding: 10px;
+        }
     </style>
 </head>
+
 <body class="hold-transition sidebar-mini">
     <div class="card">
         <div class="card-header">
@@ -45,100 +59,33 @@
                         <label class="form-check-label" for="followup">Follow-up</label>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <div class="form-group">
-                        <label for="fromDate">From Date</label>
-                        <input type="text" id="fromDate" class="form-control" placeholder="Select a date">
-                    </div>
+          <div class="col-lg-2">
+<div class="form-group">
+<label for="datepicker">From Date</label>
+                        <input type="text" id="datepicker" placeholder="Select a date" class="form-control">
+</div>
                 </div>
                 <div class="col-lg-2">
-                    <div class="form-group">
-                        <label for="toDate">To Date</label>
-                        <input type="text" id="toDate" class="form-control" placeholder="Select a date">
-                    </div>
-                </div>
+    <div class="form-group">
+        <label for="datepicker2">To Date</label>
+        <input type="text" id="datepicker2" placeholder="Select a date" class="form-control">
+    </div>
+</div>
+
+
                 <div class="col-md-4">
                     <div class="form-group text-right">
                         <a href="@Url.Action("Create", "Enquiry")" class="btn btn-info">
-                            <i class="fas fa-plus"></i> Add Enquiry
+                            <i class="fas fa-plus"></i> Add item
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card-body">
-            <div id="enquiry1">
-            <table id="example1" class="table table-bordered table-striped">
-                <thead>
+        <div id="tableContainer"></div>
 
-                    <tr>
-                        <th>EnquiryName</th>
-                        <th>Mobile</th>
-                        <th>Enquiry Type</th>
-                    
-                        <th>Comments</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                    <tr>
-                        <td>Enquiry 1</td>
-                        <td>
-                            1234567890
-                        </td>
-                        <td>Win 95+</td>
-                   
-                        <td>Bought</td>
-                        <td>
-                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Enquiry 2</td>
-                        <td>
-                            1234567890
-                        </td>
-                        <td>Win 95+</td>
-            
-                        <td>Bought</td>
-                        <td>
-                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Enquiry 3</td>
-                        <td>
-                            1234567890
-                        </td>
-                        <td>Win 95+</td>
-                  
-                        <td>Bought</td>
-                        <td>
-                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Enquiry 4</td>
-                        <td>
-                            1234567890
-                        </td>
-                        <td>Win 95+</td>
-                  
-                        <td>Bought</td>
-                        <td>
-                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #1257ce;"></i>
-                        </td>
-                    </tr>
-
-        
-
-            </table>
-            </div>
-        </div>
     </div>
-
-
- 
 
 
 
@@ -146,7 +93,7 @@
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables  & Plugins -->
+    <!-- DataTables & Plugins -->
     <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -159,67 +106,67 @@
     <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <script src="~/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+   <script src="~/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+<!-- Add Pikaday and Moment.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+
+
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-        $(function () {
-            $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
+
         $(document).ready(function () {
-            // Function to load the "enquiry1" table
-            function loadEnquiryTable() {
-                $('#enquiry1').show();
+            // Function to load the "Enquiry" table
+            function loadTable(selectedValue) {
+                var url = '/Enquiry/GetPartialView?option=' + selectedValue;
+
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (result) {
+                        $('#tableContainer').html(result).show();
+                    },
+                    error: function () {
+                        // Handle any error that might occur during the AJAX request
+                        console.error("Failed to load partial view.");
+                    }
+                });
             }
 
-            // Initially, load the "enquiry1" table
-            loadEnquiryTable();
+            // Initially, load the "Enquiry" table
+            var selectedValue = $('input[name=radioOption]:checked').val();
+            loadTable(selectedValue);
 
             // Handle radio button click events
             $('input[type=radio]').change(function () {
                 var selectedValue = $(this).val();
-
-                if (selectedValue === 'Enquiry') {
-                    // Use Ajax to load the corresponding partial view for Customer or Follow-up
-                    var url = '@Url.Action("GetPartialView", "Enquiry")?option=' + selectedValue;
-                    $.ajax({
-                        url: url,
-                        type: 'GET',
-                        success: function (result) {
-                            $('#example1').html(result).show();
-                        }
-                    });
-                
-                } else {
-                    // Use Ajax to load the corresponding partial view for Customer or Follow-up
-                    var url = '@Url.Action("GetPartialView", "Enquiry")?option=' + selectedValue;
-                    $.ajax({
-                        url: url,
-                        type: 'GET',
-                        success: function (result) {
-                            $('#example1').html(result).show();
-                        }
-                    });
-                }
+                loadTable(selectedValue);
             });
+
+        });
+
+
+          document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Pikaday
+            var picker = new Pikaday({
+                field: document.getElementById('datepicker'),
+                format: 'MM/DD/YYYY', // Set the desired date format
+                yearRange: [1900, moment().year()], // Set the range of years
+                showYearDropdown: true, // Show a dropdown for selecting years
+            });
+
+              // Initialize Pikaday for the second datepicker
+    var picker2 = new Pikaday({
+        field: document.getElementById('datepicker2'),
+        format: 'MM/DD/YYYY', // Set the desired date format
+        yearRange: [1900, moment().year()], // Set the range of years
+        showYearDropdown: true, // Show a dropdown for selecting years
+    });
         });
 
 
@@ -230,11 +177,9 @@
 
 
 
-
+      
 
     </script>
 </body>
+
 </html>
-
-
-

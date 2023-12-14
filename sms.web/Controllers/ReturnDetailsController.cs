@@ -12,5 +12,9 @@ namespace sms.web.Controllers
         {
             return View();
         }
+        public IActionResult EditReturn()
+        {
+            return View();
+        }
     }
 }
