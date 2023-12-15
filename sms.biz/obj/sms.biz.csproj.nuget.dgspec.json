@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\sms.biz.csproj": {}
+    "D:\\SMS_15-12-2023\\sms.biz\\sms.biz.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\sms.biz.csproj": {
+    "D:\\SMS_15-12-2023\\sms.biz\\sms.biz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\sms.biz.csproj",
+        "projectUniqueName": "D:\\SMS_15-12-2023\\sms.biz\\sms.biz.csproj",
         "projectName": "sms.biz",
-        "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\sms.biz.csproj",
+        "projectPath": "D:\\SMS_15-12-2023\\sms.biz\\sms.biz.csproj",
         "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\obj\\",
+        "outputPath": "D:\\SMS_15-12-2023\\sms.biz\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\nichiuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,18 +22,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj": {
-                "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj"
+              "D:\\SMS_15-12-2023\\sms.data\\sms.data.csproj": {
+                "projectPath": "D:\\SMS_15-12-2023\\sms.data\\sms.data.csproj"
               },
-              "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\sms.viewmodels.csproj": {
-                "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\sms.viewmodels.csproj"
+              "D:\\SMS_15-12-2023\\sms.viewmodels\\sms.viewmodels.csproj": {
+                "projectPath": "D:\\SMS_15-12-2023\\sms.viewmodels\\sms.viewmodels.csproj"
               }
             }
           }
@@ -77,25 +72,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj": {
+    "D:\\SMS_15-12-2023\\sms.data\\sms.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj",
+        "projectUniqueName": "D:\\SMS_15-12-2023\\sms.data\\sms.data.csproj",
         "projectName": "sms.data",
-        "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj",
+        "projectPath": "D:\\SMS_15-12-2023\\sms.data\\sms.data.csproj",
         "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\obj\\",
+        "outputPath": "D:\\SMS_15-12-2023\\sms.data\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\nichiuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,7 +94,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -147,25 +137,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\sms.viewmodels.csproj": {
+    "D:\\SMS_15-12-2023\\sms.viewmodels\\sms.viewmodels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\sms.viewmodels.csproj",
+        "projectUniqueName": "D:\\SMS_15-12-2023\\sms.viewmodels\\sms.viewmodels.csproj",
         "projectName": "sms.viewmodels",
-        "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\sms.viewmodels.csproj",
+        "projectPath": "D:\\SMS_15-12-2023\\sms.viewmodels\\sms.viewmodels.csproj",
         "packagesPath": "C:\\Users\\nichiuser\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.viewmodels\\obj\\",
+        "outputPath": "D:\\SMS_15-12-2023\\sms.viewmodels\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\nichiuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -173,15 +159,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj": {
-                "projectPath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.data\\sms.data.csproj"
+              "D:\\SMS_15-12-2023\\sms.data\\sms.data.csproj": {
+                "projectPath": "D:\\SMS_15-12-2023\\sms.data\\sms.data.csproj"
               }
             }
           }
@@ -211,7 +196,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

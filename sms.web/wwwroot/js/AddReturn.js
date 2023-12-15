@@ -10,7 +10,7 @@ $(document).ready(function () {
     // get method to fetch data for supplier dropdown
     $.ajax({
         type: "get",
-        url: "https://localhost:44387/api/vendors",
+        url: "https://localhost:7224/api/vendors",
         contenttype: "application/json",
         datatype: "json",
         success: function (data) {
@@ -48,7 +48,7 @@ $(document).ready(function () {
     function populateOrderTypeDropdown() {
         $.ajax({
             type: "GET",
-            url: "https://localhost:44387/api/OrderType",
+            url: "https://localhost:7224/api/OrderType",
             contentType: "application/json",
             dataType: "json",
             success: function (data) {
@@ -146,7 +146,7 @@ $(document).ready(function () {
     function fetchItemMasterData(row) {
         return $.ajax({
             type: "GET",
-            url: "https://localhost:44387/api/item", // update the URL to your item master API endpoint
+            url: "https://localhost:7224/api/item", // update the URL to your item master API endpoint
             contentType: "application/json",
             dataType: "json",
             success: function (data) {
@@ -294,7 +294,7 @@ function submitOrderForm() {
     // Use the jQuery AJAX function to send a POST request
     $.ajax({
         type: "POST",
-        url: "https://localhost:44387/api/Orders", // Update the URL to your API endpoint
+        url: "https://localhost:7224/api/Orders", // Update the URL to your API endpoint
         contentType: "application/json",
         data: JSON.stringify({
 

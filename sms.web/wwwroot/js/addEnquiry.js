@@ -1,5 +1,6 @@
 ﻿
 var selectedEnquiryTypeId;
+var enquirytypename;
 
 $(document).ready(function () {
 
@@ -9,7 +10,7 @@ $(document).ready(function () {
         // get method to fetch data for supplier dropdown
         $.ajax({
             type: "get",
-            url: "https://localhost:44387/api/EnquiryType",
+            url: "https://localhost:7224/api/EnquiryType",
             contenttype: "application/json",
             datatype: "json",
             success: function (data) {
@@ -21,7 +22,7 @@ $(document).ready(function () {
                 // loop through each vendor
                 $.each(data, function (i, enquiry) {
                     var enquiryid = enquiry.id;
-                    var enquirytypename = enquiry.enquiryTypeName;
+                     enquirytypename = enquiry.enquiryTypeName;
 
                     // create option and append to the dropdown
                     var option = $("<option>").text(enquirytypename).val(enquiryid);
@@ -104,11 +105,12 @@ function submitOrderForm() {
     // Use the jQuery AJAX function to send a POST request
     $.ajax({
         type: "POST",
-        url: "https://localhost:44387/api/Customers", // Update the URL to your API endpoint
+        url: "https://localhost:7224/api/Customers", // Update the URL to your API endpoint
         contentType: "application/json",
         data: JSON.stringify({
 
             enquiryTypeId: enquiryTypeId,
+            enquiryTypeName: enquirytypename,
             name: customerName,
             mobile: mobile,
             address: address,

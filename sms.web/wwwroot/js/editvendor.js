@@ -18,7 +18,7 @@ $(document).ready(function () {
         // Fetch data for enquiry type dropdown
         $.ajax({
             type: "get",
-            url: "https://localhost:44387/api/TaxType",
+            url: "https://localhost:7224/api/TaxType",
             contentType: "application/json",
             dataType: "json",
             success: function (data) {
@@ -69,7 +69,7 @@ $(document).ready(function () {
             // PUT request
             $.ajax({
                 type: "PUT",
-                url: "https://localhost:44387/api/Vendors/" + vendorId,
+                url: "https://localhost:7224/api/Vendors/" + vendorId,
 
                 data: JSON.stringify({
                     id: vendorId,

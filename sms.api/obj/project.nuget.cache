@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DxeP1XQZMVFQd3xJcWbAjY9Z9+CdAj/4TSCedV9af53xlG6+MFMiUCz6Z9MvzpCA146NJULlaCN4EATxBM+w8w==",
+  "dgSpecHash": "ywKSHvpJK4/1xb+WiQrmaeNBBLOrx5DL73PPsAtyhtQjLfoo6eEJC7XblLa2nFRRjyGf0I+GE4HvE8Qv/qfSBw==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.api\\sms.api.csproj",
+  "projectFilePath": "D:\\SMS_15-12-2023\\sms.api\\sms.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nichiuser\\.nuget\\packages\\barcode\\2023.11.8\\barcode.2023.11.8.nupkg.sha512",
     "C:\\Users\\nichiuser\\.nuget\\packages\\barcodelib\\3.0.3\\barcodelib.3.0.3.nupkg.sha512",

@@ -34,3 +34,15 @@ D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.dat
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\refint\sms.data.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.data.pdb
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\ref\sms.data.dll
+D:\SMS_15-12-2023\sms.data\bin\Debug\net6.0\sms.data.deps.json
+D:\SMS_15-12-2023\sms.data\bin\Debug\net6.0\sms.data.dll
+D:\SMS_15-12-2023\sms.data\bin\Debug\net6.0\sms.data.pdb
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\sms.data.csproj.AssemblyReference.cache
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\sms.data.GeneratedMSBuildEditorConfig.editorconfig
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\sms.data.AssemblyInfoInputs.cache
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\sms.data.AssemblyInfo.cs
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\sms.data.csproj.CoreCompileInputs.cache
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\sms.data.dll
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\refint\sms.data.dll
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\sms.data.pdb
+D:\SMS_15-12-2023\sms.data\obj\Debug\net6.0\ref\sms.data.dll

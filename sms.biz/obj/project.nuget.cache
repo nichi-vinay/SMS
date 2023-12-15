@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rLLFe781rcb7ING9WTeQgOzgo7hRpkn0jBVFJ46gzH/7TYjYBMWcveEZLrY+bdsJHUAnV6S8ZMi3Bi+06RrR7A==",
+  "dgSpecHash": "y/W0UCKXRk+5TxBIxHSmaaXmg1fMLitCRZZrnvA/wFkqtOkI70C6lUyS7GQCUlI/XzOLWT6K2q+wKJC6xnqDuw==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.biz\\sms.biz.csproj",
+  "projectFilePath": "D:\\SMS_15-12-2023\\sms.biz\\sms.biz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nichiuser\\.nuget\\packages\\barcode\\2023.11.8\\barcode.2023.11.8.nupkg.sha512",
     "C:\\Users\\nichiuser\\.nuget\\packages\\bitmiracle.libtiff.net\\2.4.649\\bitmiracle.libtiff.net.2.4.649.nupkg.sha512",

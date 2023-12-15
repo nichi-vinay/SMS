@@ -2,7 +2,7 @@
     // Fetch vendor names from the server
     $.ajax({
         type: "GET",
-        url: "https://localhost:44387/api/Vendors",
+        url: "https://localhost:7224/api/Vendors",
         contentType: "application/json",
         dataType: "json",
         success: function (data) {
@@ -89,7 +89,7 @@
     function fetchDataFromAPI() {
         $.ajax({
             type: "GET",
-            url: "https://localhost:44387/api/Vendors",
+            url: "https://localhost:7224/api/Vendors",
             contentType: "application/json",
             dataType: "json",
             success: function (data) {
@@ -120,7 +120,7 @@ $(document).on('click', '.btn-edit-order', function () {
     // Make an AJAX request to get the detailed customer information
     $.ajax({
         type: "GET",
-        url: "https://localhost:44387/api/Vendors/" + vendorId,
+        url: "https://localhost:7224/api/Vendors/" + vendorId,
         contentType: "text/plain; charset=utf-8",
         dataType: "json",
         success: function (data) {
@@ -152,7 +152,7 @@ $(document).on('click', '.btn-delete-order', function () {
     // AJAX request to delete the sales record
     $.ajax({
         type: 'DELETE',
-        url: 'https://localhost:44387/api/Vendors/' + vendorId,
+        url: 'https://localhost:7224/api/Vendors/' + vendorId,
         success: function (response) {
             // Handle the success response
             console.log("Success:", response);

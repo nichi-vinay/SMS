@@ -24,7 +24,7 @@
 
     $.ajax({
         type: "GET",
-        url: "https://localhost:44387/api/Customers",
+        url: "https://localhost:7224/api/Customers",
         contentType: "text/plain; charset=utf-8",
         dataType: "json",
         success: function (data) {
@@ -70,7 +70,7 @@ $(document).on('click', '.btn-edit-order', function () {
     // Make an AJAX request to get the detailed customer information
     $.ajax({
         type: "GET",
-        url: "https://localhost:44387/api/Customers/" + customerId,
+        url: "https://localhost:7224/api/Customers/" + customerId,
         contentType: "text/plain; charset=utf-8",
         dataType: "json",
         success: function (data) {

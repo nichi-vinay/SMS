@@ -136,7 +136,7 @@
 //    // First AJAX request for PurchaseItemMaster
 //    $.ajax({
 //        type: "GET",
-//        url: "https://localhost:44387/api/Purchase",
+//        url: "https://localhost:7224/api/Purchase",
 //        contentType: "text/plain; charset=utf-8",
 //        dataType: "json",
 //        success: function (data) {
@@ -151,7 +151,7 @@
 //            // Now make the second AJAX request for SalesItemMaster
 //            $.ajax({
 //                type: "GET",
-//                url: "https://localhost:44387/api/SalesItem",
+//                url: "https://localhost:7224/api/SalesItem",
 //                contentType: "text/plain; charset=utf-8",
 //                dataType: "json",
 //                success: function (salesDataResponse) {
@@ -291,7 +291,7 @@ $(document).ready(function () {
     // First AJAX request for PurchaseItemMaster
     $.ajax({
         type: "GET",
-        url: "https://localhost:44387/api/Purchase",
+        url: "https://localhost:7224/api/Purchase",
         contentType: "text/plain; charset=utf-8",
         dataType: "json",
         success: function (data) {
@@ -307,7 +307,7 @@ $(document).ready(function () {
             // Now make the second AJAX request for SalesItemMaster
             $.ajax({
                 type: "GET",
-                url: "https://localhost:44387/api/SalesItem",
+                url: "https://localhost:7224/api/SalesItem",
                 contentType: "text/plain; charset=utf-8",
                 dataType: "json",
                 success: function (salesDataResponse) {

@@ -1,4 +1,7 @@
-﻿$(document).ready(function () {
+﻿var enquiryTypeName;
+
+
+$(document).ready(function () {
     // Get the query parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const enquiryDataParam = urlParams.get('enquiryData');
@@ -16,7 +19,7 @@
         // Fetch data for enquiry type dropdown
         $.ajax({
             type: "get",
-            url: "https://localhost:44387/api/EnquiryType",
+            url: "https://localhost:7224/api/EnquiryType",
             contentType: "application/json",
             dataType: "json",
             success: function (data) {
@@ -26,7 +29,7 @@
                 // Loop through each enquiry type
                 $.each(data, function (i, enquiry) {
                     var enquiryId = enquiry.id;
-                    var enquiryTypeName = enquiry.enquiryTypeName;
+                     enquiryTypeName = enquiry.enquiryTypeName;
 
                     // Create option and append to the dropdown
                     var option = $("<option>").text(enquiryTypeName).val(enquiryId);
@@ -70,11 +73,12 @@
             // PUT request
             $.ajax({
                 type: "PUT",
-                url: "https://localhost:44387/api/Customers/" + enquiryId,
+                url: "https://localhost:7224/api/Customers/" + enquiryId,
 
                 data: JSON.stringify({
                     id: enquiryId,
-                   name: customerName,
+                    name: customerName,
+                    enquiryTypeName: enquiryTypeName,
                     mobile: mobile,
                     email: email,
                     address: address,
@@ -86,7 +90,7 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function () {
-                    location.reload();
+                   
                     toastr.success('Enquiry has been updated successfully.');
                 },
                 error: function (error) {

@@ -17,7 +17,7 @@
     // GET Method to fetch data from server
     $.ajax({
         type: "GET",
-        url: "https://localhost:44387/api/Orders",
+        url: "https://localhost:7224/api/Orders",
         contentType: "text/plain; charset=utf-8",
         dataType: "json",
         success: function (data) {
@@ -144,7 +144,7 @@ $(document).on('click', '.btn-edit-order', function () {
     // Make an AJAX request to get the detailed order information
     $.ajax({
         type: "GET",
-        url: "https://localhost:44387/api/Orders/" + orderId,
+        url: "https://localhost:7224/api/Orders/" + orderId,
         contentType: "text/plain; charset=utf-8",
         dataType: "json",
         success: function (data) {
@@ -198,7 +198,7 @@ $('#saveOrderChangesBtn').click(function () {
     // Make an AJAX request to update the order using the orderId
     $.ajax({
         type: "PUT",
-        url: "https://localhost:44387/api/Orders/" + orderId,
+        url: "https://localhost:7224/api/Orders/" + orderId,
         data: JSON.stringify({
             "id": orderId,
             "orderName": orderName,

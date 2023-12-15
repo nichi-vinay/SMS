@@ -65,7 +65,7 @@ $(document).ready(function () {
             function populateOrderTypeDropdown() {
                 $.ajax({
                     type: "GET",
-                    url: "https://localhost:44387/api/OrderType",
+                    url: "https://localhost:7224/api/OrderType",
                     contentType: "application/json",
                     dataType: "json",
                     success: function (data) {
@@ -137,7 +137,7 @@ $(document).ready(function () {
     // Fetch all item master data
     $.ajax({
         type: "GET",
-        url: "https://localhost:44387/api/Item", // Update the URL to your item master API endpoint
+        url: "https://localhost:7224/api/Item", // Update the URL to your item master API endpoint
         contentType: "application/json",
         dataType: "json",
         success: function (data) {
@@ -219,7 +219,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "GET",
-            url: "https://localhost:44387/api/Item/" + itemID,
+            url: "https://localhost:7224/api/Item/" + itemID,
             contentType: "application/json",
             dataType: "json",
             success: function (itemDetails) {

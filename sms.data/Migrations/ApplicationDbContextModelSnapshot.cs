@@ -51,21 +51,21 @@ namespace sms.data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "43e42dad-d08d-4242-b925-aa036aee0fb3",
+                            Id = "17711256-09c7-4505-887b-071e9532d41d",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "088b22a6-6051-4b93-a17a-5771d53748e1",
+                            Id = "6d15a5f3-2557-4160-98e3-3eb886aa45e9",
                             ConcurrencyStamp = "3",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "9e0512c2-7822-49c1-8dfd-97b70d2e99d4",
+                            Id = "5c2f45b4-1e68-4e26-b937-da996dd75d1b",
                             ConcurrencyStamp = "2",
                             Name = "Executive",
                             NormalizedName = "Executive"
@@ -382,7 +382,7 @@ namespace sms.data.Migrations
                     b.Property<int>("EnquirytypeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("FollowUpdate")
+                    b.Property<DateTime>("FollowUpdate")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
@@ -551,7 +551,7 @@ namespace sms.data.Migrations
                     b.ToTable("ItemMaster");
                 });
 
-            modelBuilder.Entity("sms.data.Models.OrderItemMaster", b =>
+            modelBuilder.Entity("sms.data.Models.OrderItmeMaster", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -566,6 +566,9 @@ namespace sms.data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsProcessed")
                         .HasColumnType("bit");
 
                     b.Property<int>("ItemID")
@@ -1314,7 +1317,7 @@ namespace sms.data.Migrations
                     b.Navigation("UnitTypeMaster");
                 });
 
-            modelBuilder.Entity("sms.data.Models.OrderItemMaster", b =>
+            modelBuilder.Entity("sms.data.Models.OrderItmeMaster", b =>
                 {
                     b.HasOne("sms.data.Models.ItemMaster", "ItemMaster")
                         .WithMany()
@@ -1323,7 +1326,7 @@ namespace sms.data.Migrations
                         .IsRequired();
 
                     b.HasOne("sms.data.Models.OrderMaster", "OrderMaster")
-                        .WithMany("orderItemMasters")
+                        .WithMany("OrderItmeMasters")
                         .HasForeignKey("OrderMasterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1491,7 +1494,7 @@ namespace sms.data.Migrations
 
             modelBuilder.Entity("sms.data.Models.OrderMaster", b =>
                 {
-                    b.Navigation("orderItemMasters");
+                    b.Navigation("OrderItmeMasters");
                 });
 
             modelBuilder.Entity("sms.data.Models.PurchaseMaster", b =>
