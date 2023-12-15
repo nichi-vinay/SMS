@@ -9,169 +9,185 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = sms.web
 build_property.RootNamespace = sms.web
-build_property.ProjectDir = D:\SMS\SMS\sms.web\
+build_property.ProjectDir = D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\SMS\SMS\sms.web
+build_property.MSBuildProjectDirectory = D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/SMS/SMS/sms.web/Views/Dashboard/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/Create.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/Enquiry.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/EditCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxFZGl0Q3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/Enquiry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxFbnF1aXJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/PartialView/_CustomerTable.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/PartialView/_CustomerTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxQYXJ0aWFsVmlld1xfQ3VzdG9tZXJUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/PartialView/_EnquiryTable - Copy.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/PartialView/_EnquiryTable - Copy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxQYXJ0aWFsVmlld1xfRW5xdWlyeVRhYmxlIC0gQ29weS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/_CustomerTable.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/_CustomerTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxfQ3VzdG9tZXJUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/_EnquiryTable.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/_EnquiryTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxfRW5xdWlyeVRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Enquiry/_FollowupTable.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Enquiry/_FollowupTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5xdWlyeVxfRm9sbG93dXBUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Home/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Home/Privacy.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/InStock/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/InStock/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5TdG9ja1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Login/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Purchase/AddItem.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Purchase/AddItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VcQWRkSXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Purchase/AddPurchase.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Purchase/AddPurchase.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VcQWRkUHVyY2hhc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Purchase/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Purchase/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Report/Customer.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Report/Customer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Report/Enquiry.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Report/Enquiry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEVucXVpcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Report/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Report/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Report/Inventory.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Report/Inventory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEludmVudG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Report/Purchases.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Report/Purchases.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFB1cmNoYXNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Report/Sales.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Report/Sales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFNhbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Report/Supplier.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Report/Supplier.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFN1cHBsaWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/ReturnDetails/AddReturn.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/ReturnDetails/AddReturn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuRGV0YWlsc1xBZGRSZXR1cm4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/ReturnDetails/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/ReturnDetails/EditReturn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuRGV0YWlsc1xFZGl0UmV0dXJuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/ReturnDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuRGV0YWlsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Sales/Create.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Sales/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Sales/Edit.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Sales/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Sales/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Sales/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Sales/Reports.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Sales/Reports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcUmVwb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Sales/Views.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Sales/Views.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcVmlld3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Shared/Error.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Shared/_LoginLayout.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Shared/_LoginLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Supplier/Create.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Supplier/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Supplier/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Supplier/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Supplier/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Vendor/Create.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Vendor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Vendor/Index.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Vendor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/_ViewImports.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/_ViewStart.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SMS/SMS/sms.web/Views/Shared/_Layout.cshtml]
+[D:/VisualStudio/Projects/NichiProjects/SMSMain/sms.web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-46hucv6jxe

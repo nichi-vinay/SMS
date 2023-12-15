@@ -62,7 +62,7 @@ namespace sms.api.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
-            int id = OrderLogic.AddOrder(order);
+            int id = OrderLogic.AddOrder(order,order.OrderItems);
 
             return CreatedAtRoute("GetOrder", new { id = order.Id }, order);
         }

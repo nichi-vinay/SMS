@@ -22,14 +22,14 @@ D:\VisualStudio\Projects\NichiProjects\SMSGITClone\sms.data\obj\Debug\net6.0\sms
 D:\VisualStudio\Projects\NichiProjects\SMSGITClone\sms.data\obj\Debug\net6.0\refint\sms.data.dll
 D:\VisualStudio\Projects\NichiProjects\SMSGITClone\sms.data\obj\Debug\net6.0\sms.data.pdb
 D:\VisualStudio\Projects\NichiProjects\SMSGITClone\sms.data\obj\Debug\net6.0\ref\sms.data.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\bin\Debug\net6.0\sms.data.deps.json
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\bin\Debug\net6.0\sms.data.dll
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\bin\Debug\net6.0\sms.data.pdb
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.data.csproj.AssemblyReference.cache
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.data.GeneratedMSBuildEditorConfig.editorconfig
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.data.AssemblyInfoInputs.cache
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.data.AssemblyInfo.cs
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.data.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\bin\Debug\net6.0\sms.data.deps.json
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\bin\Debug\net6.0\sms.data.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\bin\Debug\net6.0\sms.data.pdb
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.data.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\refint\sms.data.dll
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.data\obj\Debug\net6.0\sms.data.pdb

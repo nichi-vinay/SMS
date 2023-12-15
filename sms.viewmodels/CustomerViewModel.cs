@@ -21,7 +21,7 @@ namespace sms.viewmodels
 
         public string? Comments { get; set; }
 
-        public DateTime? FollowUpdate { get; set; }
+        public DateTime FollowUpdate { get; set; }
 
         public bool IsWhatsapp { get; set; }
 
@@ -32,5 +32,8 @@ namespace sms.viewmodels
         public DateTime CreatedDate { get; set; }
 
         public int EnquirytypeId { get; set; }
+        public bool IsCustomer { get; set; }
+        public string EnquiryTypeName { get; set; }
+        public string? InvoiceNumber { get; set; }
     }
 }

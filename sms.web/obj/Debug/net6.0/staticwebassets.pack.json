@@ -1441,6 +1441,10 @@
       "PackagePath": "staticwebassets\\index3.html"
     },
     {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\AddReturn.js",
+      "PackagePath": "staticwebassets\\js\\AddReturn.js"
+    },
+    {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Ajax\\AddPurchaseItem.js",
       "PackagePath": "staticwebassets\\js\\Ajax\\AddPurchaseItem.js"
     },
@@ -1461,8 +1465,52 @@
       "PackagePath": "staticwebassets\\js\\Ajax\\SalesJS\\Sales.js"
     },
     {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\Inventory.js",
+      "PackagePath": "staticwebassets\\js\\Inventory.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\addEnquiry.js",
+      "PackagePath": "staticwebassets\\js\\addEnquiry.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\addvendor.js",
+      "PackagePath": "staticwebassets\\js\\addvendor.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\customerTable.js",
+      "PackagePath": "staticwebassets\\js\\customerTable.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\editEnquiry.js",
+      "PackagePath": "staticwebassets\\js\\editEnquiry.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\editreturn.js",
+      "PackagePath": "staticwebassets\\js\\editreturn.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\editvendor.js",
+      "PackagePath": "staticwebassets\\js\\editvendor.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\enquiryTable.js",
+      "PackagePath": "staticwebassets\\js\\enquiryTable.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\followUpTable.js",
+      "PackagePath": "staticwebassets\\js\\followUpTable.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\return.js",
+      "PackagePath": "staticwebassets\\js\\return.js"
+    },
+    {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\js\\vendor.js",
+      "PackagePath": "staticwebassets\\js\\vendor.js"
     },
     {
       "Id": "D:\\VisualStudio\\Projects\\NichiProjects\\SMSMain\\sms.web\\wwwroot\\lib\\bootstrap\\LICENSE",

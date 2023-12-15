@@ -156,6 +156,12 @@ D:\VisualStudio\Projects\NichiProjects\SMSGITClone\sms.api\obj\Debug\net6.0\refi
 D:\VisualStudio\Projects\NichiProjects\SMSGITClone\sms.api\obj\Debug\net6.0\sms.api.pdb
 D:\VisualStudio\Projects\NichiProjects\SMSGITClone\sms.api\obj\Debug\net6.0\sms.api.genruntimeconfig.cache
 D:\VisualStudio\Projects\NichiProjects\SMSGITClone\sms.api\obj\Debug\net6.0\ref\sms.api.dll
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.csproj.AssemblyReference.cache
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfoInputs.cache
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfo.cs
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cache
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\bin\Debug\net6.0\appsettings.Development.json
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\bin\Debug\net6.0\appsettings.json
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\bin\Debug\net6.0\sms.api.exe
@@ -246,13 +252,6 @@ D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\bin\Debug\net6.0\sms.view
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\bin\Debug\net6.0\sms.biz.pdb
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\bin\Debug\net6.0\sms.data.pdb
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\bin\Debug\net6.0\sms.viewmodels.pdb
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.csproj.AssemblyReference.cache
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.GeneratedMSBuildEditorConfig.editorconfig
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfoInputs.cache
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.AssemblyInfo.cs
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.csproj.CoreCompileInputs.cache
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cs
-D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\sms.api.MvcApplicationPartsAssemblyInfo.cache
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.sms.api.Microsoft.AspNetCore.StaticWebAssets.props
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.build.sms.api.props
 D:\VisualStudio\Projects\NichiProjects\SMSMain\sms.api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.sms.api.props

@@ -38,7 +38,7 @@ namespace sms.data
 
         public virtual DbSet<ItemMaster> ItemMaster { get; set; }
 
-        public virtual DbSet<OrderItemMaster> OrderItmeMaster { get; set; }
+        public virtual DbSet<OrderItmeMaster> OrderItmeMaster { get; set; }
 
         public virtual DbSet<OrderMaster> OrderMaster { get; set; }
 
